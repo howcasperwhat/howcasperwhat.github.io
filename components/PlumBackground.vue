@@ -4,8 +4,9 @@ const el = ref<HTMLCanvasElement>()
 const ctx = computed(() => el.value!.getContext('2d')!)
 const WIDTH = 1920
 const HEIGHT = 1080
-const LENGTH = 32
-const NSEED = 4
+const LENGTH = 8
+const NSEED = 12
+const MINDEPTH = 2
 
 interface Point {
   x: number
@@ -49,20 +50,20 @@ function step(b: Branch, depth = 0) {
   const end = getEndPoint(b)
   drawBranch(b)
 
-  if (depth < 3 || Math.random() < 0.5) {
+  if (depth < MINDEPTH || Math.random() < 0.5) {
     pendingTasks.push(() => {
       step({
         start: end,
-        length: b.length + Math.random() * 6 - 3,
+        length: b.length + Math.random() * 4 - 2,
         angle: b.angle - 0.4 * Math.random()
       }, depth + 1)
     })
   }
-  if (depth < 3 || Math.random() < 0.5) {
+  if (depth < MINDEPTH || Math.random() < 0.5) {
     pendingTasks.push(() => {
       step({
         start: end,
-        length: b.length + Math.random() * 6 - 3,
+        length: b.length + Math.random() * 4 - 2,
         angle: b.angle + 0.4 * Math.random()
       }, depth + 1)
     })
