@@ -51,6 +51,7 @@ defineProps({
   flex-direction: column;
   justify-content: space-around;
   padding-left: 20px;
+  user-select: none;
 }
 
 #item-icon {
