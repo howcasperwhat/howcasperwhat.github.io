@@ -2,11 +2,12 @@
 import { onMounted, ref, computed } from 'vue';
 const el = ref<HTMLCanvasElement>()
 const ctx = computed(() => el.value!.getContext('2d')!)
-const WIDTH = 1920
-const HEIGHT = 1080
-const LENGTH = 8
+const WIDTH = document.documentElement.clientWidth
+const HEIGHT = document.documentElement.clientHeight
+const LENGTH = 12
 const NSEED = 12
 const MINDEPTH = 2
+const MAXDEPTH = 512
 
 interface Point {
   x: number
@@ -49,12 +50,14 @@ function generateSeed(): Branch {
 function step(b: Branch, depth = 0) {
   const end = getEndPoint(b)
   drawBranch(b)
+  if (depth >= MAXDEPTH) return
+  if (b.start.x < 0 || b.start.x > WIDTH || b.start.y < 0 || b.start.y > HEIGHT) return
 
   if (depth < MINDEPTH || Math.random() < 0.5) {
     pendingTasks.push(() => {
       step({
         start: end,
-        length: b.length + Math.random() * 4 - 2,
+        length: Math.abs(b.length + Math.random() * 4 - 2) % LENGTH,
         angle: b.angle - 0.4 * Math.random()
       }, depth + 1)
     })
@@ -63,7 +66,7 @@ function step(b: Branch, depth = 0) {
     pendingTasks.push(() => {
       step({
         start: end,
-        length: b.length + Math.random() * 4 - 2,
+        length: Math.abs(b.length + Math.random() * 4 - 2) % LENGTH,
         angle: b.angle + 0.4 * Math.random()
       }, depth + 1)
     })
