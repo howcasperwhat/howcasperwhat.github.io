@@ -27,19 +27,35 @@ const { isDark } = useData()
 
 <template>
   <a
-    id="item-main"
     :href="props.link"
     target="_blank"
+    p-l-4
+    min-h-144px
+    w-auto
+    flex="~ col justify-start"
+    select-none
+    :filter="isDark ? 'hover:brightness-130' : 'hover:brightness-90'"
   >
-    <div id="item-title">
-      <div id="item-title-icon">
+    <div flex="~ items-center">
+      <div
+        id="item-title-icon"
+        p-3
+      >
         <slot name="icon" />
       </div>
-      <div id="item-title-text">
+      <div
+        id="item-title-text"
+        text="5 w-5"
+        h-7
+      >
         {{ props.title }}
       </div>
     </div>
-    <div id="item-details">
+    <div
+      id="item-details"
+      p-1
+      overflow-hidden
+    >
       <Badge
         :type="'info'"
         v-for="tag in props.tags"
@@ -52,52 +68,16 @@ const { isDark } = useData()
 </template>
 
 <style scoped>
-#item-main {
-  padding-left: 1rem;
-  min-height: 144px;
-  width: auto;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  user-select: none;
-}
-
-#item-main:hover {
-  filter: v-bind("isDark ? 'brightness(1.3)' : 'brightness(0.9)'");
-}
-
-#item-title {
-  display: flex;
-  align-items: center;
-}
-
 #item-title-icon {
-  width: 50px;
-  height: 50px;
-  scale: 0.65;
-  border-radius: 8px;
   color: v-bind("props.color ? props.color : ''");
 }
 
 #item-title-text {
-  font-weight: 700;
-  font-size: 24px;
-  height: 28px;
-  overflow-y: visible;
-  background-color: v-bind("props.color ? props.color : ''");
-  background-clip: text;
-  -webkit-background-clip: text;
-  filter: v-bind("isDark ? 'brightness(1.2)' : 'brightness(0.7)'");
-  color: transparent;
+  color: v-bind("props.color ? props.color : ''");
 }
 
-#item-details {
-  padding: 4px;
-  overflow: hidden;
-}
-
-#item-details * {
-  margin: 4px;
+#item-details>* {
+  margin-right: 0.25rem;
+  background: transparent;
 }
 </style>

@@ -10,8 +10,14 @@ defineProps({
 </script>
 
 <template>
-  <div id="items-parent">
-    <div id="items-main">
+  <div p-5>
+    <div
+      id="items-main"
+      m-auto
+      max-w-600px
+      grid="~ gap-2"
+      style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));"
+    >
       <link-item
         v-for="item in items"
         :key="item.id"
@@ -30,17 +36,4 @@ defineProps({
   </div>
 </template>
 
-<style scoped>
-#items-parent {
-  padding: 1.25rem;
-  width: 100vw;
-}
-
-#items-main {
-  margin: auto;
-  max-width: 600px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 0.5rem;
-}
-</style>
+<style scoped></style>

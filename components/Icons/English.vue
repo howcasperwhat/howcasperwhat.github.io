@@ -1,20 +1,52 @@
-<script setup lang='ts'>
-
-</script>
 
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    viewBox="0 0 20 20"
+    width="1.5em"
+    height="1.5em"
+    viewBox="0 0 48 48"
   >
-    <g fill="none">
+    <g
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="4"
+    >
+      <rect
+        width="36"
+        height="36"
+        x="6"
+        y="6"
+        fill="#2F88FF"
+        stroke="#000"
+        rx="3"
+      ></rect>
       <path
-        d="M4 4v12a2 2 0 0 0 2 2h9.5a.5.5 0 0 0 0-1H6a1 1 0 0 1-1-1h10a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2zm10-1a1 1 0 0 1 1 1v11H5V4a1 1 0 0 1 1-1h8zm-4 2c.2 0 .38.12.46.303l3 7a.5.5 0 0 1-.92.394L11.813 11H8.187l-.727 1.697a.5.5 0 0 1-.92-.394l3-7A.5.5 0 0 1 10 5zm-1.385 5h2.77L10 6.77L8.615 10z"
-        fill="currentColor"
+        stroke="#fff"
+        d="M13 31V17H21"
+      ></path>
+      <path
+        stroke="#fff"
+        d="M13 24H20.5"
+      ></path>
+      <path
+        stroke="#fff"
+        d="M13 31H20.5"
+      ></path>
+      <path
+        stroke="#fff"
+        d="M26 31L26 19"
+      ></path>
+      <path
+        stroke="#fff"
+        d="M26 31L26 24.5C26 22.0147 28.0147 20 30.5 20V20C32.9853 20 35 22.0147 35 24.5L35 31"
       ></path>
     </g>
   </svg>
 </template>
 
-<style scoped></style>
+<script lang="ts">
+export default {
+  name: 'IconParkEnglish'
+}
+</script>

@@ -15,7 +15,14 @@ useFetch(url, {
 </script>
 
 <template>
-  <div id="sub-title-main">
+  <div
+    p="l-8 r-8"
+    m="t-2 b-2 l-auto r-auto"
+    text="4 w-6 h-normal"
+    max-w-600px
+    select-none
+    c-gray
+  >
     {{ prefix }}
     <n-number-animation
       :from="0"
@@ -25,16 +32,4 @@ useFetch(url, {
   </div>
 </template>
 
-<style scoped>
-#sub-title-main {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 56px;
-  max-width: 600px;
-  margin: auto;
-  user-select: none;
-  color: #888;
-}
-</style>
+<style scoped></style>

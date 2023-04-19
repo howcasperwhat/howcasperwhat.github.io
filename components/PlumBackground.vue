@@ -118,19 +118,13 @@ onMounted(() => {
 <template>
   <canvas
     ref="el"
-    id="plum-background"
+    fixed
+    top-0
+    left-0
+    z--1
+    pointer-events-none
+    opacity-50
   />
 </template>
 
-<style scoped>
-#plum-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 50%;
-}
-</style>
+<style scoped></style>
