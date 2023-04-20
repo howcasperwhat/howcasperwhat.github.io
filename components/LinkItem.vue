@@ -38,13 +38,13 @@ const { isDark } = useData()
   >
     <div flex="~ items-center">
       <div
-        id="item-title-icon"
+        class="item-title-icon"
         p-3
       >
         <slot name="icon" />
       </div>
       <div
-        id="item-title-text"
+        class="item-title-text"
         text="5 w-5"
         h-7
       >
@@ -52,7 +52,6 @@ const { isDark } = useData()
       </div>
     </div>
     <div
-      id="item-details"
       p-1
       overflow-hidden
     >
@@ -60,6 +59,7 @@ const { isDark } = useData()
         :type="'info'"
         v-for="tag in props.tags"
         :key="tag"
+        class="m-r-1 !bg-transparent"
       >
         {{ tag }}
       </Badge>
@@ -68,16 +68,11 @@ const { isDark } = useData()
 </template>
 
 <style scoped>
-#item-title-icon {
+.item-title-icon {
   color: v-bind("props.color ? props.color : ''");
 }
 
-#item-title-text {
+.item-title-text {
   color: v-bind("props.color ? props.color : ''");
-}
-
-#item-details>* {
-  margin-right: 0.25rem;
-  background: transparent;
 }
 </style>
