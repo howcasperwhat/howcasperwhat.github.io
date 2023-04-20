@@ -4,7 +4,7 @@ const el = ref<HTMLCanvasElement>()
 const ctx = computed(() => el.value!.getContext('2d')!)
 const WIDTH = document.documentElement.clientWidth
 const HEIGHT = document.documentElement.clientHeight
-const LENGTH = 12
+const LENGTH = 6
 const NSEED = 12
 const MINDEPTH = 2
 const MAXDEPTH = 512

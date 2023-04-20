@@ -12,7 +12,6 @@ defineProps({
 <template>
   <div p-5>
     <div
-      id="items-main"
       m-auto
       max-w-600px
       grid="~ gap-2"
