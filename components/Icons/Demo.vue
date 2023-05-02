@@ -1,0 +1,20 @@
+
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" width="1.3m" height="1.3em" viewBox="0 0 48 48">
+    <mask id="ipTGamePs0">
+      <g fill="none" stroke="#fff" strokeLinejoin="round" strokeWidth="4">
+        <path fill="#555"
+          d="M44 28H28v16h16V28ZM13 4l9 16H4l9-16Zm23 16a8 8 0 1 0 0-16a8 8 0 0 0 0 16Z">
+        </path>
+        <path strokeLinecap="round" d="m4 28l16 16m0-16L4 44"></path>
+      </g>
+    </mask>
+    <path fill="currentColor" d="M0 0h48v48H0z" mask="url(#ipTGamePs0)"></path>
+  </svg>
+</template>
+
+<script lang="ts">
+export default {
+  name: 'IconParkTwotoneGamePs'
+}
+</script>
