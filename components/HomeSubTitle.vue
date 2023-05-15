@@ -16,19 +16,12 @@ useFetch(url, {
 
 <template>
   <div
-    p="l-8 r-8"
-    m="t-2 b-2 l-auto r-auto"
-    text="4 w-6 h-normal"
-    max-w-600px
-    select-none
-    c-gray
+    text="4 w-6 h-normal" max-w-600px
+    c-gray m-x-auto p-x-8 m-y-2
   >
     {{ prefix }}
-    <n-number-animation
-      :from="0"
-      :to="views"
-      show-separator
-    />
+    <n-number-animation :from="0"
+      :to="views" show-separator />
   </div>
 </template>
 

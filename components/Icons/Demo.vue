@@ -1,6 +1,6 @@
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="1.3m" height="1.3em" viewBox="0 0 48 48">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 48 48">
     <mask id="ipTGamePs0">
       <g fill="none" stroke="#fff" strokeLinejoin="round" strokeWidth="4">
         <path fill="#555"

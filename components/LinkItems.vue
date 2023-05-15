@@ -14,7 +14,7 @@ defineProps({
     <div
       m-auto
       max-w-600px
-      grid="~ gap-2"
+      grid="~ gap-6"
       style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));"
     >
       <link-item
