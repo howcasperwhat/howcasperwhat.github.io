@@ -26,10 +26,10 @@ const { isDark } = useData()
 </script>
 
 <template>
-  <a :href="props.link" p-l-4 h-auto w-auto flex="~ col justify-start"
+  <a :href="props.link" p-l-4 h-auto w-auto flex="~ col justify-start" target="_blank"
     :filter="isDark ? 'hover:brightness-130' : 'hover:brightness-85'" class="link-item">
     <div flex="~ items-center">
-      <div class="item-title-icon" p-3>
+      <div class="item-title-icon" p="l-.5 y-3 r-3">
         <slot name="icon" />
       </div>
       <div class="item-title-text" text="5 w-5" h-7 p-t-.5>

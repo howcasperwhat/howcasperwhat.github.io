@@ -17,7 +17,7 @@ useFetch(url, {
 <template>
   <div
     text="4 w-6 h-normal" max-w-600px
-    c-gray m-x-auto p-x-8 m-y-2
+    c-gray m-x-auto p-x-9 m-y-2
   >
     {{ prefix }}
     <n-number-animation :from="0"

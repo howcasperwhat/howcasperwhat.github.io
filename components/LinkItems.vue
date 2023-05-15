@@ -11,12 +11,13 @@ const root = "https://howcasperwhat.github.io"
 </script>
 
 <template>
-  <div p-5>
+  <div p-y-5>
     <div
       m-auto
       max-w-600px
       grid="~ gap-6"
       style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));"
+      p-x-4
     >
       <link-item
         v-for="item in items"
