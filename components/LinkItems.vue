@@ -7,6 +7,7 @@ defineProps({
     required: true
   }
 })
+const root = "https://howcasperwhat.github.io"
 </script>
 
 <template>
@@ -20,7 +21,7 @@ defineProps({
       <link-item
         v-for="item in items"
         :key="item.id"
-        :link="item.link"
+        :link="root + item.link"
         :title="item.title"
         :details="item.details"
         :tags="item.tags"
