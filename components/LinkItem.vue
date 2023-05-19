@@ -38,7 +38,7 @@ const { isDark } = useData()
     </div>
     <div p-1 overflow-hidden text-3.2 flex="~ wrap gap-1">
       <div :type="'info'" v-for="tag in props.tags"  c="gray/100"
-        class="m-r-1 !bg-transparent" b-b="1px solid gray/60" m-b-1 >
+        class="m-r-1 !bg-transparent" m-b-1 >
         {{ tag }}
       </div>
     </div>

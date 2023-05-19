@@ -14,7 +14,7 @@ const switchTheme = () => {
 <template>
   <div flex="~ items-center">
     <button @click="switchTheme" m-r-2>
-      <Sun v-if="isDark" />
+      <Sun v-if="!isDark" />
       <Moon v-else />
     </button>
     <a :href="github" target="_blank" m-l-2>
