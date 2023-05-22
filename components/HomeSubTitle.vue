@@ -10,8 +10,7 @@ useFetch(url, {
     views.value = JSON.parse(data.data).views
     return data
   }
-}
-)
+})
 </script>
 
 <template>

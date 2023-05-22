@@ -1,9 +1,11 @@
 <script setup lang='ts'>
 import { onMounted, ref, computed } from 'vue';
+import { useWindowSize } from '@vueuse/core'
+const { width, height } = useWindowSize()
 const el = ref<HTMLCanvasElement>()
 const ctx = computed(() => el.value!.getContext('2d')!)
-const WIDTH = document.documentElement.clientWidth
-const HEIGHT = document.documentElement.clientHeight
+const WIDTH = width.value
+const HEIGHT = height.value
 const LENGTH = 6
 const NSEED = 12
 const MINDEPTH = 2
@@ -89,8 +91,6 @@ function startFrame() {
   })
 }
 
-startFrame()
-
 function lineTo(p1: Point, p2: Point): void {
   ctx.value.beginPath()
   ctx.value.moveTo(p1.x, p1.y)
@@ -112,6 +112,7 @@ function drawBranch(b: Branch) {
 
 onMounted(() => {
   init()
+  startFrame()
 })
 </script>
 
