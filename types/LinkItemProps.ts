@@ -1,10 +1,9 @@
-import { Component } from 'vue';
 export interface LinkItemProps {
   id: number
-  icon: Component
+  icon: string
   title: string
   details: string
   link: string
-  tags: Array<String>
+  tags: string[]
   color: string
 }

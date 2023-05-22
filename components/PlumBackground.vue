@@ -116,15 +116,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <canvas
-    ref="el"
-    fixed
-    top-0
-    left-0
-    z--1
-    pointer-events-none
-    opacity-50
-  />
+  <canvas ref="el" fixed top-0 left-0 z--1
+    pointer-events-none opacity-50 />
 </template>
 
 <style scoped></style>

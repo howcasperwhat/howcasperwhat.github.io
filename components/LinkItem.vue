@@ -1,44 +1,24 @@
 <script setup lang='ts'>
 import { useData } from 'vitepress'
-const props = defineProps({
-  title: {
-    type: String,
-    default: 'default'
-  },
-  details: {
-    type: String,
-    default: 'default'
-  },
-  link: {
-    type: String,
-    required: true
-  },
-  tags: {
-    type: Array<String>,
-    default: []
-  },
-  color: {
-    type: String,
-    default: null
-  }
-})
+import type { LinkItemProps } from '../types/LinkItemProps'
+defineProps<{ item: LinkItemProps }>()
 const { isDark } = useData()
 </script>
 
 <template>
-  <a :href="props.link" p-l-4 h-auto w-auto flex="~ col justify-start" target="_blank"
+  <a :href="item.link" p-l-4 h-auto w-auto flex="~ col justify-start" target="_blank"
     :filter="isDark ? 'hover:brightness-130' : 'hover:brightness-85'" class="link-item">
     <div flex="~ items-center">
-      <div class="item-title-icon" p="l-.5 y-3 r-3">
-        <slot name="icon" />
+      <div class="colorful" p="l-.5 y-3 r-3">
+        <div :class="'i-' + item.icon" text-6 />
       </div>
-      <div class="item-title-text" text="5 w-5" h-7 p-t-.5>
-        {{ props.title }}
+      <div class="colorful" text="5 w-5" h-7 p-t-.25>
+        {{ item.title }}
       </div>
     </div>
     <div p-1 overflow-hidden text-3.2 flex="~ wrap gap-1">
-      <div :type="'info'" v-for="tag in props.tags"  c="gray/100"
-        class="m-r-1 !bg-transparent" m-b-1 >
+      <div :type="'info'" v-for="tag in item.tags"
+        c="gray/100" m="r-1 b-1">
         {{ tag }}
       </div>
     </div>
@@ -46,12 +26,8 @@ const { isDark } = useData()
 </template>
 
 <style scoped>
-.item-title-icon {
-  color: v-bind("props.color ? props.color : ''");
-}
-
-.item-title-text {
-  color: v-bind("props.color ? props.color : ''");
+.colorful {
+  color: v-bind("item.color ? item.color : ''");
 }
 
 @keyframes ping {

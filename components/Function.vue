@@ -1,7 +1,4 @@
 <script setup lang='ts'>
-import Sun from './Icons/Sun.vue'
-import Moon from './Icons/Moon.vue'
-import Github from './Icons/Github.vue'
 import { useData } from 'vitepress';
 const { isDark } = useData()
 const github = "https://github.com/howcasperwhat/howcasperwhat.github.io"
@@ -14,11 +11,10 @@ const switchTheme = () => {
 <template>
   <div flex="~ items-center">
     <button @click="switchTheme" m-r-2>
-      <Sun v-if="!isDark" />
-      <Moon v-else />
+      <div :i="isDark ? 'carbon-moon' : 'carbon-sun'" text-6 />
     </button>
     <a :href="github" target="_blank" m-l-2>
-      <Github />
+      <div i="iconoir-github" text-6 />
     </a>
   </div>
 </template>
