@@ -9,9 +9,9 @@ import { items } from '../res/data'
 
 <template>
   <res-provider>
-    <home-title p-x-4 m="t-8 x-auto" />
-    <home-subtitle p-x-4 m="y-3 x-auto" />
-    <link-items :items="items" m-auto p-4/>
+    <home-title p-x-8 m="x-auto" />
+    <home-subtitle p-x-8 m="y-3 x-auto" />
+    <link-items :items="items" m-auto p="x-8 y-4"/>
     <plum-background />
   </res-provider>
 </template>

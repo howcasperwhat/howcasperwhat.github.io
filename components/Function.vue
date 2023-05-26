@@ -4,9 +4,8 @@ const { isDark } = useData()
 const github = "https://github.com/howcasperwhat/howcasperwhat.github.io"
 const switchTheme = () => {
   isDark.value = !isDark.value
-  const html = document.querySelector("html")
-  html?.classList.toggle("dark")
-  document.body.style.backgroundColor = isDark.value ? "#050505" : "#fff"
+  document.querySelector("html")?.classList.toggle("dark")
+  document.body.style.backgroundColor = isDark.value ? "#050505" : "#ffffff"
 }
 </script>
 <template>
