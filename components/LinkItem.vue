@@ -6,44 +6,19 @@ const { isDark } = useData()
 </script>
 
 <template>
-  <a :href="item.link" p-l-4 h-auto w-auto flex="~ col justify-start" target="_blank"
-    :filter="isDark ? 'hover:brightness-130' : 'hover:brightness-85'" class="link-item">
-    <div flex="~ items-center">
-      <div class="colorful" p="l-.5 y-3 r-3">
-        <div :class="'i-' + item.icon" text-6 />
-      </div>
-      <div class="colorful" text="5 w-5" h-7 p-t-.25>
-        {{ item.title }}
-      </div>
+  <a :href="item.link" p-l-4 p-y-1 w-auto h-16 target="_blank"
+    flex="~ items-center justify-between" bg="gray/10"
+    :filter="isDark ? 'hover:brightness-130' : 'hover:brightness-85'" 
+    b="rd-1 .5px gray/24 solid"  children-flex="~ items-center gap-2">
+    <div :c="item.color">
+      <div :class="'i-' + item.icon" text-6 m-r-2/>
+      <div text="5 w-5" h-7 p-t-.25 v-text="item.title" />
     </div>
-    <div p-1 overflow-hidden text-3.2 flex="~ wrap gap-1">
-      <div :type="'info'" v-for="tag in item.tags"
-        c="gray/100" m="r-1 b-1">
-        {{ tag }}
-      </div>
+    <div text="3.6" transition="!ease-in-out !color-600" p-x-3>
+      <div v-text="'Learn more'" />
+      <div i-carbon:arrow-right />
     </div>
   </a>
 </template>
 
-<style scoped>
-.colorful {
-  color: v-bind("item.color ? item.color : ''");
-}
-
-@keyframes ping {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  75%,
-  100% {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-  }
-}
-
-.link-item:hover {
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) 1;
-}
-</style>
+<style scoped></style>

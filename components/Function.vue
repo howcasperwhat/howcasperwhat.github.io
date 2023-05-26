@@ -6,6 +6,7 @@ const switchTheme = () => {
   isDark.value = !isDark.value
   const html = document.querySelector("html")
   html?.classList.toggle("dark")
+  document.body.style.backgroundColor = isDark.value ? "#050505" : "#fff"
 }
 </script>
 <template>
