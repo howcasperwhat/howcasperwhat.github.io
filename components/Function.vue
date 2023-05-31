@@ -11,6 +11,13 @@ const changeTheme = () => {
   document.querySelector('html')?.classList.toggle('theme-dark')
 }
 const toggleDark = (event: MouseEvent) => {
+  // @ts-expect-error experimental API
+  const isAppearanceTransition = document.startViewTransition
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (!isAppearanceTransition) {
+    isDark.value = !isDark.value
+    return
+  }
   // @ts-expect-error: Transition API
   const transition = document.startViewTransition(async () => {
     await nextTick()
