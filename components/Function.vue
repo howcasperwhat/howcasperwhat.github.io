@@ -15,7 +15,7 @@ const toggleDark = (event: MouseEvent) => {
   const isAppearanceTransition = document.startViewTransition
     && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
   if (!isAppearanceTransition) {
-    isDark.value = !isDark.value
+    changeTheme()
     return
   }
   // @ts-expect-error: Transition API
