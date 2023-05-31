@@ -4,9 +4,8 @@ import Function from './Function.vue'
 </script>
 
 <template>
-  <div text="8 h-normal w-bold"
-    flex="~ items-center gap-2 wrap justify-between"
-    children-transition="!ease-in-out !color-600" max-w-600px>
+  <div text="8 h-normal w-bold" max-w-150
+    flex="~ items-center gap-2 wrap justify-between">
     <span v-text="title" />
     <Function />
   </div>

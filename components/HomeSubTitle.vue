@@ -14,7 +14,7 @@ useFetch(url, {
 </script>
 
 <template>
-  <div text="4 w-6 h-normal" max-w-600px c-gray>
+  <div text="4 w-6 h-normal" max-w-150 c-gray>
     {{ prefix }}
     <n-number-animation :from="0" :to="views" show-separator />
   </div>
