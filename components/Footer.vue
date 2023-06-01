@@ -5,7 +5,7 @@ const year = '2023'
 </script>
 
 <template>
-  <div text="4" max-w-150 flex="~" c-gray-500>
+  <div text="4" flex="~" c-gray-500>
     {{ `${license} ${year}-present ©${author}` }}
   </div>
 </template>

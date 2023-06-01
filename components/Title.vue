@@ -4,7 +4,7 @@ import Function from './Function.vue'
 </script>
 
 <template>
-  <div text="8 h-normal w-bold" max-w-150
+  <div text="8 h-normal w-bold" 
     flex="~ items-center gap-2 wrap justify-between">
     <span v-text="title" />
     <Function />

@@ -3,7 +3,6 @@ import { useFetch } from '@vueuse/core'
 import { ref } from 'vue'
 import { default as NNumberAnimation } from 'naive-ui/lib/number-animation/src/NumberAnimation'
 const url = "https://finicounter.eu.org/counter?host=howcasperwhat.github.io"
-const prefix = 'Total Views: '
 const views = ref(0)
 useFetch(url, {
   afterFetch(data) {
@@ -14,8 +13,8 @@ useFetch(url, {
 </script>
 
 <template>
-  <div text="4 w-6 h-normal" max-w-150 c-gray>
-    {{ prefix }}
+  <div text="4 w-6 h-normal" c-gray>
+    Total Views: 
     <n-number-animation :from="0" :to="views" show-separator />
   </div>
 </template>

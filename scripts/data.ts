@@ -46,9 +46,7 @@ export const items = [
     "tags": [
       "DNN",
       "BP",
-      "CNN",
-      "RNN",
-      "GAN"
+      "CNN"
     ]
   },
   {
