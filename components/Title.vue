@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-const title = 'Casper Huang'
 import Function from './Function.vue'
+const title = 'Casper Huang'
 </script>
 
 <template>
