@@ -6,7 +6,7 @@ const year = '2023'
 
 <template>
   <div text="4" flex="~" c-gray-500>
-    {{ `${license} ${year}-present ©${author}` }}
+    {{ `${license} License ${year}-present ©${author}` }}
   </div>
 </template>
 

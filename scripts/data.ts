@@ -1,76 +1,9 @@
-export const items = [
-  {
-    "id": 1,
-    "link": "/CSS/",
-    "title": "CSS",
-    "icon": "devicon-css3",
-    "color": "#2b8cff",
-    "details": "My CSS notes.",
-    "tags": [
-      "flex",
-      "selector"
-    ]
-  },
-  {
-    "id": 2,
-    "link": "/English/",
-    "title": "English",
-    "icon": "fluent-emoji:potted-plant",
-    "color": "#b29dca",
-    "details": "My English notes.",
-    "tags": [
-      "vocabulary",
-      "grammar"
-    ]
-  },
-  {
-    "id": 3,
-    "link": "/Algorithm/",
-    "title": "Algorithm",
-    "icon": "fluent-emoji:light-bulb",
-    "color": "#32CD32",
-    "details": "My Algorithm notes.",
-    "tags": [
-      "dp",
-      "greedy",
-      "backtracking"
-    ]
-  },
-  {
-    "id": 4,
-    "link": "/AI/",
-    "title": "AI",
-    "icon": "fluent-emoji:robot",
-    "color": "#ff8c00",
-    "details": "My Artificial Intelligence notes.",
-    "tags": [
-      "DNN",
-      "BP",
-      "CNN"
-    ]
-  },
-  {
-    "id": 5,
-    "link": "/Demo/",
-    "title": "Demo",
-    "icon": "fluent-emoji:game-die",
-    "color": "#e88080",
-    "details": "Demo.",
-    "tags": [
-      "game",
-      "tools"
-    ]
-  },
-  {
-    "id": 6,
-    "link": "/Math/",
-    "title": "Math",
-    "icon": "carbon:function-math",
-    "color": "#4bcfa4",
-    "details": "My Math notes.",
-    "tags": [
-      "probability",
-      "statistics"
-    ]
-  }
+import type { AppLinkProps } from './type'
+export const items: Array<AppLinkProps> = [
+  { id: 1, link: "/CSS/", title: "CSS", icon: "devicon-css3", color: "#2b8cff" },
+  { id: 2, link: "/English/", title: "English", icon: "fluent-emoji:potted-plant", color: "#b29dca" },
+  { id: 3, link: "/Algorithm/", title: "Algorithm", icon: "fluent-emoji:light-bulb", color: "#32CD32" },
+  { id: 4, link: "/AI/", title: "AI", icon: "fluent-emoji:robot", color: "#ff8c00" },
+  { id: 5, link: "/Demo/", title: "Demo", icon: "fluent-emoji:game-die", color: "#e88080" },
+  { id: 6, link: "/Math/", title: "Math", icon: "carbon:function-math", color: "#4bcfa4" }
 ]

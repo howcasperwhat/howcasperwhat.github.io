@@ -3,24 +3,21 @@ import Title from './Title.vue'
 import ViewCounter from './ViewCounter.vue'
 import Footer from './Footer.vue'
 import Plum from './Plum.vue'
-import Provider from './Provider.vue'
 import AppLink from './AppLink.vue'
 import { items } from '../scripts/data'
-import type { LinkItemProps } from '../scripts/LinkItemProps'
-defineProps<{ items: Array<LinkItemProps> }>()
+import type { AppLinkProps } from '../scripts/type'
+defineProps<{ items: Array<AppLinkProps> }>()
 </script>
 
 <template>
-  <Provider>
-    <div class="slide-enter" children-max-w-150 children-m-x-auto children-p-x-8>
-      <Title />
-      <ViewCounter m-y-3 />
-      <div grid="~ gap-4" p-y-4>
-        <AppLink v-for="item in items" :item="item" />
-      </div>
-      <Footer m-t-4 />
+  <div class="slide-enter" children-max-w-150 children-m-x-auto children-p-x-8>
+    <Title />
+    <ViewCounter m-y-3 />
+    <div grid="~ gap-4" p-y-4>
+      <AppLink v-for="item in items" :item="item" />
     </div>
-  </Provider>
+    <Footer m-t-4 />
+  </div>
   <Plum />
 </template>
 
@@ -45,13 +42,13 @@ defineProps<{ items: Array<LinkItemProps> }>()
   animation-delay: calc(var(--start) + var(--stagger) * var(--delay));
 }
 
-@for $i from 1 through 30 {
+@for $i from 1 through 32 {
   .slide-enter *:nth-child(#{$i}) {
     --stagger: #{$i};
   }
 }
 
 .slide-enter>*:last-child {
-  --stagger: v-bind(items.length + 2);
+  --stagger: v-bind(items.length + 1);
 }
 </style>

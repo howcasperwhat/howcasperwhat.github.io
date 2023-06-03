@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { useData } from 'vitepress'
-import type { LinkItemProps } from '../scripts/LinkItemProps'
-defineProps<{ item: LinkItemProps }>()
+import type { AppLinkProps } from '../scripts/type'
+defineProps<{ item: AppLinkProps }>()
 const { isDark } = useData()
 </script>
 
@@ -10,12 +10,12 @@ const { isDark } = useData()
     flex="~ items-center justify-between" bg="gray/10"
     :filter="isDark ? 'hover:brightness-130' : 'hover:brightness-85'" 
     b="rd-1 .5px gray/24 solid" children-flex="~ items-center gap-2">
-    <div :c="item.color">
-      <div :class="'i-' + item.icon" text-6 m-r-2 />
+    <div :class="`c-${item.color}`">
+      <div :class="`i-${item.icon}`" text-6 m-r-2 />
       <div text="5 w-5" h-7 p-t-.25 v-text="item.title" />
     </div>
     <div text="3.6" p-x-3>
-      <div v-text="'Learn more'" />
+      <div v-text="'View Note'" />
       <div i-carbon:arrow-right />
     </div>
   </a>
