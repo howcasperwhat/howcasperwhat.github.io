@@ -1,12 +1,13 @@
 <script setup lang='ts'>
-const license = 'MIT'
-const author = 'Casper Huang'
-const year = '2023'
+import { useConfigStore } from '../stores/config'
+const { author, license, setupYear, licenseURL } = useConfigStore()
 </script>
 
 <template>
   <div text="4" flex="~" c-gray-500>
-    {{ `${license} License ${year}-present ©${author}` }}
+    <a v-text="`${license} License`" :href="licenseURL" target="_blank" 
+      hover:b-b="1px solid gray/80"/>
+    <span v-text="` ${setupYear}-present ©${author}`" />
   </div>
 </template>
 

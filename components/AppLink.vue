@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import { useData } from 'vitepress'
+import { useThemeStore } from '../stores/theme'
 import type { AppLinkProps } from '../scripts/type'
 defineProps<{ item: AppLinkProps }>()
-const { isDark } = useData()
+const { isDark } = useThemeStore()
 </script>
 
 <template>
