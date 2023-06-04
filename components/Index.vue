@@ -11,10 +11,10 @@ import { items } from '../scripts/data'
   <main class="slide-enter" children-max-w-150 children-m-x-auto children-p-x-8>
     <Title />
     <ViewCounter m-y-3 />
-    <div grid="~ gap-4" p-y-4>
+    <div grid="~ gap-4" p-y-3>
       <AppLink v-for="item in items" :item="item" />
     </div>
-    <Footer m-t-4 />
+    <Footer m-y-3 />
   </main>
   <Plum />
 </template>

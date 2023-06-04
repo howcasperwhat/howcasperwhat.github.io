@@ -5,7 +5,7 @@ const { author } = useConfigStore()
 </script>
 
 <template>
-  <div text="8 h-normal w-bold" 
+  <div text="8 w-bold" 
     flex="~ items-center gap-2 wrap justify-between">
     <span v-text="author" />
     <Function />
