@@ -5,10 +5,12 @@ import { useConfigStore } from '../stores/config'
 const { counterAPI } = useConfigStore()
 const response = useFetch(counterAPI).data
 const views = computed(() => JSON.parse(response.value as string)?.views)
+const offset = computed(() => views.value >> 8)
 const counter = ref(0)
 const { pause } = useIntervalFn(() => {
-  if (counter.value + 6 >= views.value) { counter.value = views.value; pause(); }
-  counter.value = counter.value + 6
+  if (response.value === undefined) return
+  if (counter.value + offset.value >= views.value) { counter.value = views.value; pause(); }
+  counter.value = counter.value + offset.value
 }, 1)
 </script>
 

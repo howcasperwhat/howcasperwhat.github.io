@@ -6,7 +6,7 @@ const { isDark } = useThemeStore()
 </script>
 
 <template>
-  <a :href="item.link" p-l-4 p-y-1 w-auto h-16 target="_blank"
+  <a :href="item.link" p-l-4 p-y-1 w-auto h-16 class="vp-raw"
     flex="~ items-center justify-between" bg="gray/10"
     :filter="isDark ? 'hover:brightness-130' : 'hover:brightness-85'" 
     b="rd-1 .5px gray/24 solid" children-flex="~ items-center gap-2">
