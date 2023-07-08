@@ -1,0 +1,1 @@
+import{h as e,k as t,j as n}from"./chunks/framework.396aacb0.js";const c=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"note/index.md","filePath":"note/index.md"}'),o={name:"note/index.md"},d=e({...o,setup(a){return typeof location<"u"&&(location.href="/note/css/"),(i,r)=>(n(),t("div"))}});export{c as __pageData,d as default};
