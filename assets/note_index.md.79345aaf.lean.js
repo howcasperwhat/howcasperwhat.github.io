@@ -1,0 +1,1 @@
+import{h as e,k as t,j as n}from"./chunks/framework.12cb7e1a.js";const c=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"note/index.md","filePath":"note/index.md"}'),o={name:"note/index.md"},s=e({...o,setup(a){return typeof location<"u"&&(location.href="/note/front/"),(r,i)=>(n(),t("div"))}});export{c as __pageData,s as default};
