@@ -25,7 +25,7 @@ onMounted(() => {
     z-64 grid="~ flow-col gap-1 items-center" p-y-2 p-x-4
     :class="`b-${colors[message.type.value]}/80 bg-${colors[message.type.value]}/10`">
     <div :class="`i-${icons[message.type.value]} c-${colors[message.type.value]}`" />
-    <span v-text="message.content.value" />
+    <span v-text="message.content.value" m-l-2 />
   </div>
 </template>
 
