@@ -6,7 +6,7 @@ const isHidden = ref(true)
 const content = ref()
 const type = ref()
 
-const messageAux = (_type: string, _message: string, _duration?: number) => {
+const messageAux = (_type: string, _message: string, _duration: number = 2000) => {
   type.value = _type
   content.value = _message
   isHidden.value = false
@@ -17,7 +17,7 @@ const messageAux = (_type: string, _message: string, _duration?: number) => {
     { transform: 'translateX(-50%) translateY(20%)', offset: 0.95 },
     { transform: 'translateX(-50%) translateY(-100%)', offset: 1 }
   ], {
-    duration: _duration || 2000,
+    duration: _duration,
     easing: 'linear',
   })
   animation.value?.finished.then(() => {

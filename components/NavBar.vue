@@ -14,17 +14,17 @@ const { githubURL } = useConfigStore()
     <nav grid="~ flow-col gap-4 items-center">
       <a href="/note/front/">
         <span lt-md:hidden v-text="'Note'" />
-        <div i-carbon-notebook text-5 md-hidden />
+        <div i-carbon:notebook text-5 md-hidden />
       </a>
       <a href="/demo/">
         <span lt-md:hidden v-text="'Demo'" />
-        <div i-carbon-cube text-5 md-hidden />
+        <div i-carbon:cube text-5 md-hidden />
       </a>
       <button @click="toggleTheme" class="icon">
-        <div i-carbon-sun dark:i-carbon-moon text-5 />
+        <div i-carbon:sun dark:i-carbon-moon text-5 />
       </button>
       <a :href="githubURL" target="_blank" class="icon">
-        <div i-iconoir-github text-5 />
+        <div i-iconoir:github text-5 />
       </a>
     </nav>
   </header>
