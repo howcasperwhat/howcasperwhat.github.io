@@ -26,7 +26,7 @@ function init(): void {
   const canvas = el.value!
   canvas.width = WIDTH
   canvas.height = HEIGHT
-  ctx.value.strokeStyle = '#88888888'
+  ctx.value.strokeStyle = '#8888'
 
   for (let i = 0; i < NSEED; ++i) {
     step(generateSeed())

@@ -20,7 +20,7 @@ const { githubURL } = useConfigStore()
         <span lt-md:hidden v-text="'Demo'" />
         <div i-carbon:cube text-5 md-hidden />
       </a>
-      <button @click="toggleTheme" class="icon">
+      <button @click="toggleTheme">
         <div i-carbon:sun dark:i-carbon-moon text-5 />
       </button>
       <a :href="githubURL" target="_blank" class="icon">

@@ -3,6 +3,7 @@ import MessageBox from './MessageBox.vue'
 import NavBar from './NavBar.vue'
 import Footer from './Footer.vue'
 import Plum from './Plum.vue'
+import Walk from './Walk.vue'
 import { useData } from 'vitepress'
 const { frontmatter } = useData()
 </script>
@@ -16,6 +17,7 @@ const { frontmatter } = useData()
     <Content class="slide" />
     <Footer />
   </main>
+  <Walk fixed right-3 bottom-6 />
   <Plum />
 </template>
 
