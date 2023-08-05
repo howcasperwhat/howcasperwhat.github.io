@@ -17,7 +17,7 @@ const { frontmatter } = useData()
     <Content class="slide" />
     <Footer />
   </main>
-  <Walk fixed right-3 bottom-6 />
+  <Walk />
   <Plum />
 </template>
 

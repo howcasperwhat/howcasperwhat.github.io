@@ -21,10 +21,11 @@ function goBack() {
 </script>
 
 <template>
-  <button rounded-full w-max p-2 text-xl 
+  <button rounded-full text-xl flex-center
+    fixed right-3 bottom-3 w-10 h-10 op-50
     v-if="router.route.path !== '/'"
     @click="far() ? toTop() : goBack()"
-    op-50 hover:op-100 hover:bg-hex-8884 >
+    hover:op-100 hover:bg-hex-8884 >
     <div i-carbon:arrow-up v-if="far()" />
     <div i-carbon:arrow-left v-else />
   </button>
