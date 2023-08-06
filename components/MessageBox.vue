@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { onMounted } from 'vue';
 import { useMessageProperties } from '../utils/message'
+
 const message = useMessageProperties()
 const colors = {
   success: 'green',

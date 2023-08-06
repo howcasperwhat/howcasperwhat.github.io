@@ -6,6 +6,7 @@
     </g>
   </svg>
 </template>
+
 <style scoped lang="sass">
 @keyframes write-path-1 
   0%

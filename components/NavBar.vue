@@ -2,6 +2,7 @@
 import Logo from './Logo.vue'
 import { useThemeStore } from '../stores/theme'
 import { useConfigStore } from '../stores/config'
+
 const { toggleTheme } = useThemeStore()
 const { githubURL } = useConfigStore()
 </script>

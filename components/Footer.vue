@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import { useConfigStore } from '../stores/config'
+
 const { author, license, setupYear, licenseURL } = useConfigStore()
 </script>
 
@@ -11,5 +12,3 @@ const { author, license, setupYear, licenseURL } = useConfigStore()
     <span v-text="`©${author}`" />
   </div>
 </template>
-
-<style scoped></style>

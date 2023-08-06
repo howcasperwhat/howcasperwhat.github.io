@@ -5,6 +5,7 @@ import Footer from './Footer.vue'
 import Plum from './Plum.vue'
 import Walk from './Walk.vue'
 import { useData } from 'vitepress'
+
 const { frontmatter } = useData()
 </script>
 
@@ -20,5 +21,3 @@ const { frontmatter } = useData()
   <Walk />
   <Plum />
 </template>
-
-<style scoped></style>

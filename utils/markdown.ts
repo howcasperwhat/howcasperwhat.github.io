@@ -1,6 +1,7 @@
 import mathjax3 from 'markdown-it-mathjax3'
 // @ts-ignore
 import MarkdownIt from 'markdown-it'
+
 const md = new MarkdownIt()
 md.use(mathjax3)
 function renderMarkdown(content: string): string {
@@ -27,6 +28,7 @@ function matrixToLatex(matrix: number[][] | string[][]): string {
   content = content.slice(0, -2) + '\\end{bmatrix}'
   return content
 }
+
 export const useMarkdown = () => {
   return { renderFormula, matrixToLatex, renderMarkdownInline, renderMarkdown }
 }

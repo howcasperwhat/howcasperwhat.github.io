@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { useWindowScroll } from '@vueuse/core';
 import { useRouter } from 'vitepress';
+
 const { y } = useWindowScroll()
 const router = useRouter()
 function far() {
@@ -30,5 +31,3 @@ function goBack() {
     <div i-carbon:arrow-left v-else />
   </button>
 </template>
-
-<style scoped></style>

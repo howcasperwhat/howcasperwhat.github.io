@@ -1,5 +1,6 @@
 import { useWindowSize, useStorage } from '@vueuse/core'
 import { watch, ref, nextTick } from 'vue'
+
 const theme = ref('light')
 watch(theme, () => {
   if (typeof document === 'undefined') return
@@ -52,6 +53,7 @@ const toggleTheme = (event?: MouseEvent) => {
     })
   })
 }
+
 export const useThemeStore = () => {
   return { theme, toggleTheme }
 }

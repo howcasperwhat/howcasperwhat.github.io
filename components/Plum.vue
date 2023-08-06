@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { onMounted, ref, computed } from 'vue';
 import { useWindowSize } from '@vueuse/core'
+
 const { width, height } = useWindowSize()
 const el = ref<HTMLCanvasElement>()
 const ctx = computed(() => el.value!.getContext('2d')!)
@@ -120,5 +121,3 @@ onMounted(() => {
   <canvas ref="el" fixed top-0 left-0 z--1
     pointer-events-none opacity-50 />
 </template>
-
-<style scoped></style>
