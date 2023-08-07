@@ -12,7 +12,7 @@ const { frontmatter } = useData()
 <template>
   <MessageBox />
   <NavBar />
-  <main children:m-x-auto :p-x="frontmatter.layout === 'full' ? 2 : 8" 
+  <main children:m-x-auto :p-x="frontmatter.layout === 'full' ? 2 : 8"
     :children-max-w="(frontmatter.layout === 'full' || frontmatter.layout === 'large') ? 360 :
       frontmatter.layout === 'medium' ? 240 : 160">
     <Content class="slide" />

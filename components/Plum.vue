@@ -3,8 +3,8 @@ import { onMounted, ref, computed } from 'vue';
 import { useWindowSize } from '@vueuse/core'
 
 const { width, height } = useWindowSize()
-const el = ref<HTMLCanvasElement>()
-const ctx = computed(() => el.value!.getContext('2d')!)
+const plum = ref<HTMLCanvasElement>()
+const ctx = computed(() => plum.value!.getContext('2d')!)
 const WIDTH = width.value
 const HEIGHT = height.value
 const LENGTH = 6
@@ -24,7 +24,7 @@ interface Branch {
 }
 
 function init(): void {
-  const canvas = el.value!
+  const canvas = plum.value!
   canvas.width = WIDTH
   canvas.height = HEIGHT
   ctx.value.strokeStyle = '#8888'
@@ -118,6 +118,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <canvas ref="el" fixed top-0 left-0 z--1
+  <canvas ref="plum" fixed top-0 left-0 z--1
     pointer-events-none opacity-50 />
 </template>
