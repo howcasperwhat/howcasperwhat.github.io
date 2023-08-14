@@ -1,7 +1,9 @@
 <script setup lang='ts'>
 import { useWindowScroll } from '@vueuse/core'
 import { useRouter } from 'vitepress'
+import { useMessage } from '../utils/message';
 
+const message = useMessage()
 const { y } = useWindowScroll()
 const router = useRouter()
 function far() {
@@ -26,9 +28,8 @@ function goBack() {
     if (path.at(-1) === '')
       router.go('/')
     else router.go('/demo/')
-  } else {
-    router.go('/')
   }
+  message.info(router.route.path, 5000)
 }
 </script>
 
