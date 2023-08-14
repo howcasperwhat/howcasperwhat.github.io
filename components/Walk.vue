@@ -1,9 +1,7 @@
 <script setup lang='ts'>
 import { useWindowScroll } from '@vueuse/core'
 import { useRouter } from 'vitepress'
-import { useMessage } from '../utils/message';
 
-const message = useMessage()
 const { y } = useWindowScroll()
 const router = useRouter()
 function far() {
@@ -13,7 +11,6 @@ function toTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 function goBack() {
-  message.info(router.route.path, 5000)
   const path = router.route.path.split('/')
   if (path.includes('note')) {
     if (path.at(-1) === '')
