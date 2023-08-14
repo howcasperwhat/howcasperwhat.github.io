@@ -10,10 +10,10 @@ function far() {
   return y.value > 300
 }
 function toTop() {
-  message.info('' + y.value, 5000)
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 function goBack() {
+  message.info(router.route.path, 5000)
   const path = router.route.path.split('/')
   if (path.includes('note')) {
     if (path.at(-1) === '')
@@ -30,7 +30,6 @@ function goBack() {
       router.go('/')
     else router.go('/demo/')
   }
-  message.info(router.route.path, 5000)
 }
 </script>
 
