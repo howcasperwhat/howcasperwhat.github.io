@@ -10,6 +10,7 @@ function far() {
   return y.value > 300
 }
 function toTop() {
+  message.info('' + y.value, 5000)
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 function goBack() {
@@ -37,8 +38,8 @@ function goBack() {
   <button
     v-if="router.route.path !== '/'" rounded-full text-xl
     flex-center fixed right-3 bottom-3 w-10 h-10
-    op-50 hover:op-100
-    hover:bg-hex-8884 @click="far() ? toTop() : goBack()"
+    op-50 hover:op-100 hover:bg-hex-8884 
+    @click="far() ? toTop() : goBack()"
   >
     <div v-if="far()" i-carbon:arrow-up />
     <div v-else i-carbon:arrow-left />
