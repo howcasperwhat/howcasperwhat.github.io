@@ -1,14 +1,14 @@
 <script setup lang='ts'>
-import Logo from './Logo.vue'
 import { useThemeStore } from '../stores/theme'
 import { useConfigStore } from '../stores/config'
+import Logo from './Logo.vue'
 
 const { toggleTheme } = useThemeStore()
 const { githubURL } = useConfigStore()
 </script>
 
-<template> 
-  <header w-full p-8 grid="~ items-center justify-end flow-col"> 
+<template>
+  <header w-full p-8 grid="~ items-center justify-end flow-col">
     <a lg:fixed absolute href="/">
       <Logo />
     </a>
@@ -19,7 +19,11 @@ const { githubURL } = useConfigStore()
       </a>
       <a href="/demo/">
         <span lt-md:hidden v-text="'Demo'" />
-        <div i-carbon:cube text-5 md-hidden />
+        <div i-carbon:workspace text-5 md-hidden />
+      </a>
+      <a href="/study/linear-algebra/">
+        <span lt-md:hidden v-text="'Study'" />
+        <div i-carbon:growth text-5 md-hidden />
       </a>
       <button @click="toggleTheme">
         <div i-carbon:sun dark:i-carbon-moon text-5 />
