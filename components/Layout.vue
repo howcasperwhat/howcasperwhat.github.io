@@ -6,7 +6,6 @@ import CopyRight from './CopyRight.vue'
 import Plum from './Plum.vue'
 import Walk from './Walk.vue'
 import GoTo from './GoTo.vue'
-
 const { frontmatter } = useData()
 </script>
 

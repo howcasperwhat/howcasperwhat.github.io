@@ -10,12 +10,12 @@ defineProps<{ prev: string, next: string }>()
     children:text="gray hover:unset" children:w-full
   >
     <a :href="prev" justify-start v-if="prev">
-      <div i-mdi:arrow-left />
+      <div i-mdi:arrow-left-thin text-xl />
       <span v-text="prev" />
     </a>
     <a :href="next" justify-end v-if="next">
       <span v-text="next" />
-      <div i-mdi:arrow-right />
+      <div i-mdi:arrow-right-thin text-xl />
     </a>
   </div>
 </template>

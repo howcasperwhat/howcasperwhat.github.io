@@ -32,10 +32,9 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
-#messageBox {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-}
+<style scoped lang="sass">
+#messageBox
+  position: fixed
+  left: 50%
+  transform: translateX(-50%)
 </style>
