@@ -6,7 +6,7 @@ const isHidden = ref(true)
 const content = ref()
 const type = ref()
 
-const messageAux = (_type: string, _message: string, _duration: number = 2000) => {
+const messageAux = (_type: string, _message: string, _duration: number = 3000) => {
   type.value = _type
   content.value = _message
   isHidden.value = false

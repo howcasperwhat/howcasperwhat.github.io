@@ -1,1 +1,1 @@
-using [Vitepress](https://vitepress.vuejs.org/)
+code is under [MIT License](https://mit-license.org/).
