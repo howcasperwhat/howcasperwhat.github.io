@@ -1,0 +1,1 @@
+import{u as r}from"./markdown-BT-greU2.js";import{d as s,q as c,o as a,c as m}from"./app-tJiRKwZh.js";const p=["innerHTML"],u=s({__name:"ClientMarkdown",props:{content:{}},setup(n){const{md:e}=r(),o=n,t=c(()=>e.render(o.content));return(d,i)=>(a(),m("div",{class:"markdown client",innerHTML:t.value},null,8,p))}});export{u as _};
