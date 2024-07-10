@@ -1,0 +1,20 @@
+@keyframes enter
+  0%
+    opacity: 0
+    transform: translateY(0.75rem)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+.slide>div > *:not(.slide-content),
+.slide-content > *:not(.route)
+  --stagger: 0
+  --delay: 60ms
+  --start: 0ms
+  animation: enter .6s both 1
+  animation-delay: calc(var(--start) + var(--stagger) * var(--delay))
+
+@for $i from 1 through 16
+  .slide>div > *:not(.slide-content):nth-child(#{$i}),
+  .slide-content > *:not(.route):nth-child(#{$i})
+    --stagger: #{$i}

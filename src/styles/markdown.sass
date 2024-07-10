@@ -1,0 +1,170 @@
+:root
+  --m-c-divider: rgba(60, 60, 67, 0.12)
+  --m-c-blockquote: rgba(60, 60, 67, 0.75)
+  --m-c-table-bg: #f6f6f7
+  --m-c-table-head: #333
+  --m-c-paragraph: #333
+  --m-c-list: #333
+  --m-c-head: #222
+  --m-c-code-bg: #8882
+  --m-c-code-block-bg: #f0f0f0
+
+.dark
+  --m-c-divider: rgba(82, 82, 89, 0.32)
+  --m-c-blockquote: rgba(235, 235, 245, 0.6)
+  --m-c-table-bg: #252529
+  --m-c-table-head: #ccc
+  --m-c-paragraph: #ccc
+  --m-c-list: #ccc
+  --m-c-head: #eee
+  --m-c-code-block-bg: #101010
+
+.markdown
+  font-size: 17px
+
+.markdown:not(.client)
+  max-width: 42rem
+  margin-left: auto
+  margin-right: auto
+
+// Headers
+.markdown h1, .markdown h2, .markdown h3,
+.markdown h4, .markdown h5, .markdown h6
+  position: relative
+  font-weight: 600
+  outline: none
+  color: var(--m-c-head)
+
+.markdown h1
+  letter-spacing: -0.02em
+  line-height: 40px
+  font-size: 28px
+  font-weight: bold
+
+.markdown h2
+  margin: 48px 0 16px
+  border-top: 1px solid
+  padding-top: 24px
+  letter-spacing: -0.02em
+  line-height: 32px
+  font-size: 24px
+  border-top-color: var(--m-c-divider)
+
+.markdown h3
+  margin: 32px 0 0
+  letter-spacing: -0.01em
+  line-height: 28px
+  font-size: 20px
+
+@media (min-width: 768px)
+  .markdown h1
+    letter-spacing: -0.02em
+    line-height: 40px
+    font-size: 32px
+
+// Paragraphs and inline elements
+.markdown p, .markdown summary
+  margin: 16px 0
+
+.markdown p
+  line-height: 28px
+  color: var(--m-c-paragraph)
+
+.markdown blockquote
+  margin: 16px 0
+  border-left: 2px solid var(--m-c-divider)
+  padding-left: 16px
+
+.markdown blockquote>p
+  margin: 0
+  font-size: 16px
+  color: var(--m-c-blockquote)
+
+.markdown a
+  font-weight: 500
+  text-decoration-style: dotted
+
+.markdown a:hover
+  border-bottom: 1px solid
+  transition: color 0.3s ease-in-out, border 0.3s ease-in-out
+
+.markdown strong
+  font-weight: 600
+
+// Lists
+.markdown ul, .markdown ol
+  padding-left: 1.25rem
+  margin: 16px 0
+
+.markdown ul
+  list-style: square
+
+.markdown ol
+  list-style: decimal
+
+.markdown li+li
+  margin-top: 8px
+
+.markdown li>ol,
+.markdown li>ul
+  margin: 8px 0 0
+
+.markdown li
+  color: var(--m-c-list)
+
+// Tables
+.markdown table
+  display: block
+  border-collapse: collapse
+  margin: 20px 0
+  overflow-x: auto
+
+.markdown tr
+  border-top: 1px solid var(--m-c-divider)
+
+.markdown tr:nth-child(2n)
+  background-color: var(--m-c-table-bg)
+
+.markdown th, .markdown td
+  border: 1px solid var(--m-c-divider)
+  padding: 8px 16px
+
+.markdown th
+  text-align: left
+  font-size: 14px
+  font-weight: 600
+  color: var(--m-c-table-head)
+  background-color: var(--m-c-table-bg)
+
+.markdown td
+  font-size: 14px
+
+// Separators
+.markdown hr
+  margin: 16px 0
+  border: none
+  border-top: 1px solid var(--m-c-divider)
+
+// Code
+.markdown :not(pre)>code
+  padding: 3px 6px
+  background-color: var(--m-c-code-bg)
+
+.markdown h1>code,
+.markdown h2>code,
+.markdown h3>code
+  font-size: 0.9em
+
+.markdown .shiki
+  font-family: 'DM Mono', 'Input Mono', 'Fira Code', monospace
+  border-radius: .2em
+  font-size: .92rem
+  line-height: 1.8
+  padding: 1.2em
+  margin: .5em 0
+  overflow: scroll
+
+.markdown img
+  max-width: 100%
+  border-radius: 8px
+  -webkit-user-drag: none
