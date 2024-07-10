@@ -9,10 +9,6 @@ const content = ref<string>('# Markdown')
 const theme = useThemeStore()
 useStorage('markdown-monaco-editor-content', content)
 const monacoElement = ref<HTMLElement>()
-const updateContent = (monaco: any) => {
-  const text = monaco.editor.getModels()[0].getValue()
-  content.value = text
-}
 onMounted(async () => {
   setAPPHeight(monacoElement.value!)
   if (typeof window === 'undefined') return
@@ -38,8 +34,9 @@ onMounted(async () => {
   watch(theme.theme, () => {
     monaco.editor.setTheme(theme.theme.value)
   }, { immediate: true })
-  editor.onDidChangeModelContent(updateContent)
-  // updateContent()
+  editor.onDidChangeModelContent(() => {
+    content.value = monaco.editor.getModels()[0].getValue()
+  })
 })
 </script>
 
