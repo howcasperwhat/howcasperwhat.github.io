@@ -32,7 +32,7 @@ function getColor(index: number) {
       </a>
       <div
         text-sm text-gray p-l-5 b-l=".1rem solid"
-        h-3rem relative m-l-.7rem b="!r-0 !y-0"
+        h-3rem relative m-l-.8rem b="!r-0 !y-0"
         :from="getColor(_)" :to="getColor(_ + 1)"
         b-gradient-to-bottom v-text="process.date"
       />
