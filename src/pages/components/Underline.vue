@@ -104,7 +104,7 @@ onMounted(() => {
       :viewBox="`0 -${height / 2} ${width} ${height}`"
       :stroke="color" :stroke-width="thickness"
       fill="none" stroke-linecap="round"
-      fixed bottom-0 :stroke-opacity="opacity"
+      fixed :stroke-opacity="opacity"
     >
       <path :d="d" ref="path" />
     </svg>

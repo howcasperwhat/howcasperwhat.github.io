@@ -3,20 +3,22 @@ import type { Component } from 'vue'
 import Underline from './Underline.vue'
 import { h, ref } from 'vue'
 const {
-  info, link, logo
+  info, link, logo, raw
 } = defineProps<{
   info?: string
   link?: string
   logo: Component
+  raw?: boolean
 }>()
 const container = link ? h('a', { href: link, target: '_blank' }) : h('span')
 const show = ref(false)
+const opacity = ref(raw ? 0 : 0.6)
 </script>
 
 <template>
   <Underline :show="show"
-    :opacity="0.6"
-    m-x-2 p-2 rounded
+    :opacity="opacity"
+    m-2 p-2 rounded
     box-border bg-hex-8881
   >
     <container 

@@ -13,16 +13,18 @@ import Unocss from './components/icons/Unocss.vue'
 import Typescript from './components/icons/Typescript.vue'
 import Iconify from './components/icons/Iconify.vue'
 import Torch from './components/icons/Torch.vue'
+import VSCode from './components/icons/VSCode.vue'
+import { useThemeStore } from '../stores/theme'
+const { theme } = useThemeStore()
 </script>
 
 <template>
   <div max-w-2xl m-x-auto>
-    <div lg:text-10
-      lt-lg:text-3xl
+    <div lg:text-10 lt-lg:text-3xl
       font-bold m-b-5
       v-text="'Casper Huang'" />
-    <article children:flex="~ items-center" 
-      children:whitespace-nowrap
+    <article children:flex="~ items-center wrap" 
+      children:whitespace-nowrap children:m-0
       class="slide-content">
       <p>Studying in <Badge :logo="SZU"
         link="https://www.szu.edu.cn" 
@@ -32,28 +34,36 @@ import Torch from './components/icons/Torch.vue'
         NPM: <Badge info="howcasperwhat" :logo="NPM"
         link="https://www.npmjs.com/~howcasperwhat"/></p>
       <p>Research: <Badge info="Recommender System"
-        :logo="Research" /></p>
-      <div>Projects:
+        :logo="Research" raw /></p>
+      <p>Projects:
         <Badge info="Comment Formula" :logo="CommentFormula"
         link="https://github.com/howcasperwhat/comment-formula"/>
         <Badge info="markdown-it-copy-code" :logo="MarkdownItCopyCode"
         link="https://github.com/howcasperwhat/markdown-it-copy-code" />
         <Badge info="markdown-it-tabbar" :logo="MarkdownItTabbar"
         link="https://github.com/howcasperwhat/markdown-it-tabbar" />
-      </div>
+      </p>
       <p>Using 
         <Badge info="Vue" :logo="Vue"
           link="https://vuejs.org/" />
         <Badge info="Vite" :logo="Vite"
           link="https://vitejs.dev/" />
+        <Badge info="Typescript" :logo="Typescript"
+        link="https://www.typescriptlang.org/" />
         <Badge info="Unocss" :logo="Unocss"
           link="https://unocss.dev/" />
-        <Badge info="Typescript" :logo="Typescript"
-          link="https://www.typescriptlang.org/" />
         <Badge info="Iconify" :logo="Iconify" 
           link="https://iconify.design/" />
         <Badge info="Torch" :logo="Torch"
           link="https://pytorch.org/" />
+        <Badge info="VSCode" :logo="VSCode"
+          link="https://code.visualstudio.com/" />
+      </p>
+      <hr b-hex-8884 w-6rem m-x-auto m-y-6 />
+      <p>
+        <span>Contact me:</span>
+        <img :src="`/public/images/mail.${theme}.png`"
+        :key="theme" h-8 m-t-2 m-l-2 draggable="false" />
       </p>
     </article>
   </div>
