@@ -26,43 +26,82 @@ const { theme } = useThemeStore()
     <article children:flex="~ items-center wrap" 
       children:whitespace-nowrap children:m-0
       class="slide-content">
-      <p>Studying in <Badge :logo="SZU"
-        link="https://www.szu.edu.cn" 
-        info="ShenZhen University" /></p>
-      <p>GitHub: <Badge info="howcasperwhat" :logo="GitHub"
-        link="https://github.com/howcasperwhat"/>
-        NPM: <Badge info="howcasperwhat" :logo="NPM"
-        link="https://www.npmjs.com/~howcasperwhat"/></p>
-      <p>Research: <Badge info="Recommender System"
-        :logo="Research" raw /></p>
-      <p>Projects:
-        <Badge info="Comment Formula" :logo="CommentFormula"
-        link="https://github.com/howcasperwhat/comment-formula"/>
-        <Badge info="markdown-it-copy-code" :logo="MarkdownItCopyCode"
-        link="https://github.com/howcasperwhat/markdown-it-copy-code" />
-        <Badge info="markdown-it-tabbar" :logo="MarkdownItTabbar"
-        link="https://github.com/howcasperwhat/markdown-it-tabbar" />
+      <p>
+        Studying in
+        <Badge link="https://www.szu.edu.cn">
+          <SZU />
+          <span>ShenZhen University</span>
+        </Badge>
       </p>
-      <p>Using 
-        <Badge info="Vue" :logo="Vue"
-          link="https://vuejs.org/" />
-        <Badge info="Vite" :logo="Vite"
-          link="https://vitejs.dev/" />
-        <Badge info="Typescript" :logo="Typescript"
-        link="https://www.typescriptlang.org/" />
-        <Badge info="Unocss" :logo="Unocss"
-          link="https://unocss.dev/" />
-        <Badge info="Iconify" :logo="Iconify" 
-          link="https://iconify.design/" />
-        <Badge info="Torch" :logo="Torch"
-          link="https://pytorch.org/" />
-        <Badge info="VSCode" :logo="VSCode"
-          link="https://code.visualstudio.com/" />
+      <p>
+        GitHub: 
+        <Badge link="https://github.com/howcasperwhat">
+          <GitHub />
+          <span>howcasperwhat</span>
+        </Badge>
+        NPM:
+        <Badge link="https://www.npmjs.com/~howcasperwhat">
+          <NPM />
+          <span>howcasperwhat</span>
+        </Badge>
+      </p>
+      <p>
+        Research: 
+        <Badge raw>
+          <Research />
+          <span>Recommender System</span>
+        </Badge>
+      </p>
+      <p>
+        Projects:
+        <Badge link="https://github.com/howcasperwhat/comment-formula">
+          <CommentFormula />
+          <span>comment-formula</span>
+        </Badge>
+        <Badge link="https://github.com/howcasperwhat/markdown-it-copy-code">
+          <MarkdownItCopyCode />
+          <span>markdown-it-copy-code</span>
+        </Badge>
+        <Badge link="https://github.com/howcasperwhat/markdown-it-tabbar">
+          <MarkdownItTabbar />
+          <span>markdown-it-tabbar</span>
+        </Badge>
+      </p>
+      <p>
+        Using 
+        <Badge link="https://vuejs.org/">
+          <Vue />
+          <span>Vue</span>
+        </Badge>
+        <Badge link="https://vitejs.dev/">
+          <Vite />
+          <span>Vite</span>
+        </Badge>
+        <Badge link="https://www.typescriptlang.org/">
+          <Typescript />
+          <span>Typescript</span>
+        </Badge>
+        <Badge link="https://unocss.dev/">
+          <Unocss />
+          <span>Unocss</span>
+        </Badge>
+        <Badge link="https://iconify.design/">
+          <Iconify />
+          <span>Iconify</span>
+        </Badge>
+        <Badge link="https://pytorch.org/">
+          <Torch />
+          <span>Torch</span>
+        </Badge>
+        <Badge link="https://code.visualstudio.com/">
+          <VSCode />
+          <span>VSCode</span>
+        </Badge>
       </p>
       <hr b-hex-8884 w-6rem m-x-auto m-y-6 />
       <p>
         <span>Contact me:</span>
-        <img :src="`/public/images/mail.${theme}.png`"
+        <img :src="`/images/mail.${theme}.png`"
         :key="theme" h-8 m-t-2 m-l-2 draggable="false" />
       </p>
     </article>
