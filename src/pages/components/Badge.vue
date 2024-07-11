@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import type { Component } from 'vue'
-import { h } from 'vue'
+import Underline from './Underline.vue'
+import { h, ref } from 'vue'
 const {
   info, link, logo
 } = defineProps<{
@@ -9,19 +10,26 @@ const {
   logo: Component
 }>()
 const container = link ? h('a', { href: link, target: '_blank' }) : h('span')
+const show = ref(false)
 </script>
 
 <template>
-  <container bg-hex-8881
-    box-border p-2 rounded
-    flex="~ items-center"
-    m-x-2
+  <Underline :show="show"
+    :opacity="0.6"
+    m-x-2 p-2 rounded
+    box-border bg-hex-8881
   >
-    <logo h-4 p-r-2 />
-    <span v-text="info"
-      v-if="info"
-      whitespace-nowrap />
-  </container>
+    <container 
+      flex="~ items-center"
+      @mouseover="show = true"
+      @mouseleave="show = false"
+    >
+      <logo h-4 p-r-2 />
+      <span v-text="info"
+        v-if="info"
+        whitespace-nowrap />
+    </container>
+  </Underline>
 </template>
 
 <style scoped></style>
