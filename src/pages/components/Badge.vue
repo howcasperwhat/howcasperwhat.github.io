@@ -12,6 +12,7 @@ const opacity = ref(link ? 0.6 : 0)
 <template>
   <Underline :show="show"
     :opacity="opacity"
+    :speed="0.5"
     m-2 p-2 rounded
     box-border bg-hex-8881
   >

@@ -31,19 +31,23 @@ const length = ref(0)
 const process = ref<'i' | 'o'>()
 
 const wave = (width: number, height: number) => {
+  const freq = 4
   const unit = height / 2
   const operation = []
   operation.push(`M 0 0`)
-  let curx = unit * 4 * Math.random()
+  let curx = unit * freq * Math.random()
   if (curx <= width)
-    operation.push(`q ${unit} -${unit}, ${curx} 0`)
+    operation.push(`q ${unit} ${unit}, ${curx} 0`)
+  let edx, cdx
+  let edy = 0, cdy = unit
   do {
-    const dx = unit * 4 * Math.random()
-    const dy = 0
-    curx += dx
-    if (curx >= width) break
-    operation.push(`t ${dx} ${dy}`)
-  } while (true)
+    edx = unit * freq * Math.random()
+    if (curx + edx >= width) edx = width - curx
+    cdx = edx * Math.random()
+    cdy = -cdy
+    curx += edx
+    operation.push(`q ${cdx} ${cdy}, ${edx} ${edy}`)
+  } while (curx < width)
   return operation.join(' ')
 }
 
@@ -51,7 +55,7 @@ const paint = () => {
   requestAnimationFrame(() => {
     trace.value += step.value
     trace.value = Math.min(trace.value, length.value)
-    path.value!.style.strokeDasharray = `${trace.value} ${length.value - trace.value}`
+    path.value!.style.strokeDashoffset = `${length.value - trace.value}`
     if (trace.value === length.value) return
     process.value === 'i' ? paint() : erase()
   })
@@ -61,12 +65,8 @@ const erase = () => {
   requestAnimationFrame(() => {
     trace.value -= step.value
     trace.value = Math.max(trace.value, 0)
-    path.value!.style.strokeDasharray = `${trace.value} ${length.value - trace.value}`
-    if (trace.value === 0) {
-      // Browser Bug: dasharray = 0 0 will display a small dot
-      path.value!.style.strokeOpacity = `0`
-      return
-    }
+    path.value!.style.strokeDashoffset = `${length.value - trace.value}`
+    if (trace.value === 0) return
     process.value === 'o' ? erase() : paint()
   })
 }
@@ -79,11 +79,9 @@ onMounted(() => {
   nextTick(() => {
     length.value = path.value!.getTotalLength()
     step.value = speed.value * length.value / 10
-    // Browser Bug: dasharray = 0 0 will display a small dot
-    path.value!.style.strokeDasharray = `0 ${length.value}`
-    path.value!.style.strokeOpacity = `0`
+    path.value!.style.strokeDasharray = `${length.value}`
+    path.value!.style.strokeDashoffset = `${length.value}`
     watch(() => props.show, () => {
-      path.value!.style.strokeOpacity = `${opacity.value}`
       process.value = props.show ? 'i' : 'o'
       switch (process.value) {
         case 'i': paint(); break;
@@ -105,6 +103,7 @@ onMounted(() => {
       :stroke="color" :stroke-width="thickness"
       fill="none" stroke-linecap="round"
       fixed :stroke-opacity="opacity"
+      overflow-visible
     >
       <path :d="d" ref="path" />
     </svg>
