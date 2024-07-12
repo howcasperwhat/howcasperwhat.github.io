@@ -1,0 +1,1 @@
+import{c as o,e as t,a as n}from"./app-CwJzLBy1.js";const s={class:"markdown"},a=n("h1",null,"Homogeneous Equations",-1),c=[a],i="vector-space",h="nonhomogeneous-equations",d={__name:"homogeneous-equation",setup(r,{expose:e}){return e({frontmatter:{prev:"vector-space",next:"nonhomogeneous-equations"}}),(u,m)=>(t(),o("div",s,c))}};export{d as default,h as next,i as prev};
