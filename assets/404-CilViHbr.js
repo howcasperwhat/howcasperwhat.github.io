@@ -1,0 +1,1 @@
+import{_ as t,c,e as o,i as e}from"./index-DSfN-7gb.js";const s={},n={"w-full":"",flex:"~ row items-center justify-center"},r=e("div",{flex:"~ col items-center justify-center"},[e("h1",{"m-2":""},"404"),e("p",null,"Page not found")],-1),_=[r];function i(a,f){return o(),c("div",n,_)}const d=t(s,[["render",i]]);export{d as default};
