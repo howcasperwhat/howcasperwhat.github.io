@@ -6,6 +6,7 @@
 > **Change Node Modules**  
 > 1. @vscode/markdown-it-katex/dist/index.js: `module.exports = default_1;`
 > 2. vite-plugin-monaco-editor/dist/index.js: `module.exports = monacoEditorPlugin;`
+> 3. delete 'roughjs/tsconfig.json'
 
 > [!IMPORTANT]
 > **TODO**  

@@ -4,7 +4,6 @@
   --m-c-table-bg: #f6f6f7
   --m-c-table-head: #333
   --m-c-paragraph: #333
-  --m-c-list: #333
   --m-c-head: #222
   --m-c-code-bg: #8882
   --m-c-code-block-bg: #f0f0f0
@@ -15,7 +14,6 @@
   --m-c-table-bg: #252529
   --m-c-table-head: #ccc
   --m-c-paragraph: #ccc
-  --m-c-list: #ccc
   --m-c-head: #eee
   --m-c-code-block-bg: #101010
 
@@ -66,7 +64,7 @@
 .markdown p, .markdown summary
   margin: 16px 0
 
-.markdown p
+.markdown p, .markdown li
   line-height: 28px
   color: var(--m-c-paragraph)
 
@@ -83,13 +81,11 @@
 .markdown a
   font-weight: 500
   text-decoration-style: dotted
+  filter: contrast(1.25)
 
 .markdown a:hover
   border-bottom: 1px solid
   transition: color 0.3s ease-in-out, border 0.3s ease-in-out
-
-.markdown strong
-  font-weight: 600
 
 // Lists
 .markdown ul, .markdown ol
@@ -108,9 +104,6 @@
 .markdown li>ol,
 .markdown li>ul
   margin: 8px 0 0
-
-.markdown li
-  color: var(--m-c-list)
 
 // Tables
 .markdown table
@@ -147,8 +140,10 @@
 
 // Code
 .markdown :not(pre)>code
-  padding: 3px 6px
-  background-color: var(--m-c-code-bg)
+  font-size: 0.875rem
+  &:before, &:after
+    content: '`'
+    opacity: 0.6
 
 .markdown h1>code,
 .markdown h2>code,
@@ -168,3 +163,20 @@
   max-width: 100%
   border-radius: 8px
   -webkit-user-drag: none
+
+.markdown a
+  border-bottom: 1px dashed
+
+.markdown .header-anchor
+  float: left
+  border: 0
+  opacity: 0
+  margin-left: -1em
+
+.makrdown h1:hover>.header-anchor,
+.markdown h2:hover>.header-anchor,
+.markdown h3:hover>.header-anchor,
+.markdown h4:hover>.header-anchor,
+.markdown h5:hover>.header-anchor,
+.markdown h6:hover>.header-anchor
+  opacity: 0.5

@@ -7,7 +7,7 @@ const icons = [
 ]
 const colors = ['green', 'blue', 'yellow', 'red', 'purple', 'orange', 'transparent']
 const basis = ['1/64', '11/64', '52/64']
-const dev = ['html5', 'css3', 'javascript', 'typescript', 'matlab', 'python', 'java']
+const dev = ['html5', 'css3', 'javascript', 'typescript', 'matlab', 'python', 'java', 'vuejs']
 const processes = ['pause', 'continue', 'done']
 
 export default defineConfig({
@@ -33,6 +33,7 @@ export default defineConfig({
     [/^b-gradient-to-(left|right|top|bottom)$/, match => ({
       'border-image': `linear-gradient(to ${match[1]}, var(--un-gradient-from), var(--un-gradient-to)) 1`,
     })],
+    ['justify-safe-center', { 'justify-content': 'safe center' }]
   ],
   safelist: [
     ...dev.map(d => `i-devicon:${d}`),
@@ -48,7 +49,7 @@ export default defineConfig({
   shortcuts: [
     ['btn', 'px-4 py-2 rounded-.6'],
     ['ipt', 'px-2 py-1 rd-.5 bg-transparent'],
-    ['flex-center', 'flex justify-center items-center'],
+    ['flex-center', 'flex justify-safe-center items-center'],
     ['process-pause', 'i-carbon:pause c-yellow'],
     ['process-continue', 'i-carbon:continue c-blue'],
     ['process-done', 'i-carbon:checkmark-outline c-green'],

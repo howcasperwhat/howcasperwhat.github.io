@@ -33,6 +33,10 @@ const routes: Readonly<RouteRecordRaw[]> = [
     component: () => import("../pages/notes/develop/Network.md"),
   },
   {
+    path: "/notes/develop/More-Animatable-Notation",
+    component: () => import("../pages/notes/develop/MoreAnimatableNotation.md"),
+  },
+  {
     path: "/notes/research/BackPropagation",
     component: () => import("../pages/notes/research/BackPropagation.md"),
   },
@@ -61,28 +65,28 @@ const routes: Readonly<RouteRecordRaw[]> = [
     component: () => import("../pages/notes/algorithm/BinarySearch.md"),
   },
   {
-    path: "/demo/",
-    component: () => import("../pages/demo/index.vue"),
+    path: "/demos/",
+    component: () => import("../pages/demos/index.vue"),
   },
   {
-    path: "/demo/BackPropagation",
-    component: () => import("../pages/demo/BackPropagation.vue"),
+    path: "/demos/BackPropagation",
+    component: () => import("../pages/demos/BackPropagation.vue"),
   },
   {
-    path: "/demo/MineSweeper",
-    component: () => import("../pages/demo/MineSweeper.vue"),
+    path: "/demos/MineSweeper",
+    component: () => import("../pages/demos/MineSweeper.vue"),
   },
   {
-    path: "/demo/Spark-Chat",
-    component: () => import("../pages/demo/Spark-Chat.vue"),
+    path: "/demos/Spark-Chat",
+    component: () => import("../pages/demos/Spark-Chat.vue"),
   },
   {
-    path: "/demo/LeetCode/:id",
-    component: () => import("../pages/demo/LeetCode.vue"),
+    path: "/demos/LeetCode/:id",
+    component: () => import("../pages/demos/LeetCode.vue"),
   },
   {
-    path: "/demo/Markdown",
-    component: () => import("../pages/demo/Markdown.vue"),
+    path: "/demos/Markdown",
+    component: () => import("../pages/demos/Markdown.vue"),
   },
   {
     path: "/study/",

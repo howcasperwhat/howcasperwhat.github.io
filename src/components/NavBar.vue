@@ -14,17 +14,17 @@ const { githubURL } = useConfigStore()
     </RouterLink>
     <nav flex="~ gap-4 items-center justify-end">
       <RouterLink to="/notes/">
-        <span lt-md:hidden v-text="'Note'" />
+        <span lt-md:hidden v-text="'Notes'" />
         <div i-carbon:notebook text-5 md-hidden />
       </RouterLink>
-      <RouterLink to="/demo/">
-        <span lt-md:hidden v-text="'Demo'" />
+      <RouterLink to="/demos/">
+        <span lt-md:hidden v-text="'Demos'" />
         <div i-carbon:workspace text-5 md-hidden />
       </RouterLink>
-      <RouterLink to="/study/">
+      <!-- <RouterLink to="/study/">
         <span lt-md:hidden v-text="'Study'" />
         <div i-carbon:growth text-5 md-hidden />
-      </RouterLink>
+      </RouterLink> -->
       <button @click="toggleTheme">
         <div i-carbon:sun dark:i-carbon-moon text-5 />
       </button>

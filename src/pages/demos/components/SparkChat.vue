@@ -79,7 +79,7 @@ onMounted(() => {
 <template>
   <div grid="~ flow-row gap-4" ref="container">
     <ChatHistory :history="chat.qas" ref="el" />
-    <div flex="~ items-center">
+    <form @submit.prevent="send()" flex="~ items-center">
       <textarea v-model="input"
         @input="autoResize"
         @keydown.enter="enter"
@@ -92,12 +92,11 @@ onMounted(() => {
         bg-transparent c-inherit
       />
       <button absolute right-8 
-        @click="send"
         :disabled="loading">
         <div i-svg-spinners:tadpole text-xl v-if="loading" />
         <div i-carbon:send text-xl v-else />
       </button>
-    </div>
+    </form>
   </div>
 </template>
 

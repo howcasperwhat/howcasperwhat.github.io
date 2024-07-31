@@ -6,8 +6,10 @@ import Shiki from '@shikijs/markdown-it'
 import KaTeX from '@vscode/markdown-it-katex'
 import Alerts from 'markdown-it-github-alerts'
 import CopyCode from 'markdown-it-copy-code'
+import Anchor from 'markdown-it-anchor'
 import Tabbar from 'markdown-it-tabbar'
 import Monaco from 'vite-plugin-monaco-editor'
+import LinkAttributes from 'markdown-it-link-attributes'
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 
 export default defineConfig({
@@ -28,8 +30,23 @@ export default defineConfig({
         typographer: true,
       },
       markdownItUses: [
-        KaTeX, Alerts, CopyCode, Tabbar,
-        await Shiki({
+        KaTeX, Alerts, CopyCode, Tabbar
+      ],
+      async markdownItSetup(md) {
+        md.use(LinkAttributes, {
+          matcher: (link: string) => /^https?:\/\//.test(link),
+          attrs: {
+            target: '_blank',
+            rel: 'noopener',
+          },
+        })
+        md.use(Anchor, {
+          permalink: Anchor.permalink.linkInsideHeader({
+            symbol: '#',
+            renderAttrs: () => ({ 'aria-hidden': 'true' }),
+          }),
+        })
+        md.use(await Shiki({
           defaultColor: false,
           defaultLanguage: 'ts',
           fallbackLanguage: 'ts',
@@ -43,8 +60,8 @@ export default defineConfig({
               renderer: rendererRich(),
             })
           ]
-        })
-      ],
+        }))
+      }
     })
   ],
 })
