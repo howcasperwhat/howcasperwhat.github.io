@@ -1,1 +1,0 @@
-import{u as r}from"./markdown-DFKfk4Ej.js";import{d as s,A as c,e as a,c as m}from"./app-DYSJX45E.js";const p=["innerHTML"],u=s({__name:"ClientMarkdown",props:{content:{}},setup(n){const{md:e}=r(),o=n,t=c(()=>e.render(o.content));return(d,i)=>(a(),m("div",{class:"markdown client",innerHTML:t.value},null,8,p))}});export{u as _};
