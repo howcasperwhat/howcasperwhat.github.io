@@ -1,1 +1,0 @@
-import{_ as t,c,o,f as e}from"./app-DhPgBnwM.js";const s={},n={"w-full":"",flex:"~ row items-center justify-center"},r=e("div",{flex:"~ col items-center justify-center"},[e("h1",{"m-2":""},"404"),e("p",null,"Page not found")],-1),_=[r];function f(a,i){return o(),c("div",n,_)}const d=t(s,[["render",f]]);export{d as default};
