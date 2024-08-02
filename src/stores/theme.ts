@@ -1,7 +1,7 @@
 import { useWindowSize, useStorage } from '@vueuse/core'
 import { watch, ref, nextTick } from 'vue'
 
-const theme = ref('dark')
+const theme = ref<'light' | 'dark'>('dark')
 watch(theme, () => {
   if (typeof document === 'undefined') return
   document.querySelectorAll('html').forEach((element) => {

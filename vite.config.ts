@@ -8,7 +8,6 @@ import Alerts from 'markdown-it-github-alerts'
 import CopyCode from 'markdown-it-copy-code'
 import Anchor from 'markdown-it-anchor'
 import Tabbar from 'markdown-it-tabbar'
-import Monaco from 'vite-plugin-monaco-editor'
 import LinkAttributes from 'markdown-it-link-attributes'
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 
@@ -21,7 +20,6 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/]
     }),
     UnoCSS(),
-    Monaco({}),
     Markdown({
       wrapperClasses: 'markdown',
       markdownItOptions: {

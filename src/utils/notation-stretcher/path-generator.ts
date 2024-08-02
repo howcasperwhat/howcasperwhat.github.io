@@ -1,3 +1,4 @@
+
 import { RoughGenerator } from 'roughjs/bin/generator'
 import type { PathRoughOptions, MarkType, PathConstructor, MultiBracket, SingleBracket } from './notation-types'
 import { DEFAULT_ROUGH_OPTIONS } from './notation-store'
@@ -71,6 +72,7 @@ export default class PathGenerator extends RoughGenerator {
                 1 << (3 - i) as SingleBracket
               )
             )
+          return undefined
         }).filter(x => !!x).flat()
       case 'x':
         return (w, h) => [

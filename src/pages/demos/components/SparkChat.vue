@@ -4,7 +4,7 @@ import { useStorage } from '@vueuse/core';
 import { nextTick, onMounted, ref } from 'vue';
 import { SparkChat } from '../logics/spark-chat';
 import ChatHistory from './ChatHistory.vue'
-import { setAPPHeight } from '../../../utils/layout'
+import { setAppHeight } from '../../../utils/layout'
 
 const message = useMessage()
 const editor = ref<HTMLTextAreaElement>()
@@ -70,7 +70,7 @@ const autoResize = () => {
 
 
 onMounted(() => {
-  setAPPHeight(container.value!)
+  setAppHeight(container.value!)
   editor.value!.focus()
   autoResize()
 })
