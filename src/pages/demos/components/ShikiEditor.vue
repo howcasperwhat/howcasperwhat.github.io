@@ -39,7 +39,8 @@ const render = (code: string = '') => {
 onMounted(async () => {
   highlighter = await createHighlighter({
     themes: ['vitesse-dark', 'vitesse-light'],
-    langs: ['typescript', 'javascript', 'markdown'],
+    langs: ['typescript', 'javascript', 'markdown',
+      'html', 'css', 'json', 'vue', 'jsx', 'tsx'],
   })
 
   watch(content, () => {
