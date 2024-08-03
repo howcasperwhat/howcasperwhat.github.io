@@ -9,17 +9,26 @@ import CopyCode from 'markdown-it-copy-code'
 import Anchor from 'markdown-it-anchor'
 import Tabbar from 'markdown-it-tabbar'
 import LinkAttributes from 'markdown-it-link-attributes'
+import Components from 'unplugin-vue-components/vite'
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 
 export default defineConfig({
   build: {
     target: 'esnext',
   },
+  ssgOptions: {
+    formatting: 'minify',
+  },
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/]
     }),
     UnoCSS(),
+    Components({
+      dirs: ['src/pages/notes/*/components'],
+      extensions: ['vue', 'md'],
+      include: [/\.vue$/, /\.md$/, /\.vue\?vue/, /\.md\?vue/],
+    }),
     Markdown({
       wrapperClasses: 'markdown',
       markdownItOptions: {

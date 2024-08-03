@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite-ssg build && rm -rf .vite-ssg-temp && rm -rf Users",
+    "build": "vite-ssg build && rmdir .vite-ssg-temp",
     "preview": "vite preview",
     "test": "vitest",
     "deploy": "gh-pages -d dist"
@@ -32,6 +32,7 @@
     "roughjs": "^4.6.6",
     "sass": "^1.77.4",
     "shiki": "^1.10.3",
+    "unplugin-vue-components": "^0.27.3",
     "unplugin-vue-markdown": "^0.26.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.2"

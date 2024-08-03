@@ -1,12 +1,9 @@
-<script setup>
-import Flex1 from './components/Flex1.vue'
-import Flex2 from './components/Flex2.vue'
-</script>  
+
 
 # Flex In CSS  
 ## Flex 布局结构  
 
-<flex-1 />  
+<Flex1 />  
 
 ## 主轴和侧轴  
 1. 主轴默认水平向右

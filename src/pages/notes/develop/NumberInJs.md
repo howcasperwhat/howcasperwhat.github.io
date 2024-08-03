@@ -1,8 +1,3 @@
-<script setup>
-import IEEE754Float from './components/IEEE754Float.vue'
-import BinaryOp from './components/BinaryOp.vue'
-</script>
-
 # Number In Javascript
 
 The JavaScript `Number` type is a double-precision 64-bit binary format IEEE 754 value.

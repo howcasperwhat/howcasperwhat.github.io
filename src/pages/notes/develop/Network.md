@@ -1,9 +1,3 @@
-<script setup>
-import IPDatagram from './components/IPDatagram.vue'
-import UDPDatagram from './components/UDPDatagram.vue'
-import TCPDatagram from './components/TCPDatagram.vue'
-</script>
-
 # 计算机网络
 
 ## IP数据报格式

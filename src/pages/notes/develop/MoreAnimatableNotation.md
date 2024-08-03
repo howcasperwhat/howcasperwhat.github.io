@@ -8,11 +8,13 @@ const bracket = ref(null)
 const box = ref(null)
 const circle = ref(null)
 const line = ref(null)
+
 const n0 = ref(null)
 const n1 = ref(null)
 const n2 = ref(null)
 const n3 = ref(null)
 const n4 = ref(null)
+
 onMounted(async () => {
   const notate = (await import('notation-stretcher')).notate
   n0.value = notate(box.value, 'box', { 
