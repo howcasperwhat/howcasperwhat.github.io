@@ -10,6 +10,7 @@ import Anchor from 'markdown-it-anchor'
 import Tabbar from 'markdown-it-tabbar'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Components from 'unplugin-vue-components/vite'
+import PluginInspect from 'vite-plugin-inspect'
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 
 export default defineConfig({
@@ -24,6 +25,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/]
     }),
     UnoCSS(),
+    PluginInspect(),
     Components({
       dirs: ['src/pages/notes/*/components'],
       extensions: ['vue', 'md'],
