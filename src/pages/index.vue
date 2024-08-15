@@ -4,6 +4,7 @@ import SZU from './components/icons/SZU.vue'
 import GitHub from './components/icons/GitHub.vue'
 import NPM from './components/icons/NPM.vue'
 import Research from './components/icons/Research.vue'
+import NotationStretcher from './components/icons/NotationStretcher.vue'
 import CommentFormula from './components/icons/CommentFormula.vue'
 import MarkdownItCopyCode from './components/icons/MarkdownItCopyCode.vue'
 import MarkdownItTabbar from './components/icons/MarkdownItTabbar.vue'
@@ -54,6 +55,10 @@ const { theme } = useThemeStore()
       </p>
       <p>
         Projects:
+        <Badge link="https://github.com/howcasperwhat/notation-stretcher">
+          <NotationStretcher />
+          <span>notation-stretcher</span>
+        </Badge>
         <Badge link="https://github.com/howcasperwhat/comment-formula">
           <CommentFormula />
           <span>comment-formula</span>
