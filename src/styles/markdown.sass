@@ -141,14 +141,13 @@
 // Code
 .markdown :not(pre)>code
   font-size: 0.875rem
+  font-family: 'DM Mono', 'Input Mono', 'Fira Code', monospace
   &:before, &:after
     content: '`'
     opacity: 0.6
 
-.markdown h1>code,
-.markdown h2>code,
-.markdown h3>code
-  font-size: 0.9em
+.markdown pre.shiki code
+  font-family: inherit
 
 .markdown .shiki
   font-family: 'DM Mono', 'Input Mono', 'Fira Code', monospace
