@@ -79,12 +79,14 @@ onMounted(async () => {
 
 .demo-markdown-wrapper>* {
   line-height: 1.8;
-  font-family: monospace;
-  font-size: 1.25em;
+  font-family: 'DM Mono', 'Input Mono', 'Fira Code', monospace;
+  font-size: 1rem;
   position: absolute;
 }
 
 .demo-markdown-mock * {
   background-color: transparent !important;
+  font-family: 'DM Mono', 'Input Mono', 'Fira Code', monospace;
+  font-size: 1rem;
 }
 </style>
