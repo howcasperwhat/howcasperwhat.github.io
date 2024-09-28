@@ -14,7 +14,7 @@ function imageSrcOf(name: string) {
   <div p-6 rounded
     grid="~ flow-row gap-2" hover:scale-102
     hover:duration-transform-600 overflow-hidden 
-    bg-hex-e8e8e8 dark:bg-hex-181818 
+    bg-white dark:bg-hex-181818 
     b="1 solid gray-300 dark:gray-800"
   >
     <div grid="~ flow-row" z-10>

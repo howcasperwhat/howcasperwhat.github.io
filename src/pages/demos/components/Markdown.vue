@@ -16,7 +16,7 @@ onMounted(() => {
 
 <template>
   <div grid="~ cols-2 gap-4" ref="container"
-    children-bg-hex-8882>
+    children-bg-hex-eee6 children:rd-4>
     <ShikiEditor v-model="content" />
     <ClientMarkdown :content="content" 
       p-4 overflow-auto />
