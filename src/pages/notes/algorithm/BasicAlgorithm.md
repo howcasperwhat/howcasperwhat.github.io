@@ -416,3 +416,43 @@ public long query(int L, int R,
 }
 ```
 :::
+
+
+## Linked List Algorithm
+
+::: tabbar
+
+@ Linked List Cycle
+``` ts
+function hasCycle(head: ListNode | null): boolean {
+  for (
+    let [slow, fast] = [head, head?.next];
+    fast && fast.next;
+    slow = slow.next, fast = fast.next.next
+  ) if (slow === fast) 
+    return true
+  return false
+}
+```
+
+@ Linked List Cycle II
+``` ts
+function detectCycle(head: ListNode | null): ListNode | null {
+  let [slow, fast] = [head, head]
+  while (fast && fast.next) {
+    slow = slow.next
+    fast = fast.next.next
+    if (slow === fast) 
+      break
+  }
+  if (!fast || !fast.next) 
+    return null
+  fast = head
+  while (slow !== fast) {
+    slow = slow.next
+    fast = fast.next
+  }
+  return slow
+}
+```
+:::
