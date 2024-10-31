@@ -1,5 +1,5 @@
 node_modules
 .vscode
 dist
-
+.DS_Store
 components.d.ts
