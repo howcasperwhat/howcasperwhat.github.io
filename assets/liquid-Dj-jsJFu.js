@@ -1,4 +1,4 @@
-import e from"./html-CqhC7HHo.js";import n from"./css-CbYhyuC0.js";import t from"./json-CupVZNk8.js";import i from"./javascript-Dch3xQiY.js";const a=Object.freeze({displayName:"Liquid",fileTypes:["liquid"],foldingStartMarker:`(?x)
+import e from"./html-lZfqWVWm.js";import n from"./css-CbYhyuC0.js";import t from"./json-CupVZNk8.js";import i from"./javascript-Dch3xQiY.js";const a=Object.freeze({displayName:"Liquid",fileTypes:["liquid"],foldingStartMarker:`(?x)
 {%
   -?
   \\s*

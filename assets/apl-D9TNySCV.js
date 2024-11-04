@@ -1,4 +1,4 @@
-import a from"./html-CqhC7HHo.js";import e from"./xml-KWQaRJyt.js";import n from"./css-CbYhyuC0.js";import t from"./javascript-Dch3xQiY.js";import u from"./json-CupVZNk8.js";import"./java-ClXEvkw9.js";const o=Object.freeze({displayName:"APL",fileTypes:["apl","apla","aplc","aplf","apli","apln","aplo","dyalog","dyapp","mipage"],firstLineMatch:`(?x)
+import a from"./html-lZfqWVWm.js";import e from"./xml-KWQaRJyt.js";import n from"./css-CbYhyuC0.js";import t from"./javascript-Dch3xQiY.js";import u from"./json-CupVZNk8.js";import"./java-ClXEvkw9.js";const o=Object.freeze({displayName:"APL",fileTypes:["apl","apla","aplc","aplf","apli","apln","aplo","dyalog","dyapp","mipage"],firstLineMatch:`(?x)
 # APL symbols
 [⌶-⍺]
 |

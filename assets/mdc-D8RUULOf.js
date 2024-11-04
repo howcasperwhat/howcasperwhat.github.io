@@ -1,4 +1,4 @@
-import e from"./markdown-BnyYJeap.js";import r from"./yaml-DK4oFTHQ.js";import t from"./html-derivative-Dyi7-2SW.js";import"./html-lZfqWVWm.js";import"./javascript-CHuuZgn4.js";import"./css-B0OQ7Gti.js";const a=Object.freeze({displayName:"MDC",injectionSelector:"L:text.html.markdown",name:"mdc",patterns:[{include:"#component_block"},{include:"#inline"}],repository:{attribute:{patterns:[{captures:{2:{name:"entity.other.attribute-name.html"},3:{patterns:[{include:"#attribute-interior"}]}},match:`(?x)
+import e from"./markdown-BnyYJeap.js";import r from"./yaml-DK4oFTHQ.js";import t from"./html-derivative-Dyi7-2SW.js";import"./html-CqhC7HHo.js";import"./javascript-CHuuZgn4.js";import"./css-B0OQ7Gti.js";const a=Object.freeze({displayName:"MDC",injectionSelector:"L:text.html.markdown",name:"mdc",patterns:[{include:"#component_block"},{include:"#inline"}],repository:{attribute:{patterns:[{captures:{2:{name:"entity.other.attribute-name.html"},3:{patterns:[{include:"#attribute-interior"}]}},match:`(?x)
 (
 ([^=><\\s]*)
 (
