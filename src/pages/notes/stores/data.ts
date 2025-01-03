@@ -14,6 +14,7 @@ export const noteLists: NoteLink[][] = [
   ],
   [
     { id: 0, name: 'BackPropagation', title: 'Back Propagation', date: '2023-07-19', lang: 'en', dev: ['typescript'] },
+    { id: 1, name: 'AccelerateCSVReader', title: 'Accelerate Reading of Huge Dataset', date: '2025-01-02', lang: 'zh', dev: ['python'] },
   ],
   [
     { id: 0, name: 'LargestRectangleArea', title: 'Largest Rectangle Area', date: '2023-07-26', lang: 'en', dev: ['java'] },

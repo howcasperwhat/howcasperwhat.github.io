@@ -41,6 +41,10 @@ const routes: Readonly<RouteRecordRaw[]> = [
     component: () => import("../pages/notes/research/BackPropagation.md"),
   },
   {
+    path: "/notes/research/AccelerateCSVReader",
+    component: () => import("../pages/notes/research/AccelerateCSVReader.md"),
+  },
+  {
     path: "/notes/algorithm/LargestRectangleArea",
     component: () => import("../pages/notes/algorithm/LargestRectangleArea.md"),
   },
