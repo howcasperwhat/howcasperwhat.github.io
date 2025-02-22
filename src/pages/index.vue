@@ -55,13 +55,13 @@ const { theme } = useThemeStore()
       </p>
       <p>
         Projects:
-        <Badge link="https://github.com/howcasperwhat/notation-stretcher">
-          <NotationStretcher />
-          <span>notation-stretcher</span>
-        </Badge>
         <Badge link="https://github.com/howcasperwhat/comment-formula">
           <CommentFormula />
           <span>comment-formula</span>
+        </Badge>
+        <Badge link="https://github.com/howcasperwhat/notation-stretcher">
+          <NotationStretcher />
+          <span>notation-stretcher</span>
         </Badge>
         <Badge link="https://github.com/howcasperwhat/markdown-it-copy-code">
           <MarkdownItCopyCode />
