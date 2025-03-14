@@ -16,7 +16,7 @@ const n3 = ref(null)
 const n4 = ref(null)
 
 onMounted(async () => {
-  const notate = (await import('notation-stretcher')).notate
+  const notate = (await import('animate-notation')).notate
   n0.value = notate(box.value, 'box', { 
     color: '#2f81f7'
   })
@@ -124,18 +124,18 @@ interface FrameRequestCallback {
 type DOMHighResTimeStamp = number;
 ```
 
-## [Notation Stretcher](https://www.npmjs.com/package/notation-stretcher)
+## [Notation Stretcher](https://www.npmjs.com/package/animate-notation)
 
 Now you can use it in your project by installing package from npm:
 
 ``` bash
-npm install notation-stretcher
+npm install animate-notation
 ```
 
 ### Basic Usage
 
 ``` js
-import { notate } from 'notation-stretcher'
+import { notate } from 'animate-notation'
 const foo = document.querySelector('.bar')
 ```
 
@@ -182,8 +182,8 @@ export type PathConstructor = OrConstructorOf<OrArrayOf<Path>>
 You can pass a path data with type `string[]` or `Drawable[]`(see [Rough.js](https://roughjs.com/)) to the `paths` parameter of `notate()`. If path datas are depended on the size of the element, you can pass a function with `width` and `height` as parameters to `paths`.
 
 ``` js
-import PathGenerator from 'notation-stretcher/path-generator'
-import PathAnimator from 'notation-stretcher/path-animator'
+import PathGenerator from 'animate-notation/path-generator'
+import PathAnimator from 'animate-notation/path-animator'
 // PathRoughOptions is a subset of RoughOptions
 const pg = new PathGenerator({ maxRandomnessOffset: 0.4 })
 const paths = (w, h) => [

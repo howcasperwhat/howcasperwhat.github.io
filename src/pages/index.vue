@@ -59,9 +59,9 @@ const { theme } = useThemeStore()
           <CommentFormula />
           <span>comment-formula</span>
         </Badge>
-        <Badge link="https://github.com/howcasperwhat/notation-stretcher">
+        <Badge link="https://github.com/howcasperwhat/animate-notation">
           <NotationStretcher />
-          <span>notation-stretcher</span>
+          <span>animate-notation</span>
         </Badge>
         <Badge link="https://github.com/howcasperwhat/markdown-it-copy-code">
           <MarkdownItCopyCode />

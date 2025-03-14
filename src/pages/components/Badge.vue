@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { h, ref, onMounted, onUnmounted } from 'vue'
-import type PathAnimatior from 'notation-stretcher/path-animator'
-import type PathGenerator from 'notation-stretcher/path-generator'
+import type PathAnimatior from 'animate-notation/path-animator'
+import type PathGenerator from 'animate-notation/path-generator'
 
 const { link } = defineProps<{
   link?: string
@@ -54,9 +54,9 @@ const pa = ref<PathAnimatior | null>(null)
 onMounted(async () => {
   if (!link) return
   const PathAnimatior = (await import(
-    'notation-stretcher/path-animator')).default
+    'animate-notation/path-animator')).default
   const PathGenerator = (await import(
-    'notation-stretcher/path-generator')).default
+    'animate-notation/path-generator')).default
   pg.value = new PathGenerator()
   pa.value = new PathAnimatior(
     target.value!, wave, {
