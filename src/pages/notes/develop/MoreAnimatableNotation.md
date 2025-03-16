@@ -124,7 +124,7 @@ interface FrameRequestCallback {
 type DOMHighResTimeStamp = number;
 ```
 
-## [Notation Stretcher](https://www.npmjs.com/package/animate-notation)
+## [Animate Notation](https://www.npmjs.com/package/animate-notation)
 
 Now you can use it in your project by installing package from npm:
 

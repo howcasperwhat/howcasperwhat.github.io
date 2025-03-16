@@ -4,7 +4,7 @@ import SZU from './components/icons/SZU.vue'
 import GitHub from './components/icons/GitHub.vue'
 import NPM from './components/icons/NPM.vue'
 import Research from './components/icons/Research.vue'
-import NotationStretcher from './components/icons/NotationStretcher.vue'
+import AnimateNotation from './components/icons/AnimateNotation.vue'
 import CommentFormula from './components/icons/CommentFormula.vue'
 import MarkdownItCopyCode from './components/icons/MarkdownItCopyCode.vue'
 import MarkdownItTabbar from './components/icons/MarkdownItTabbar.vue'
@@ -60,7 +60,7 @@ const { theme } = useThemeStore()
           <span>comment-formula</span>
         </Badge>
         <Badge link="https://github.com/howcasperwhat/animate-notation">
-          <NotationStretcher />
+          <AnimateNotation />
           <span>animate-notation</span>
         </Badge>
         <Badge link="https://github.com/howcasperwhat/markdown-it-copy-code">
