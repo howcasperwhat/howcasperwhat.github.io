@@ -146,7 +146,6 @@ We can repeat step 2-4 until the error is small enough.
 ### Code
 
 ```ts
-// @errors: 7006
 import * as tf from '@tensorflow/tfjs'
 
 async function train(_input: number[], _output: number[], _lr: number, epochs: number) {
