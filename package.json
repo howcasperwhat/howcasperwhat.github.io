@@ -9,7 +9,8 @@
     "dev": "vite",
     "preview": "vite preview",
     "sort": "sort-package-json",
-    "test": "vitest"
+    "test": "vitest",
+    "update": "tsx script/auto-router.ts"
   },
   "dependencies": {
     "@vueuse/core": "^10.10.0",
@@ -41,6 +42,7 @@
     "crypto-js": "^4.2.0",
     "d3": "^7.9.0",
     "gh-pages": "^6.1.1",
+    "magic-string": "^0.30.17",
     "markdown-it-anchor": "^9.0.1",
     "markdown-it-copy-code": "^0.0.3",
     "markdown-it-github-alerts": "^0.3.0",
