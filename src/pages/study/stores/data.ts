@@ -14,11 +14,9 @@ export const studyProcesses: StudyProcess[][] = [
     { id: 3, name: 'A=LU', date: '2023-08-09', title: 'A=LU', status: 'done' },
     { id: 4, name: 'vector-space', date: '2023-09-03', title: 'Vector Space', status: 'done' },
     { id: 5, name: 'homogeneous-equation', date: '2023-09-04', title: 'Homogeneous Equation', status: 'continue' },
-    { id: 6, name: 'nonhomogeneous-equation', date: '2023-09-05', title: 'Nonhomogeneous Equation', status: 'pause' },
   ],
   [
     { id: 0, name: 'data-preprocessing', date: '2023-08-10', title: 'Data PreProcessing', status: 'done' },
-    { id: 1, name: 'simple-linear-regression', date: '...', title: 'Simple Linear Regression', status: 'pause' },
   ],
   [
 

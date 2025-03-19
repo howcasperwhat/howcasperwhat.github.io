@@ -14,11 +14,7 @@ export const demos: DemoProps[] = [
     description: 'AI chatbot using <a href="https://www.xfyun.cn/" target="_blank">讯飞星火</a>.'
   },
   {
-    id: 3, name: 'LeetCode', route: 'LeetCode/1',
-    description: 'LeetCode solutions.'
-  },
-  {
-    id: 4, name: 'Markdown', route: 'Markdown',
+    id: 3, name: 'Markdown', route: 'Markdown',
     description: 'A markdown editor rendered in your browser.'
   }
 ]

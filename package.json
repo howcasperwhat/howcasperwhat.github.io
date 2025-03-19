@@ -9,8 +9,7 @@
     "dev": "vite",
     "preview": "vite preview",
     "sort": "sort-package-json",
-    "test": "vitest",
-    "update": "tsx script/auto-router.ts"
+    "test": "vitest"
   },
   "dependencies": {
     "@vueuse/core": "^10.10.0",
