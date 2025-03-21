@@ -86,18 +86,24 @@ export const routes: RouteRecordRaw[] = ${transformObject(route)}
   return code
 }
 
-const autoRouterCallback = () => writeFileSync('src/plugins/router.ts', transformRoutes(generateRoutes()))
+interface AutoRouterOptions {
+  dir: string
+}
 
-const autoRouter = (): Plugin => {
+const autoRouterCallback = (options: AutoRouterOptions) =>
+  writeFileSync(options.dir, transformRoutes(generateRoutes()))
+
+
+const autoRouter = (options: AutoRouterOptions): Plugin => {
   return {
     name: 'auto-router',
     configureServer() {
-      autoRouterCallback()
+      autoRouterCallback(options)
     },
     handleHotUpdate({ file }) {
-      if (file.endsWith('src/plugins/router.ts'))
+      if (file.endsWith(options.dir))
         return
-      autoRouterCallback()
+      autoRouterCallback(options)
     }
   }
 }

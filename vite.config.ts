@@ -73,6 +73,8 @@ export default defineConfig({
         }))
       }
     }),
-    autoRouter()
+    autoRouter({
+      dir: 'src/plugins/router.ts',
+    })
   ],
 })
