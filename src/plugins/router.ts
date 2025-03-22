@@ -7,144 +7,144 @@ import type { RouteRecordRaw } from 'vue-router'
 export const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('../pages/index.vue')
+    component: () => import('/pages/index.vue')
   },
   {
     path: '/:pathMatch(.*)*',
-    component: () => import('../pages/404.vue')
+    component: () => import('/pages/404.vue')
   },
   {
     path: '/notes/',
     redirect: '/notes/develop/',
-    component: () => import('../pages/notes/index.vue'),
+    component: () => import('/pages/notes/index.vue'),
     children: [
       {
         path: 'develop',
-        component: () => import('../pages/notes/develop/index.vue')
+        component: () => import('/pages/notes/develop/index.vue')
       },
       {
         path: 'research',
-        component: () => import('../pages/notes/research/index.vue')
+        component: () => import('/pages/notes/research/index.vue')
       },
       {
         path: 'algorithm',
-        component: () => import('../pages/notes/algorithm/index.vue')
+        component: () => import('/pages/notes/algorithm/index.vue')
       }
     ]
   },
   {
     path: '/notes/develop/FlexInCSS',
-    component: () => import('../pages/notes/develop/FlexInCSS.md')
+    component: () => import('/pages/notes/develop/FlexInCSS.md')
   },
   {
     path: '/notes/develop/NumberInJs',
-    component: () => import('../pages/notes/develop/NumberInJs.md')
+    component: () => import('/pages/notes/develop/NumberInJs.md')
   },
   {
     path: '/notes/develop/Network',
-    component: () => import('../pages/notes/develop/Network.md')
+    component: () => import('/pages/notes/develop/Network.md')
   },
   {
     path: '/notes/develop/MoreAnimatableNotation',
-    component: () => import('../pages/notes/develop/MoreAnimatableNotation.md')
+    component: () => import('/pages/notes/develop/MoreAnimatableNotation.md')
   },
   {
     path: '/notes/research/BackPropagation',
-    component: () => import('../pages/notes/research/BackPropagation.md')
+    component: () => import('/pages/notes/research/BackPropagation.md')
   },
   {
     path: '/notes/research/AccelerateCSVReader',
-    component: () => import('../pages/notes/research/AccelerateCSVReader.md')
+    component: () => import('/pages/notes/research/AccelerateCSVReader.md')
   },
   {
     path: '/notes/algorithm/LargestRectangleArea',
-    component: () => import('../pages/notes/algorithm/LargestRectangleArea.md')
+    component: () => import('/pages/notes/algorithm/LargestRectangleArea.md')
   },
   {
     path: '/notes/algorithm/MaximalRectangle',
-    component: () => import('../pages/notes/algorithm/MaximalRectangle.md')
+    component: () => import('/pages/notes/algorithm/MaximalRectangle.md')
   },
   {
     path: '/notes/algorithm/DistinctSubsequences',
-    component: () => import('../pages/notes/algorithm/DistinctSubsequences.md')
+    component: () => import('/pages/notes/algorithm/DistinctSubsequences.md')
   },
   {
     path: '/notes/algorithm/BasicAlgorithm',
-    component: () => import('../pages/notes/algorithm/BasicAlgorithm.md')
+    component: () => import('/pages/notes/algorithm/BasicAlgorithm.md')
   },
   {
     path: '/notes/algorithm/CountSubMatrix',
-    component: () => import('../pages/notes/algorithm/CountSubMatrix.md')
+    component: () => import('/pages/notes/algorithm/CountSubMatrix.md')
   },
   {
     path: '/notes/algorithm/BinarySearch',
-    component: () => import('../pages/notes/algorithm/BinarySearch.md')
+    component: () => import('/pages/notes/algorithm/BinarySearch.md')
   },
   {
     path: '/study/',
     redirect: '/study/linear-algebra/',
-    component: () => import('../pages/study/index.vue'),
+    component: () => import('/pages/study/index.vue'),
     children: [
       {
         path: 'linear-algebra',
-        component: () => import('../pages/study/linear-algebra/index.vue')
+        component: () => import('/pages/study/linear-algebra/index.vue')
       },
       {
         path: 'machine-learning',
-        component: () => import('../pages/study/machine-learning/index.vue')
+        component: () => import('/pages/study/machine-learning/index.vue')
       },
       {
         path: 'canvas-design',
-        component: () => import('../pages/study/canvas-design/index.vue')
+        component: () => import('/pages/study/canvas-design/index.vue')
       }
     ]
   },
   {
     path: '/study/linear-algebra/linear-equation',
-    component: () => import('../pages/study/linear-algebra/linear-equation.md')
+    component: () => import('/pages/study/linear-algebra/linear-equation.md')
   },
   {
     path: '/study/linear-algebra/matrix-elimination',
-    component: () => import('../pages/study/linear-algebra/matrix-elimination.md')
+    component: () => import('/pages/study/linear-algebra/matrix-elimination.md')
   },
   {
     path: '/study/linear-algebra/multiplication-and-inversion',
-    component: () => import('../pages/study/linear-algebra/multiplication-and-inversion.md')
+    component: () => import('/pages/study/linear-algebra/multiplication-and-inversion.md')
   },
   {
     path: '/study/linear-algebra/A=LU',
-    component: () => import('../pages/study/linear-algebra/A=LU.md')
+    component: () => import('/pages/study/linear-algebra/A=LU.md')
   },
   {
     path: '/study/linear-algebra/vector-space',
-    component: () => import('../pages/study/linear-algebra/vector-space.md')
+    component: () => import('/pages/study/linear-algebra/vector-space.md')
   },
   {
     path: '/study/linear-algebra/homogeneous-equation',
-    component: () => import('../pages/study/linear-algebra/homogeneous-equation.md')
+    component: () => import('/pages/study/linear-algebra/homogeneous-equation.md')
   },
   {
     path: '/study/machine-learning/data-preprocessing',
-    component: () => import('../pages/study/machine-learning/data-preprocessing.md')
+    component: () => import('/pages/study/machine-learning/data-preprocessing.md')
   },
   {
     path: '/demos/',
-    component: () => import('../pages/demos/index.vue')
+    component: () => import('/pages/demos/index.vue')
   },
   {
     path: '/demos/MineSweeper',
-    component: () => import('../pages/demos/MineSweeper.vue')
+    component: () => import('/pages/demos/MineSweeper.vue')
   },
   {
     path: '/demos/BackPropagation',
-    component: () => import('../pages/demos/BackPropagation.vue')
+    component: () => import('/pages/demos/BackPropagation.vue')
   },
   {
     path: '/demos/Spark-Chat',
-    component: () => import('../pages/demos/Spark-Chat.vue')
+    component: () => import('/pages/demos/Spark-Chat.vue')
   },
   {
     path: '/demos/Markdown',
-    component: () => import('../pages/demos/Markdown.vue')
+    component: () => import('/pages/demos/Markdown.vue')
   }
 ]

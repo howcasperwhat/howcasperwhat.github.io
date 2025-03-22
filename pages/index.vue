@@ -15,7 +15,7 @@ import Typescript from './components/icons/Typescript.vue'
 import Iconify from './components/icons/Iconify.vue'
 import Torch from './components/icons/Torch.vue'
 import VSCode from './components/icons/VSCode.vue'
-import { useThemeStore } from '../stores/theme'
+import { useThemeStore } from '../src/stores/theme'
 const { theme } = useThemeStore()
 </script>
 

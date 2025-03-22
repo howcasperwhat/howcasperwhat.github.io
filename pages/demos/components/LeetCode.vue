@@ -2,7 +2,7 @@
 import { onMounted, ref } from 'vue';
 import IDSearcher from './IDSearcher.vue'
 import { useRoute } from 'vue-router'
-import ClientMarkdown from '../../../components/ClientMarkdown.vue'
+import ClientMarkdown from '../../../src/components/ClientMarkdown.vue'
 import V404 from '../../404.vue'
 const route = useRoute()
 const id = ref(parseInt(route.params.id as string ?? '1'))

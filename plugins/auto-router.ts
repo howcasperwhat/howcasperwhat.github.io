@@ -1,6 +1,6 @@
-import { noteTypes, noteLists } from "../src/pages/notes/stores/data"
-import { studyTypes, studyProcesses as studyLists } from "../src/pages/study/stores/data"
-import { demos } from "../src/pages/demos/stores/data"
+import { noteTypes, noteLists } from "../pages/notes/stores/data"
+import { studyTypes, studyProcesses as studyLists } from "../pages/study/stores/data"
+import { demos } from "../pages/demos/stores/data"
 import { writeFileSync } from "fs"
 import { Plugin } from "vite"
 
@@ -20,7 +20,7 @@ const lists: Record<nestingDirectory, typeof noteLists | typeof studyLists> = {
   'notes': noteLists,
   'study': studyLists,
 }
-const BASE = '../pages'
+const BASE = '/pages'
 
 export const generateRoutes = (): RouteRecordData[] => {
   const result: RouteRecordData[] = []

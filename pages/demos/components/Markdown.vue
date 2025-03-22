@@ -1,9 +1,9 @@
 <script setup lang='ts'>
-import ClientMarkdown from '../../../components/ClientMarkdown.vue'
+import ClientMarkdown from '../../../src/components/ClientMarkdown.vue'
 import ShikiEditor from './ShikiEditor.vue'
 import { ref, onMounted } from 'vue'
 import { useStorage } from '@vueuse/core'
-import { getAppHeight } from '../../../utils/layout'
+import { getAppHeight } from '../../../src/utils/layout'
 
 const container = ref<HTMLDivElement>()
 const content = ref<string>('# Markdown')

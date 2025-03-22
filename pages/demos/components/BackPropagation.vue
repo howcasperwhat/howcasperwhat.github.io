@@ -2,8 +2,8 @@
 import { useWebWorkerFn } from '@vueuse/core'
 import { ref } from 'vue'
 import { modelLearn } from '../logics/bp'
-import { useMessage } from '../../../utils/message'
-import { useMarkdown } from '../../../utils/markdown'
+import { useMessage } from '../../../src/utils/message'
+import { useMarkdown } from '../../../src/utils/markdown'
 import LineChart from './LineChart.vue'
 
 const { workerFn, workerTerminate } = useWebWorkerFn(modelLearn)

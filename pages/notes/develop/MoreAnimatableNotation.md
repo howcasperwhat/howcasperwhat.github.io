@@ -1,6 +1,6 @@
 <script setup>
 import WavyLine from './components/WavyLine.vue'
-import Logo from '../../../components/Logo.vue'
+import Logo from '../../../src/components/Logo.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const highlight = ref(null)

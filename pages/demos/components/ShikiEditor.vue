@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { ref, watch, onMounted, nextTick } from 'vue'
-import { useThemeStore } from '../../../stores/theme'
+import { useThemeStore } from '../../../src/stores/theme'
 import { createHighlighter } from 'shiki'
 
 const content = defineModel<string>()

@@ -4,7 +4,7 @@ import { useStorage, useWindowSize } from '@vueuse/core'
 import { isDev, toggleDev } from '../stores/minesweeper'
 import { GamePlay } from '../logics/minesweeper'
 import type { BlockState } from '../types/minesweeper'
-import { useMessage } from '../../../utils/message'
+import { useMessage } from '../../../src/utils/message'
 import MineBlock from './MineBlock.vue'
 
 const message = useMessage()

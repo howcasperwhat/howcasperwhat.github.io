@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { DemoProps } from '../types/demo'
-import { useThemeStore } from '../../../stores/theme'
+import { useThemeStore } from '../../../src/stores/theme'
 
 defineProps<{ demo: DemoProps }>()
 const { theme } = useThemeStore()

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { Record } from '../types/spark-chat'
-import ClientMarkdown from '../../../components/ClientMarkdown.vue'
+import ClientMarkdown from '../../../src/components/ClientMarkdown.vue'
 import { computed } from 'vue';
 
 const props = defineProps<{

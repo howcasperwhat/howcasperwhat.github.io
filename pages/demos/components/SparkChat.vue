@@ -1,10 +1,10 @@
 <script setup lang='ts'>
-import { useMessage } from '../../../utils/message'
+import { useMessage } from '../../../src/utils/message'
 import { useStorage } from '@vueuse/core';
 import { nextTick, onMounted, ref } from 'vue';
 import { SparkChat } from '../logics/spark-chat';
 import ChatHistory from './ChatHistory.vue'
-import { setAppHeight } from '../../../utils/layout'
+import { setAppHeight } from '../../../src/utils/layout'
 
 const message = useMessage()
 const editor = ref<HTMLTextAreaElement>()
