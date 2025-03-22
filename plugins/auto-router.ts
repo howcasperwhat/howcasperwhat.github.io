@@ -94,7 +94,7 @@ const autoRouterCallback = (options: AutoRouterOptions) =>
   writeFileSync(options.dir, transformRoutes(generateRoutes()))
 
 
-const autoRouter = (options: AutoRouterOptions): Plugin => {
+const AutoRouter = (options: AutoRouterOptions): Plugin => {
   return {
     name: 'auto-router',
     configureServer() {
@@ -107,4 +107,4 @@ const autoRouter = (options: AutoRouterOptions): Plugin => {
     }
   }
 }
-export default autoRouter
+export default AutoRouter

@@ -11,7 +11,7 @@ import Tabbar from 'markdown-it-tabbar'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Components from 'unplugin-vue-components/vite'
 import PluginInspect from 'vite-plugin-inspect'
-import autoRouter from './plugins/auto-router'
+import AutoRouter from './plugins/auto-router'
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 
 export default defineConfig({
@@ -73,7 +73,7 @@ export default defineConfig({
         }))
       }
     }),
-    autoRouter({
+    AutoRouter({
       dir: 'src/plugins/router.ts',
     })
   ],
