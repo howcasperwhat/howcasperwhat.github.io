@@ -3,7 +3,6 @@ import Badge from './components/Badge.vue'
 import SZU from './components/icons/SZU.vue'
 import GitHub from './components/icons/GitHub.vue'
 import NPM from './components/icons/NPM.vue'
-import Research from './components/icons/Research.vue'
 import AnimateNotation from './components/icons/AnimateNotation.vue'
 import CommentFormula from './components/icons/CommentFormula.vue'
 import MarkdownItCopyCode from './components/icons/MarkdownItCopyCode.vue'
@@ -44,13 +43,6 @@ const { theme } = useThemeStore()
         <Badge link="https://www.npmjs.com/~howcasperwhat">
           <NPM />
           <span>howcasperwhat</span>
-        </Badge>
-      </p>
-      <p>
-        Research: 
-        <Badge raw>
-          <Research />
-          <span>Recommender System</span>
         </Badge>
       </p>
       <p>
