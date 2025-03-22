@@ -11,7 +11,7 @@ export const routes: RouteRecordRaw[] = [
   },
   {
     path: '/:404(.*)',
-    component: () => import('/pages/404.vue')
+    component: () => import('/pages/404.md')
   },
   {
     path: '/notes/',

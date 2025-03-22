@@ -31,7 +31,7 @@ export const generateRoutes = (): RouteRecordData[] => {
   // TODO: add pattern matching for `[...name].[md|vue]` like filename.
   result.push({
     path: '/:404(.*)',
-    component: `${BASE}/404.vue`,
+    component: `${BASE}/404.md`,
   })
   const nestingDirs: nestingDirectory[] = ['notes', 'study']
   for (const route of nestingDirs) {
