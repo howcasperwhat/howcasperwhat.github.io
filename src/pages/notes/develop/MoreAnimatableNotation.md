@@ -197,5 +197,4 @@ pa.show(2000)
 
 ## Known Issues
 
-There also are some parts of stroke will showed when the length is zero. When I zoom in on the browser interface, the problem will disappear 🤨. Maybe it is a
-bug of browser. Or who can tell me why? 🤔
+There also are some parts of stroke will showed when the length is zero. When I zoom in on the browser interface, the problem will disappear. Maybe it is a bug of browser.
