@@ -10,7 +10,7 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('/pages/index.vue')
   },
   {
-    path: '/:pathMatch(.*)*',
+    path: '/:404(.*)',
     component: () => import('/pages/404.vue')
   },
   {
