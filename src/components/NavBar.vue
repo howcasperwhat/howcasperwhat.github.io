@@ -8,7 +8,7 @@ const { toggleTheme } = useThemeStore()
 </script>
 
 <template>
-  <header w-full box-border p-x-2 p-y-6 grid="~ flow-col items-center">
+  <header w-full box-border p-x-2 p-y-4 grid="~ flow-col items-center">
     <RouterLink lg:fixed absolute to="/">
       <Logo />
     </RouterLink>
@@ -26,7 +26,7 @@ const { toggleTheme } = useThemeStore()
         <div i-carbon:growth text-5 md-hidden />
       </RouterLink> -->
       <button @click="toggleTheme">
-        <div i-carbon:sun dark:i-carbon-moon text-5 />
+        <div i-carbon:sun dark:i-carbon-moon text-4 op-80 />
       </button>
     </nav>
   </header>

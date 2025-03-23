@@ -5,6 +5,7 @@ import { projects } from './stores/projects'
 import { notes } from './stores/notes'
 import ProjectCard from './components/ProjectCard.vue'
 import NoteItem from './components/NoteItem.vue'
+
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const cols = computed(() => breakpoints.sm ? 2 : 1)
 const parts = computed(() => {
@@ -18,13 +19,12 @@ const parts = computed(() => {
 
 <template>
   <div max-w-2xl m-x-auto>
-    <div lg:text-8 lt-lg:text-7
-      font-600>
+    <div text-8 font-600>
       Casper Huang
     </div>
     <article class="slide-content">
       <p block>
-        <div text-16 z--1
+        <div text-16 z--1 m-l--8
           select-none m-b--8
           color="#8882">
           Who
@@ -34,7 +34,7 @@ const parts = computed(() => {
         </div>
       </p>
       <p block>
-        <div text-16 z--1
+        <div text-16 z--1 m-l--8
           select-none m-b--12
           color="#8882">
           Projects
@@ -48,7 +48,7 @@ const parts = computed(() => {
         </div>
       </p>
       <p block>
-        <div text-16 z--1
+        <div text-16 z--1 m-l--8
           select-none m-b--12
           color="#8882">
           Notes
@@ -59,7 +59,7 @@ const parts = computed(() => {
         </div>
       </p>
       <p block>
-        <div text-16 z--1
+        <div text-16 z--1 m-l--8
           select-none m-b--8
           color="#8882">
           Where
