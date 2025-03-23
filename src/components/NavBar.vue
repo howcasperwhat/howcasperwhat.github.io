@@ -8,7 +8,7 @@ const { githubURL } = useConfigStore()
 </script>
 
 <template>
-  <header w-full box-border p-8 grid="~ flow-col items-center">
+  <header w-full box-border p-y-8 p-x-6 grid="~ flow-col items-center">
     <RouterLink lg:fixed absolute to="/">
       <Logo />
     </RouterLink>

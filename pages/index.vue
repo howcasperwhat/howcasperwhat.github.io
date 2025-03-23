@@ -1,116 +1,87 @@
 <script setup lang="ts">
-import Badge from './components/Badge.vue'
-import SZU from './components/icons/SZU.vue'
-import GitHub from './components/icons/GitHub.vue'
-import NPM from './components/icons/NPM.vue'
-import AnimateNotation from './components/icons/AnimateNotation.vue'
-import CommentFormula from './components/icons/CommentFormula.vue'
-import MarkdownItCopyCode from './components/icons/MarkdownItCopyCode.vue'
-import MarkdownItTabbar from './components/icons/MarkdownItTabbar.vue'
-import Vue from './components/icons/Vue.vue'
-import Vite from './components/icons/Vite.vue'
-import Unocss from './components/icons/Unocss.vue'
-import Typescript from './components/icons/Typescript.vue'
-import Iconify from './components/icons/Iconify.vue'
-import Torch from './components/icons/Torch.vue'
-import VSCode from './components/icons/VSCode.vue'
-import { useThemeStore } from '../src/stores/theme'
-const { theme } = useThemeStore()
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import { computed } from 'vue'
+import { projects } from './stores/projects'
+import { notes } from './stores/notes'
+import ProjectCard from './components/ProjectCard.vue'
+import NoteItem from './components/NoteItem.vue'
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const cols = computed(() => breakpoints.sm ? 2 : 1)
+const parts = computed(() => {
+  const result = Array.from({ length: cols.value }, () => [] as (typeof projects[0])[])
+  projects.forEach((project, index) => {
+    result[index % cols.value].push(project)
+  })
+  return result
+})
 </script>
 
 <template>
   <div max-w-2xl m-x-auto>
-    <div lg:text-10 lt-lg:text-3xl
-      font-bold m-b-5
-      v-text="'Casper Huang'" />
-    <article children:flex="~ items-center wrap" 
-      children:whitespace-nowrap children:m-0
-      class="slide-content">
-      <p>
-        Studying in
-        <Badge link="https://www.szu.edu.cn">
-          <SZU />
-          <span>ShenZhen University</span>
-        </Badge>
+    <div lg:text-8 lt-lg:text-7
+      font-600 m-b-5>
+      Casper Huang
+    </div>
+    <article class="slide-content">
+      <p block>
+        <div text-16 z--1
+          select-none m-b--8
+          color="#8882">
+          Who
+        </div>
+        <div op-60 text-lg>
+          I'm Casper Huang, a developer passionate about open source.
+        </div>
       </p>
-      <p>
-        GitHub: 
-        <Badge link="https://github.com/howcasperwhat">
-          <GitHub />
-          <span>howcasperwhat</span>
-        </Badge>
-        NPM:
-        <Badge link="https://www.npmjs.com/~howcasperwhat">
-          <NPM />
-          <span>howcasperwhat</span>
-        </Badge>
+      <p block>
+        <div text-16 z--1
+          select-none m-b--12
+          color="#8882">
+          Projects
+        </div>
+        <div grid="~ cols-1 sm:cols-2 gap-2">
+          <div v-for="(part, i) in parts" 
+            :key="i" flex="~ col gap-2">
+            <ProjectCard v-for="(project, j) in part" 
+              :key="j" :project="project" />
+          </div>
+        </div>
       </p>
-      <p>
-        Projects:
-        <Badge link="https://github.com/howcasperwhat/comment-formula">
-          <CommentFormula />
-          <span>comment-formula</span>
-        </Badge>
-        <Badge link="https://github.com/howcasperwhat/animate-notation">
-          <AnimateNotation />
-          <span>animate-notation</span>
-        </Badge>
-        <Badge link="https://github.com/howcasperwhat/markdown-it-copy-code">
-          <MarkdownItCopyCode />
-          <span>markdown-it-copy-code</span>
-        </Badge>
-        <Badge link="https://github.com/howcasperwhat/markdown-it-tabbar">
-          <MarkdownItTabbar />
-          <span>markdown-it-tabbar</span>
-        </Badge>
+      <p block>
+        <div text-16 z--1
+          select-none m-b--12
+          color="#8882">
+          Notes
+        </div>
+        <div flex="~ col">
+          <NoteItem v-for="(note, i) in notes" 
+            :key="i" :note="note" />
+        </div>
       </p>
-      <p>
-        Using 
-        <Badge link="https://vuejs.org/">
-          <Vue />
-          <span>Vue</span>
-        </Badge>
-        <Badge link="https://vitejs.dev/">
-          <Vite />
-          <span>Vite</span>
-        </Badge>
-        <Badge link="https://www.typescriptlang.org/">
-          <Typescript />
-          <span>Typescript</span>
-        </Badge>
-        <Badge link="https://unocss.dev/">
-          <Unocss />
-          <span>Unocss</span>
-        </Badge>
-        <Badge link="https://iconify.design/">
-          <Iconify />
-          <span>Iconify</span>
-        </Badge>
-        <Badge link="https://pytorch.org/">
-          <Torch />
-          <span>Torch</span>
-        </Badge>
-        <Badge link="https://code.visualstudio.com/">
-          <VSCode />
-          <span>VSCode</span>
-        </Badge>
-      </p>
-      <hr b-hex-8884 w-6rem m-x-auto m-y-6 />
-      <p>
-        <span>Contact me:</span>
-        <img :src="`/images/mail.${theme}.png`"
-        :key="theme" h-8 m-t-2 m-l-2 draggable="false" />
+      <p block>
+        <div text-16 z--1
+          select-none m-b--8
+          color="#8882">
+          Where
+        </div>
+        <div flex="~ gap-2 wrap" 
+          children:b-b="1px dashed hover:solid"
+          children:p-b-1
+        >
+          <a href="https://github.com/howcasperwhat">
+            <span i-hugeicons:github /> GitHub
+          </a>
+          <a href="mailto:casper.w.huang@qq.com">
+            <span i-hugeicons:mail-02 /> Email
+          </a>
+          <a href="https://www.npmjs.com/~howcasperwhat">
+            <span i-hugeicons:npm /> NPM
+          </a>
+          <a href="https://zhihu.com/people/howcasperwhat">
+            <span i-simple-icons:zhihu /> 知乎
+          </a>
+        </div>
       </p>
     </article>
   </div>
 </template>
-
-<style scoped>
-.author {
-  width: min-content;
-  white-space: nowrap;
-  background-clip: text;
-  color: transparent;
-  background-image: radial-gradient(240% 90% at -60% 30%, #10b981 49%, #88619a 51%);
-}
-</style>
