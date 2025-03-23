@@ -13,11 +13,16 @@ const processes = ['pause', 'continue', 'done']
 export default defineConfig({
   presets: [
     presetUno(),
-    presetIcons(),
     presetAttributify(),
-    // antfu.me
+    presetIcons({
+      extraProperties: {
+        'display': 'inline-block',
+        'height': '1.2em',
+        'width': '1.2em',
+        'vertical-align': 'text-bottom',
+      },
+    }),
     presetWebFonts({
-
       fonts: {
         sans: 'Inter:400,600,800',
         mono: 'DM Mono:400,600',
