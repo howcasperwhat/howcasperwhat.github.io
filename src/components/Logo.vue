@@ -30,8 +30,8 @@
 
 path
   fill: none
-  stroke: #10b981
-  stroke-width: 6px
+  stroke: var(--m-c-fg-base)
+  stroke-width: 4px
   stroke-linecap: round
   stroke-dashoffset: 1px
 
