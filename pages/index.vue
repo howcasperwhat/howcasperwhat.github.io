@@ -19,7 +19,7 @@ const parts = computed(() => {
 <template>
   <div max-w-2xl m-x-auto>
     <div lg:text-8 lt-lg:text-7
-      font-600 m-b-5>
+      font-600>
       Casper Huang
     </div>
     <article class="slide-content">
