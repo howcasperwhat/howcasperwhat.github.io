@@ -22,8 +22,8 @@ const parts = computed(() => {
     <div text-8 font-600>
       Casper Huang
     </div>
-    <article class="slide-content">
-      <p block>
+    <article class="slide-content" children:p-y-2>
+      <div block>
         <div text-16 z--1 m-l--8
           select-none m-b--8
           color="#8882">
@@ -32,8 +32,8 @@ const parts = computed(() => {
         <div op-60 text-lg>
           I'm Casper Huang, a developer passionate about open source.
         </div>
-      </p>
-      <p block>
+      </div>
+      <div block>
         <div text-16 z--1 m-l--8
           select-none m-b--12
           color="#8882">
@@ -46,8 +46,8 @@ const parts = computed(() => {
               :key="j" :project="project" />
           </div>
         </div>
-      </p>
-      <p block>
+      </div>
+      <div block>
         <div text-16 z--1 m-l--8
           select-none m-b--12
           color="#8882">
@@ -57,8 +57,8 @@ const parts = computed(() => {
           <NoteItem v-for="(note, i) in notes" 
             :key="i" :note="note" />
         </div>
-      </p>
-      <p block>
+      </div>
+      <div block>
         <div text-16 z--1 m-l--8
           select-none m-b--8
           color="#8882">
@@ -81,7 +81,7 @@ const parts = computed(() => {
             <span i-simple-icons:zhihu /> 知乎
           </a>
         </div>
-      </p>
+      </div>
     </article>
   </div>
 </template>

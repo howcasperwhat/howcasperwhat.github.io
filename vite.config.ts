@@ -28,7 +28,7 @@ export default defineConfig({
     UnoCSS(),
     PluginInspect(),
     Components({
-      dirs: ['**/components'],
+      dirs: ['notes', 'demos', 'studys'].map(dir => `pages/${dir}/components`),
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.md$/, /\.vue\?vue/, /\.md\?vue/],
     }),
