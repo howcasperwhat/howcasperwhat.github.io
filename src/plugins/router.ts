@@ -53,8 +53,8 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('/pages/notes/research/BackPropagation.md')
   },
   {
-    path: '/notes/research/AccelerateDatasetReading',
-    component: () => import('/pages/notes/research/AccelerateDatasetReading.md')
+    path: '/notes/research/SpeedingUpLargeDatasetLoading',
+    component: () => import('/pages/notes/research/SpeedingUpLargeDatasetLoading.md')
   },
   {
     path: '/notes/algorithm/LargestRectangleArea',

@@ -12,7 +12,7 @@ export const notes: Note[] = [
   },
   {
     date: '2025-01-02',
-    link: '/notes/research/AccelerateDatasetReading',
-    title: '加速大数据集的读取',
+    link: '/notes/research/SpeedingUpLargeDatasetLoading',
+    title: 'Speeding Up Large Dataset Loading',
   }
 ]
