@@ -1,0 +1,1 @@
+import{c as r,b as o,f as e,k as n}from"./app-Bd9BOzpr.js";const s={class:"markdown"},l={__name:"404",setup(c,{expose:a}){return a({frontmatter:{}}),(f,t)=>(o(),r("div",s,t[0]||(t[0]=[e("h1",{id:"404",tabindex:"-1"},[n("404 "),e("a",{class:"header-anchor",href:"#404","aria-hidden":"true"},"#")],-1),e("p",null,"Page not found",-1)])))}};export{l as default};
