@@ -7,22 +7,19 @@ const { project } = defineProps<{
   project: Project
 }>()
 
-const display = ref(true)
-
 const target = ref<HTMLElement | null>(null)
-const pa = ref<ReturnType<typeof notate> | null>(null)
+const animate = ref<ReturnType<typeof notate> | null>(null)
 
 onMounted(async () => {
-  // TODO: Why getBoundingClientRect() is not working at the first time?
+  // Binding After DOM Rendered.
   setTimeout(() => {
-    pa.value = notate(target.value!, '=', {
+    animate.value = notate(target.value!, '=', {
       opacity: 0.1,
-      iterations: 1
     })
-  }, 100)
+  }, 0)
 })
 onUnmounted(() => {
-  pa.value?.remove()
+  animate.value?.remove()
 })
 </script>
 
@@ -30,13 +27,10 @@ onUnmounted(() => {
   <a ref="target"
     :href="project.link" target="_blank"
     flex="~ items-center"
-    @mouseover="pa?.show(600)"
-    @mouseleave="pa?.hide(200)"
+    @mouseover="animate?.show(600)"
+    @mouseleave="animate?.hide(200)"
     p-2
   >
-    <img :src="`/icons/${project.icon}.svg`" m-r-4
-      v-if="display" @error="display = false"
-    />
     <div flex="~ col">
       <div op-60 text-lg>{{ project.title }}</div>
       <div op-40 text-sm whitespace-normal>{{ project.desc }}</div>
