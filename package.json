@@ -37,7 +37,7 @@
     "gh-pages": "^6.3.0",
     "magic-string": "^0.30.17",
     "markdown-it-anchor": "^9.0.1",
-    "markdown-it-copy-code": "^0.0.3",
+    "markdown-it-copy-code": "^0.1.1",
     "markdown-it-github-alerts": "^0.3.0",
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-tabbar": "^0.1.1",
