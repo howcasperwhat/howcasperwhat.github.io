@@ -103,7 +103,9 @@ Below are two examples of the animation using [`animate()`](https://developer.mo
 :::
 
 > [!WARNING]
-> Percentage value for `strokeDashArray` and `strokeOffset` is mentioned in [MDN Documents](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray#dasharray), but is unavailable for broswer now, thus [`getTotleLength()`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getTotalLength) should be called to get the dashLength after create the [SVGPathElement](https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement). We can also see from this that a pure Javascript implementation is necessary。
+> Percentage value for `strokeDashArray` and `strokeOffset` is mentioned in [MDN Documents](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray#dasharray), but is unavailable for broswer now, thus [`getTotleLength()`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getTotalLength) should be called to get the dashLength after create the [SVGPathElement](https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement). We can also see from this that a pure Javascript implementation is necessary. 
+>
+> Note that browser will round down `strokeDashArray` and `strokeOffset` to integer, so use `Math.ceil()` to round dashLength to integer is a good idea.
 
 ## Rough Notation
 I'm surprised that [Slidev's v-mark](https://sli.dev/features/rough-marker#v-mark-directive) function accurs to me after completing the code above. It uses [Rough Notation](https://roughnotation.com/) as a solution to mark anything using [vue directive](https://vuejs.org/guide/reusability/custom-directives.html#custom-directives). And [Rough.js](https://roughjs.com/) it uses can generate handwrite-style path datas easyly.
