@@ -1,1 +1,0 @@
-import{c as r,b as o,e,j as n}from"./app-HbDoUyTL.js";const s={class:"markdown"},m={__name:"404",setup(c,{expose:a}){return a({frontmatter:{}}),(i,t)=>(o(),r("div",s,t[0]||(t[0]=[e("h1",{id:"404",tabindex:"-1"},[n("404 "),e("a",{class:"header-anchor",href:"#404","aria-hidden":"true"},"#")],-1),e("p",null,"Page not found",-1)])))}};export{m as default};
