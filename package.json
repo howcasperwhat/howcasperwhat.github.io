@@ -31,7 +31,7 @@
     "@types/nprogress": "^0.2.3",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vscode/markdown-it-katex": "^1.0.3",
-    "animate-notation": "^0.1.10",
+    "animate-notation": "^0.2.0",
     "crypto-js": "^4.2.0",
     "d3": "^7.9.0",
     "gh-pages": "^6.3.0",
