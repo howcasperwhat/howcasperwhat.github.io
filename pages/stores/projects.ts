@@ -13,10 +13,10 @@ export const projects: Project[] = [
     link: 'https://github.com/howcasperwhat/comment-formula'
   },
   {
-    icon: 'mathjax-highlight',
-    title: 'MathJax Highlight',
-    desc: 'A VSCode extension to highlight MathJax formulas.',
-    link: 'https://github.com/howcasperwhat/mathjax-highlight'
+    icon: 'mathjax-intellisense',
+    title: 'MathJax IntelliSense',
+    desc: 'MathJax IntelliSense extension suite for VSCode.',
+    link: 'https://github.com/howcasperwhat/mathjax-intellisense'
   },
   {
     icon: 'animate-notation',
