@@ -1,9 +1,10 @@
-import { useWindowSize, useStorage } from '@vueuse/core'
-import { watch, ref, nextTick } from 'vue'
+import { useStorage, useWindowSize } from '@vueuse/core'
+import { nextTick, ref, watch } from 'vue'
 
 const theme = ref<'light' | 'dark'>('dark')
 watch(theme, () => {
-  if (typeof document === 'undefined') return
+  if (typeof document === 'undefined')
+    return
   document.querySelectorAll('html').forEach((element) => {
     element.classList.toggle('dark')
   })
@@ -11,11 +12,11 @@ watch(theme, () => {
 useStorage('theme', theme)
 
 const isDark = () => theme.value === 'dark'
-const switchTheme = () => {
+function switchTheme() {
   theme.value = isDark() ? 'light' : 'dark'
 }
 
-const toggleTheme = (event?: MouseEvent) => {
+function toggleTheme(event?: MouseEvent) {
   // @ts-expect-error: Experimental API
   const isAppearanceTransition = document.startViewTransition
     && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -53,6 +54,6 @@ const toggleTheme = (event?: MouseEvent) => {
   })
 }
 
-export const useThemeStore = () => {
+export function useThemeStore() {
   return { theme, toggleTheme }
 }

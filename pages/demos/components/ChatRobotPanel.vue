@@ -2,7 +2,7 @@
 
 <template>
   <div flex="~ items-center">
-    <div i-mage:robot m-r-2 c-green text-xl />
+    <div i-mage:robot m-r-2 text-xl c-green />
     <div>Spark Robot</div>
   </div>
 </template>

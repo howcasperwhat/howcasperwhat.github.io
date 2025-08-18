@@ -1,15 +1,16 @@
-import MarkdownIt from 'markdown-it'
 import Shiki from '@shikijs/markdown-it'
 import KaTeX from '@vscode/markdown-it-katex'
-import Tabbar from 'markdown-it-tabbar'
-import Alert from 'markdown-it-github-alerts'
+import MarkdownIt from 'markdown-it'
 import CopyCode from 'markdown-it-copy-code'
+import Alert from 'markdown-it-github-alerts'
+import Tabbar from 'markdown-it-tabbar'
 
 const md = MarkdownIt({
   html: true,
   breaks: true,
   linkify: true,
   typographer: true,
+  // eslint-disable-next-line antfu/no-top-level-await
 }).use(KaTeX).use(await Shiki({
   defaultColor: false,
   defaultLanguage: 'ts',
@@ -29,7 +30,8 @@ function renderMarkdownInline(content: string): string {
 }
 
 function renderFormula(content: string, inline: boolean = true): string {
-  if (inline) return renderMarkdownInline(`$${content}$`)
+  if (inline)
+    return renderMarkdownInline(`$${content}$`)
   else return renderMarkdown(`$$${content}$$`)
 }
 
@@ -42,12 +44,12 @@ function matrixToLatex(matrix: number[][] | string[][]): string {
       else
         content += ` ${element} &`
     }
-    content = content.slice(0, -1) + '\\\\'
+    content = `${content.slice(0, -1)}\\\\`
   }
-  content = content.slice(0, -2) + '\\end{bmatrix}'
+  content = `${content.slice(0, -2)}\\end{bmatrix}`
   return content
 }
 
-export const useMarkdown = () => {
+export function useMarkdown() {
   return { renderFormula, matrixToLatex, renderMarkdownInline, renderMarkdown, md }
 }

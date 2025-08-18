@@ -34,14 +34,14 @@ const IEEE754 = ((value: number | undefined): string[] | undefined => {
 <template>
   <div
     flex="~ items-center" b="1 solid gray"
-    even:children:b-x="1 solid gray" m-y-2 rounded
-    children:flex="col center" overflow-scroll
+    even:children:b-x="1 solid gray"
+    children:flex="col center" m-y-2 overflow-scroll rounded
     class="hidden-webkit-scrollbar"
   >
     <div
-      v-for="part, _ in parts" :key="_" children-p-2
+      v-for="part, _ in parts" :key="_"
       :basis="`${part.bits}/64`"
-      :bg="`${part.color}`" bg-op-10
+      :bg="`${part.color}`" bg-op-10 children-p-2
     >
       <span
         w-full b-b="1 solid gray"

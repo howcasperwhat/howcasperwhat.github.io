@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-const props = defineProps<{ lhs: string; rhs: string; op: string }>()
+const props = defineProps<{ lhs: string, rhs: string, op: string }>()
 let [left, right] = [props.lhs, props.rhs].map(s => s.includes('.') ? s : `${s}.0`)
 const [lInt, lDec] = left.split('.')
 const [rInt, rDec] = right.split('.')
@@ -27,12 +27,12 @@ const result = (() => {
 
 <template>
   <div
-    overflow-scroll m-y-2
+    m-y-2 overflow-scroll
     class="hidden-webkit-scrollbar"
   >
     <div
-      grid="~ flow-row" font-mono
-      w-max children:p-y-1
+      grid="~ flow-row"
+      w-max font-mono children:p-y-1
     >
       <div>
         &nbsp;&nbsp;

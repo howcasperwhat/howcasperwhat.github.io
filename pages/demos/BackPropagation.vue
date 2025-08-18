@@ -3,5 +3,5 @@ import BackPropagation from './components/BackPropagation.vue'
 </script>
 
 <template>
-  <BackPropagation max-w-4xl m-x-auto />
+  <BackPropagation m-x-auto max-w-4xl />
 </template>

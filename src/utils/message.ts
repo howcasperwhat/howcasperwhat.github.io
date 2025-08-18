@@ -8,7 +8,7 @@ const isHidden = ref(true)
 const content = ref()
 const type = ref<MessageType>()
 
-const messageAux = (_type: MessageType, _message: string, _duration: number = 3000) => {
+function messageAux(_type: MessageType, _message: string, _duration: number = 3000) {
   type.value = _type
   content.value = _message
   isHidden.value = false
@@ -17,7 +17,7 @@ const messageAux = (_type: MessageType, _message: string, _duration: number = 30
     { transform: 'translateX(-50%) translateY(-100%)', offset: 0 },
     { transform: 'translateX(-50%) translateY(20%)', offset: 0.05 },
     { transform: 'translateX(-50%) translateY(20%)', offset: 0.95 },
-    { transform: 'translateX(-50%) translateY(-100%)', offset: 1 }
+    { transform: 'translateX(-50%) translateY(-100%)', offset: 1 },
   ], {
     duration: _duration,
     easing: 'linear',
@@ -27,23 +27,23 @@ const messageAux = (_type: MessageType, _message: string, _duration: number = 30
   })
 }
 
-const success = (msg: string, duration?: number) => {
+function success(msg: string, duration?: number) {
   messageAux('success', msg, duration)
 }
-const info = (msg: string, duration?: number) => {
+function info(msg: string, duration?: number) {
   messageAux('info', msg, duration)
 }
-const warning = (msg: string, duration?: number) => {
+function warning(msg: string, duration?: number) {
   messageAux('warning', msg, duration)
 }
-const error = (msg: string, duration?: number) => {
+function error(msg: string, duration?: number) {
   messageAux('error', msg, duration)
 }
 
-export const useMessage = () => {
+export function useMessage() {
   return { success, info, warning, error }
 }
 
-export const useMessageProperties = () => {
+export function useMessageProperties() {
   return { messageBox, isHidden, content, type }
 }

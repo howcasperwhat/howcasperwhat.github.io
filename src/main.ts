@@ -1,7 +1,7 @@
-import { routes } from './plugins/router'
-import { ViteSSG } from 'vite-ssg'
 import NProgress from 'nprogress'
+import { ViteSSG } from 'vite-ssg'
 import Layout from './App.vue'
+import { routes } from './plugins/router'
 import 'uno.css'
 import './styles/slide.sass'
 import './styles/custom.sass'
@@ -24,7 +24,8 @@ import 'markdown-it-tabbar/styles/base.css'
 // app.mount('#app')
 
 export const createApp = ViteSSG(
-  Layout, { routes },
+  Layout,
+  { routes },
   ({ router }) => {
     if (typeof window === 'undefined')
       return
@@ -35,5 +36,5 @@ export const createApp = ViteSSG(
     router.afterEach(() => {
       NProgress.done()
     })
-  }
+  },
 )

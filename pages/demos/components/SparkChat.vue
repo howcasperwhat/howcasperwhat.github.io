@@ -1,10 +1,10 @@
 <script setup lang='ts'>
-import { useMessage } from '../../../src/utils/message'
-import { useStorage } from '@vueuse/core';
-import { nextTick, onMounted, ref } from 'vue';
-import { SparkChat } from '../logics/spark-chat';
-import ChatHistory from './ChatHistory.vue'
+import { useStorage } from '@vueuse/core'
+import { nextTick, onMounted, ref } from 'vue'
 import { setAppHeight } from '../../../src/utils/layout'
+import { useMessage } from '../../../src/utils/message'
+import { SparkChat } from '../logics/spark-chat'
+import ChatHistory from './ChatHistory.vue'
 
 const message = useMessage()
 const editor = ref<HTMLTextAreaElement>()
@@ -21,14 +21,17 @@ useStorage('spark-api-secret', apisecret)
 const input = ref<string>('')
 const loading = ref<boolean>(false)
 const chat = new SparkChat(
-  'Lite', appid.value,
-  apikey.value, apisecret.value
+  'Lite',
+  appid.value,
+  apikey.value,
+  apisecret.value,
 )
 useStorage('spark-chat', chat.history.qas)
 
-const send = () => {
+function send() {
   const res = input.value.trim()
-  if (loading.value) return
+  if (loading.value)
+    return
   if (res.length === 0) {
     message.warning('Please input your question!')
     return
@@ -38,36 +41,34 @@ const send = () => {
     return
   }
   loading.value = true
-  chat.send(res,
-    () => {
-      nextTick(el.value.toTop)
-    },
-    () => {
-      loading.value = false
-    },
-    (event) => {
-      message.error("ERROR")
-      console.log(event)
-    }
-  )
+  chat.send(res, () => {
+    nextTick(el.value.toTop)
+  }, () => {
+    loading.value = false
+  }, (event) => {
+    message.error('ERROR')
+    // eslint-disable-next-line no-console
+    console.log(event)
+  })
   input.value = ''
 }
 
-const enter = (event: KeyboardEvent) => {
+function enter(event: KeyboardEvent) {
   // Chinese Inputer Enter Collision
-  if (event.keyCode !== 13) return
-  if (event.shiftKey) return
+  if (event.keyCode !== 13)
+    return
+  if (event.shiftKey)
+    return
   event.preventDefault()
   send()
 }
 
-const autoResize = () => {
+function autoResize() {
   // when text reduce, shrink the height
   editor.value!.style.height = 'auto'
   // when text increase, expand the height
-  editor.value!.style.height = editor.value!.scrollHeight + 'px'
+  editor.value!.style.height = `${editor.value!.scrollHeight}px`
 }
-
 
 onMounted(() => {
   setAppHeight(container.value!)
@@ -77,24 +78,24 @@ onMounted(() => {
 </script>
 
 <template>
-  <div grid="~ flow-row gap-4" ref="container">
-    <ChatHistory :history="chat.qas" ref="el" />
-    <form @submit.prevent="send()" flex="~ items-center">
-      <textarea v-model="input"
-        @input="autoResize"
-        @keydown.enter="enter"
-        ref="editor" maxlength="2000"
-        b="solid gray 1px" 
-        focus:outline-none
-        resize-none p-r-12
-        rounded max-h-36 p-2
-        overflow-scroll w-full
-        bg-transparent c-inherit
+  <div ref="container" grid="~ flow-row gap-4">
+    <ChatHistory ref="el" :history="chat.qas" />
+    <form flex="~ items-center" @submit.prevent="send()">
+      <textarea
+        ref="editor"
+        v-model="input"
+        maxlength="2000"
+        b="solid gray 1px" max-h-36
+        w-full
+
+        resize-none overflow-scroll rounded bg-transparent p-2 p-r-12 c-inherit focus:outline-none @input="autoResize" @keydown.enter="enter"
       />
-      <button absolute right-8 
-        :disabled="loading">
-        <div i-svg-spinners:tadpole text-xl v-if="loading" />
-        <div i-carbon:send text-xl v-else />
+      <button
+        absolute right-8
+        :disabled="loading"
+      >
+        <div v-if="loading" i-svg-spinners:tadpole text-xl />
+        <div v-else i-carbon:send text-xl />
       </button>
     </form>
   </div>

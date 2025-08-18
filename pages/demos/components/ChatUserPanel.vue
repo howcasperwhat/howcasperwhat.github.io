@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-
 const emits = defineEmits<{
   erase: []
 }>()
@@ -8,7 +7,7 @@ const emits = defineEmits<{
 <template>
   <div flex="~ items-center justify-between">
     <div flex="~ items-center">
-      <div i-mage:user-circle m-r-2 c-blue text-xl />
+      <div i-mage:user-circle m-r-2 text-xl c-blue />
       <div>You</div>
     </div>
     <div flex="~ items-center">

@@ -3,10 +3,10 @@ export type ModelDomain = 'general' | 'generalv2' | 'generalv3' | 'generalv3.5'
 export type ModelVersion = 'v1.1' | 'v2.1' | 'v3.1' | 'v3.5'
 export type Role = 'system' | 'user' | 'assistant'
 export type Content = string
-export type Record = { role: Role, content: Content }
-export type QA = { question: Record, answer: Record }
+export interface Record { role: Role, content: Content }
+export interface QA { question: Record, answer: Record }
 export type Status = 0 | 1 | 2
-export type Request = {
+export interface Request {
   header: {
     app_id: string
     uid?: string
@@ -25,7 +25,7 @@ export type Request = {
     }
   }
 }
-export type Response = {
+export interface Response {
   header: {
     code: number
     message: string

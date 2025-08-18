@@ -3,5 +3,5 @@ import SparkChat from './components/SparkChat.vue'
 </script>
 
 <template>
-  <SparkChat max-w-screen-lg m-x-auto />
+  <SparkChat m-x-auto max-w-screen-lg />
 </template>

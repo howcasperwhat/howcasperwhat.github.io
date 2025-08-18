@@ -1,18 +1,18 @@
-import { defineConfig } from 'vite'
-import UnoCSS from 'unocss/vite'
-import Vue from '@vitejs/plugin-vue'
-import Markdown from 'unplugin-vue-markdown/vite'
 import Shiki from '@shikijs/markdown-it'
+import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
+import Vue from '@vitejs/plugin-vue'
 import KaTeX from '@vscode/markdown-it-katex'
-import Alerts from 'markdown-it-github-alerts'
-import CopyCode from 'markdown-it-copy-code'
 import Anchor from 'markdown-it-anchor'
-import Tabbar from 'markdown-it-tabbar'
+import CopyCode from 'markdown-it-copy-code'
+import Alerts from 'markdown-it-github-alerts'
 import LinkAttributes from 'markdown-it-link-attributes'
+import Tabbar from 'markdown-it-tabbar'
+import UnoCSS from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
+import Markdown from 'unplugin-vue-markdown/vite'
+import { defineConfig } from 'vite'
 import PluginInspect from 'vite-plugin-inspect'
 import AutoRouter from './plugins/auto-router'
-import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 
 export default defineConfig({
   build: {
@@ -23,7 +23,7 @@ export default defineConfig({
   },
   plugins: [
     Vue({
-      include: [/\.vue$/, /\.md$/]
+      include: [/\.vue$/, /\.md$/],
     }),
     UnoCSS(),
     PluginInspect(),
@@ -40,7 +40,10 @@ export default defineConfig({
         typographer: true,
       },
       markdownItUses: [
-        KaTeX, Alerts, CopyCode, Tabbar
+        KaTeX,
+        Alerts,
+        CopyCode,
+        Tabbar,
       ],
       async markdownItSetup(md) {
         md.use(LinkAttributes, {
@@ -68,13 +71,13 @@ export default defineConfig({
             transformerTwoslash({
               explicitTrigger: true,
               renderer: rendererRich(),
-            })
-          ]
+            }),
+          ],
         }))
-      }
+      },
     }),
     AutoRouter({
       dir: 'src/plugins/router.ts',
-    })
+    }),
   ],
 })

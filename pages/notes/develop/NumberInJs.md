@@ -37,45 +37,44 @@ $0.2$ in IEEE754 is below:
 > 1. Align the exponents, the smaller one will be shifted right until the exponents are equal.
 > 2. Add the mantissas.
 > 3. Normalize the result (and judge if it is overflow or underflow).
-> 4. Round the result to the nearest representable value.  
+> 4. Round the result to the nearest representable value.
 
-Now we can get the binary sum result of $0.1$ and $0.2$:  
-$0.1=1.1001... \times 2^{-4}$  
-$0.2=1.1001... \times 2^{-3}$  
-$1^{st}$. $0.1=0.1100... \times 2^{-3}$  
-&emsp;&emsp;$0.2=1.1001... \times 2^{-3}$  
+Now we can get the binary sum result of $0.1$ and $0.2$:
+$0.1=1.1001... \times 2^{-4}$
+$0.2=1.1001... \times 2^{-3}$
+$1^{st}$. $0.1=0.1100... \times 2^{-3}$
+&emsp;&emsp;$0.2=1.1001... \times 2^{-3}$
 $2^{nd}$. $0.1+0.2=10.1011... \times 2^{-3}$
 
 <BinaryOp lhs="0.11001100110011001100110011001100110011001100110011010" rhs="1.1001100110011001100110011001100110011001100110011010" op="+" />
 
 $3^{rd}$. $0.1+0.2=1.01011... \times 2^{-2}$
 
-$4^{th}$. sign = 0  
-&emsp;&emsp;exponent = -2 + 1023 => 01111111101  
-&emsp;&emsp;mantissa = 0011001100110011001100110011001100110011001100110<span c-green>011</span><span c-yellow>100</span>  
+$4^{th}$. sign = 0
+&emsp;&emsp;exponent = -2 + 1023 => 01111111101
+&emsp;&emsp;mantissa = 0011001100110011001100110011001100110011001100110<span c-green>011</span><span c-yellow>100</span>
 =>0011001100110011001100110011001100110011001100110<span c-green>100</span>
 
 So the sum of $0.1$ and $0.2$ in IEEE754 is below:
 <IEEE754Float :value="0.1 + 0.2" />
-which is equal to $0.30000000000000004$.  
+which is equal to $0.30000000000000004$.
 
 ## Why `0.2 - 0.1 === 0.1`
-$0.1=1.1001... \times 2^{-4}$  
-$0.2=1.1001... \times 2^{-3}$  
-$1^{st}$. $0.1=0.1100... \times 2^{-3}$  
-&emsp;&emsp;$0.2=1.1001... \times 2^{-3}$  
-$2^{nd}$. $0.1-0.2=0.1100... \times 2^{-3}$  
+$0.1=1.1001... \times 2^{-4}$
+$0.2=1.1001... \times 2^{-3}$
+$1^{st}$. $0.1=0.1100... \times 2^{-3}$
+&emsp;&emsp;$0.2=1.1001... \times 2^{-3}$
+$2^{nd}$. $0.1-0.2=0.1100... \times 2^{-3}$
 
 <BinaryOp lhs="0.11001100110011001100110011001100110011001100110011010" rhs="1.1001100110011001100110011001100110011001100110011010" op="-" />
 
-$3^{rd}$. $0.1-0.2=1.100... \times 2^{-4}$  
+$3^{rd}$. $0.1-0.2=1.100... \times 2^{-4}$
 
-$4^{th}$. sign = 0  
-&emsp;&emsp;exponent = -4 + 1023 => 01111111011  
+$4^{th}$. sign = 0
+&emsp;&emsp;exponent = -4 + 1023 => 01111111011
 &emsp;&emsp;mantissa = 1001100110011001100110011001100110011001100110011010
 =>1001100110011001100110011001100110011001100110011010
 
-So the subtraction of $0.2$ and $0.1$ in IEEE754 is below:  
-<IEEE754Float :value="0.2 - 0.1" />  
+So the subtraction of $0.2$ and $0.1$ in IEEE754 is below:
+<IEEE754Float :value="0.2 - 0.1" />
 which is equal to $0.1$.
-

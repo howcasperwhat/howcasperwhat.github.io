@@ -10,7 +10,7 @@ export const noteLists: NoteLink[][] = [
     { id: 0, name: 'FlexInCSS', title: 'CSS: display: flex', date: '2023-05-15', lang: 'zh', dev: ['css3'] },
     { id: 1, name: 'NumberInJs', title: 'Number In Javascript', date: '2023-07-18', lang: 'en', dev: ['javascript'] },
     { id: 2, name: 'Network', title: 'Computer Network', date: '2023-08-25', lang: 'ch', dev: [] },
-    { id: 3, name: 'MoreAnimatableNotation', title: 'More Animatable Notation', date: '2023-08-25', lang: 'en', dev: ['typescript', 'vuejs'] }
+    { id: 3, name: 'MoreAnimatableNotation', title: 'More Animatable Notation', date: '2023-08-25', lang: 'en', dev: ['typescript', 'vuejs'] },
   ],
   [
     { id: 0, name: 'BackPropagation', title: 'Back Propagation', date: '2023-07-19', lang: 'en', dev: ['typescript'] },

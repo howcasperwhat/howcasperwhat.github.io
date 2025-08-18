@@ -1,16 +1,14 @@
+# Flex In CSS
+## Flex 布局结构
 
+<Flex1 />
 
-# Flex In CSS  
-## Flex 布局结构  
-
-<Flex1 />  
-
-## 主轴和侧轴  
+## 主轴和侧轴
 1. 主轴默认水平向右
 2. 侧轴默认垂直向下
 3. 主轴和侧轴方向可以设置
 
-## Flex Container 属性  
+## Flex Container 属性
 > 需要先在Flex Container设置 `display: flex;`
 
 ### `flex-direction` 设置主轴的方向
@@ -24,8 +22,8 @@
 }
 ```
 
-### `justify-content` 设置主轴上的Flex Item的排列方式  
-> 主轴为row时：头 ---> 尾  
+### `justify-content` 设置主轴上的Flex Item的排列方式
+> 主轴为row时：头 ---> 尾
 
 1. flex-start 局头 (default)
 2. flex-end 局尾

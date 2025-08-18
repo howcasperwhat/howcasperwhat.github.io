@@ -1,6 +1,6 @@
 # Binary Search
 ## 基本框架
-假设 `x = 3`.  
+假设 `x = 3`.
 
 ::: tabbar
 @ 最后一个小于 x
@@ -80,7 +80,7 @@ $$[4][2\ 4][5\ 1]$$
 
 ## 输入格式
 
-第 $1$ 行包含两个正整数 $N,M$。  
+第 $1$ 行包含两个正整数 $N,M$。
 
 第 $2$ 行包含 $N$ 个空格隔开的非负整数 $A_i$，含义如题目所述。
 
@@ -117,40 +117,40 @@ $$[4][2\ 4][5\ 1]$$
 import java.util.Scanner;
 
 public class Main {
-	public static int[] arr;
-	public static int n;
-	public static int m;
-	public static boolean check(int maxSum) {
-		int sum = 0;
-		int cnt = 1;
-		for (int i = 0; i < n; ++i) {
-			if (sum + arr[i] <= maxSum) {sum += arr[i];}
-			else {sum = arr[i]; ++cnt;}
-		}
-		return cnt <= m;
-	}
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		n = scan.nextInt();
-		m = scan.nextInt();
-		arr = new int[n];
-		int maxElem = Integer.MIN_VALUE;
-		int sum = 0;
-		for (int i = 0; i < n; ++i) {
-			arr[i] = scan.nextInt();
-			maxElem = Math.max(maxElem, arr[i]);
-			sum += arr[i];
-		}
-		int left = maxElem - 1;
-		int right = sum + 1;
-		while (left + 1 < right) {
-			int mid = ((right - left) >> 1) + left;
-			if (check(mid)) right = mid;
-			else left = mid;
-		}
-		System.out.println(right);
-		scan.close();
-	}
+  public static int[] arr;
+  public static int n;
+  public static int m;
+  public static boolean check(int maxSum) {
+    int sum = 0;
+    int cnt = 1;
+    for (int i = 0; i < n; ++i) {
+      if (sum + arr[i] <= maxSum) {sum += arr[i];}
+      else {sum = arr[i]; ++cnt;}
+    }
+    return cnt <= m;
+  }
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    n = scan.nextInt();
+    m = scan.nextInt();
+    arr = new int[n];
+    int maxElem = Integer.MIN_VALUE;
+    int sum = 0;
+    for (int i = 0; i < n; ++i) {
+      arr[i] = scan.nextInt();
+      maxElem = Math.max(maxElem, arr[i]);
+      sum += arr[i];
+    }
+    int left = maxElem - 1;
+    int right = sum + 1;
+    while (left + 1 < right) {
+      int mid = ((right - left) >> 1) + left;
+      if (check(mid)) right = mid;
+      else left = mid;
+    }
+    System.out.println(right);
+    scan.close();
+  }
 }
 ```
 
@@ -166,7 +166,7 @@ public class Main {
 
 ## 输入格式
 
-第一行三个整数，分别为 $n,a,b$。  
+第一行三个整数，分别为 $n,a,b$。
 接下来 $2$ 到 $n+1$ 行，第 $i$ 行输入 $w_i$。
 
 ## 输出格式
@@ -210,36 +210,36 @@ $1 \le w_i,a,b,n \le 5 \times 10^5$
 import java.util.Scanner;
 
 public class Main {
-	public static int[] arr;
-	public static int a, b;
-	public static boolean check(int time) {
-		int cnt = 0;
-		for (int i = 0; i < arr.length; ++i) {
-			int tmp = arr[i] - a * time;
-			if (tmp <= 0) continue;
-			cnt += (tmp + b - 1) / b;
-		}
-		return cnt <= time;
-	}
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		int n = scan.nextInt();
-		a = scan.nextInt();
-		b = scan.nextInt();
-		arr = new int[n];
-		for (int i = 0; i < n; ++i) {
-			arr[i] = scan.nextInt();
-		}
-		int left = 0;
-		int right = 500000 + 10;
-		while (left + 1 < right) {
-			int mid = ((right - left) >> 1) + left;
-			if (check(mid)) right = mid;
-			else left = mid;
-		}
-		System.out.println(right);
-		scan.close();
-	}
+  public static int[] arr;
+  public static int a, b;
+  public static boolean check(int time) {
+    int cnt = 0;
+    for (int i = 0; i < arr.length; ++i) {
+      int tmp = arr[i] - a * time;
+      if (tmp <= 0) continue;
+      cnt += (tmp + b - 1) / b;
+    }
+    return cnt <= time;
+  }
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    int n = scan.nextInt();
+    a = scan.nextInt();
+    b = scan.nextInt();
+    arr = new int[n];
+    for (int i = 0; i < n; ++i) {
+      arr[i] = scan.nextInt();
+    }
+    int left = 0;
+    int right = 500000 + 10;
+    while (left + 1 < right) {
+      int mid = ((right - left) >> 1) + left;
+      if (check(mid)) right = mid;
+      else left = mid;
+    }
+    System.out.println(right);
+    scan.close();
+  }
 }
 ```
 
@@ -280,17 +280,17 @@ public class Main {
 ### 样例输入 #1
 
 ```
-4 3 
-2 5 4 3 
-2 1 3 
-3 2 4 
+4 3
+2 5 4 3
+2 1 3
+3 2 4
 4 2 4
 ```
 
 ### 样例输出 #1
 
 ```
--1 
+-1
 2
 ```
 
@@ -310,7 +310,6 @@ public class Main {
 
 对于 100%的数据，有$1 ≤ n,m ≤ 10^6,0 ≤ r_i,d_j≤ 10^9,1 ≤ s_j≤ t_j≤ n$。
 
-
 NOIP 2012 提高组 第二天 第二题
 
 2022.2.20 新增一组 hack 数据
@@ -326,51 +325,51 @@ NOIP 2012 提高组 第二天 第二题
 import java.util.Scanner;
 
 public class Main {
-	public static class RentItem {
-		public int num;
-		public int begin;
-		public int end;
-	}
-	public static int[] arr;
-	public static RentItem[] rent;
-	public static boolean check(int idx) {
-		int[] diff = new int[arr.length + 10];
-		for (int i = 1; i <= idx; ++i) {
-			diff[rent[i].begin] += rent[i].num;
-			diff[rent[i].end + 1] -= rent[i].num;
-		}
-		int curNeedRoom = 0;
-		for (int i = 1; i < arr.length; ++i) {
-			curNeedRoom += diff[i];
-			if (curNeedRoom > arr[i]) return false;
-		}
-		return true;
-	}
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		int n = scan.nextInt();
-		int m = scan.nextInt();
-		arr = new int[n + 1];
-		rent = new RentItem[m + 1];
-		for (int i = 1; i <= n; ++i) {
-			arr[i] = scan.nextInt();
-		}
-		for (int i = 1; i <= m; ++i) {
-			rent[i] = new RentItem();
-			rent[i].num = scan.nextInt();
-			rent[i].begin = scan.nextInt();
-			rent[i].end = scan.nextInt();
-		}
-		int left = 0;
-		int right = m + 1;
-		while(left + 1 < right) {
-			int mid = ((right - left) >> 1) + left;
-			if (check(mid)) left = mid;
-			else right = mid;
-		}
-		if (right == m + 1) System.out.println(0);
-		else System.out.println(-1 + "\n" + right);
-		scan.close();
-	}
+  public static class RentItem {
+    public int num;
+    public int begin;
+    public int end;
+  }
+  public static int[] arr;
+  public static RentItem[] rent;
+  public static boolean check(int idx) {
+    int[] diff = new int[arr.length + 10];
+    for (int i = 1; i <= idx; ++i) {
+      diff[rent[i].begin] += rent[i].num;
+      diff[rent[i].end + 1] -= rent[i].num;
+    }
+    int curNeedRoom = 0;
+    for (int i = 1; i < arr.length; ++i) {
+      curNeedRoom += diff[i];
+      if (curNeedRoom > arr[i]) return false;
+    }
+    return true;
+  }
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    int n = scan.nextInt();
+    int m = scan.nextInt();
+    arr = new int[n + 1];
+    rent = new RentItem[m + 1];
+    for (int i = 1; i <= n; ++i) {
+      arr[i] = scan.nextInt();
+    }
+    for (int i = 1; i <= m; ++i) {
+      rent[i] = new RentItem();
+      rent[i].num = scan.nextInt();
+      rent[i].begin = scan.nextInt();
+      rent[i].end = scan.nextInt();
+    }
+    int left = 0;
+    int right = m + 1;
+    while(left + 1 < right) {
+      int mid = ((right - left) >> 1) + left;
+      if (check(mid)) left = mid;
+      else right = mid;
+    }
+    if (right == m + 1) System.out.println(0);
+    else System.out.println(-1 + "\n" + right);
+    scan.close();
+  }
 }
 ```

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-import { computed, onMounted, ref } from 'vue'
 import { useWindowSize } from '@vueuse/core'
+import { computed, onMounted, ref } from 'vue'
 
 const { width, height } = useWindowSize()
 const plum = ref<HTMLCanvasElement>()
@@ -120,7 +120,7 @@ onMounted(() => {
 
 <template>
   <canvas
-    ref="plum" fixed top-0 left-0 z--1
-    pointer-events-none opacity-30
+    ref="plum"
+    pointer-events-none fixed left-0 top-0 z--1 opacity-30
   />
 </template>

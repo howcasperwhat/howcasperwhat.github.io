@@ -8,8 +8,8 @@ const { toggleTheme } = useThemeStore()
 </script>
 
 <template>
-  <header w-full box-border p-x-2 p-y-5 grid="~ flow-col items-center">
-    <RouterLink lg:fixed absolute to="/">
+  <header box-border w-full p-x-2 p-y-5 grid="~ flow-col items-center">
+    <RouterLink absolute lg:fixed to="/">
       <Logo />
     </RouterLink>
     <nav flex="~ gap-4 items-center justify-end">

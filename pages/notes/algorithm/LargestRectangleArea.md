@@ -50,10 +50,10 @@ class Solution {
 }
 ```
 > [!NOTE] Complexity Analysis
-> - Time complexity: $O(n^2)$  
+> - Time complexity: $O(n^2)$
 > - Space complexity: $O(n)$
 
-> [!WARNING] Time Limit Exceeded 
+> [!WARNING] Time Limit Exceeded
 > 87/98 cases passed (N/A)
 
 ### Brute-Force (Traversal range)
@@ -111,7 +111,7 @@ class Solution {
 ```
 
 >[!NOTE] Complexity Analysis
->- Time complexity: $O(n)$  
+>- Time complexity: $O(n)$
 >- Space complexity: $O(n)$
 
 > [!TIP] Accepted

@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import { QA } from '../types/spark-chat'
+import type { QA } from '../types/spark-chat'
 import ClientMarkdown from '../../../src/components/ClientMarkdown.vue'
-import ChatUserPanel from './ChatUserPanel.vue'
 import ChatRobotPanel from './ChatRobotPanel.vue'
+import ChatUserPanel from './ChatUserPanel.vue'
 
 const props = defineProps<{
   qa: QA
@@ -13,11 +13,11 @@ const emits = defineEmits<{
 </script>
 
 <template>
-  <div flex="~ col" p-4 box-border>
+  <div flex="~ col" box-border p-4>
     <ChatUserPanel @erase="emits('erase')" />
     <ClientMarkdown :content="props.qa.question.content" />
   </div>
-  <div flex="~ col" p-4 box-border>
+  <div flex="~ col" box-border p-4>
     <ChatRobotPanel />
     <ClientMarkdown :content="props.qa.answer.content" />
   </div>

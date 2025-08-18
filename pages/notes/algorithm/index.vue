@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 import Dirs from '../components/Dirs.vue'
 import { noteLists } from '../stores/data'
 
@@ -12,8 +12,8 @@ emit('active', active.value)
 </script>
 
 <template>
-  <Dirs 
-    :list="noteLists[active]" 
-    class="slide-content" 
+  <Dirs
+    :list="noteLists[active]"
+    class="slide-content"
   />
 </template>

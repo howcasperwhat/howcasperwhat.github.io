@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { computed } from 'vue'
-import { projects } from './stores/projects'
-import { notes } from './stores/notes'
-import ProjectCard from './components/ProjectCard.vue'
 import NoteItem from './components/NoteItem.vue'
+import ProjectCard from './components/ProjectCard.vue'
+import { notes } from './stores/notes'
+import { projects } from './stores/projects'
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const cols = computed(() => breakpoints.sm ? 2 : 1)
@@ -18,53 +18,64 @@ const parts = computed(() => {
 </script>
 
 <template>
-  <div max-w-2xl m-x-auto>
+  <div m-x-auto max-w-2xl>
     <div text-8 font-600>
       Casper Huang
     </div>
     <article class="slide-content" children:p-y-2>
       <div block>
-        <div text-16 z--1 m-l--8
-          select-none m-b--8
-          color="#8882">
+        <div
+          z--1 m-b--8 m-l--8 select-none text-16
+          color="#8882"
+        >
           Who
         </div>
-        <div op-60 text-lg>
+        <div text-lg op-60>
           I'm Casper Huang, a developer passionate about open source.
         </div>
       </div>
       <div block>
-        <div text-16 z--1 m-l--8
-          select-none m-b--12
-          color="#8882">
+        <div
+          z--1 m-b--12 m-l--8 select-none text-16
+          color="#8882"
+        >
           Projects
         </div>
         <div grid="~ cols-1 sm:cols-2 gap-2">
-          <div v-for="(part, i) in parts" 
-            :key="i" flex="~ col gap-2">
-            <ProjectCard v-for="(project, j) in part" 
-              :key="j" :project="project" />
+          <div
+            v-for="(part, i) in parts"
+            :key="i" flex="~ col gap-2"
+          >
+            <ProjectCard
+              v-for="(project, j) in part"
+              :key="j" :project="project"
+            />
           </div>
         </div>
       </div>
       <div block>
-        <div text-16 z--1 m-l--8
-          select-none m-b--12
-          color="#8882">
+        <div
+          z--1 m-b--12 m-l--8 select-none text-16
+          color="#8882"
+        >
           Notes
         </div>
         <div flex="~ col">
-          <NoteItem v-for="(note, i) in notes" 
-            :key="i" :note="note" />
+          <NoteItem
+            v-for="(note, i) in notes"
+            :key="i" :note="note"
+          />
         </div>
       </div>
       <div block>
-        <div text-16 z--1 m-l--8
-          select-none m-b--8
-          color="#8882">
+        <div
+          z--1 m-b--8 m-l--8 select-none text-16
+          color="#8882"
+        >
           Where
         </div>
-        <div flex="~ gap-2 wrap" 
+        <div
+          flex="~ gap-2 wrap"
           children:b-b="1px dashed hover:solid"
           children:p-b-1
         >

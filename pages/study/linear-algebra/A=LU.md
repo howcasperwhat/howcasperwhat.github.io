@@ -22,8 +22,8 @@ You can use permutation to exchange rows. For example, $P_{21}=\begin{bmatrix}0 
 > 2. In matrix elimination, if pivot is zero, we should exchange rows. Now $A=LU$ becomes $PA=LU$. It just exchanges A's rows to let pivot in each step be nonzero.
 
 ## Symmetric Matrix
-Feature: $R^T=R$  
-> How to get symmetric matrix?  
+Feature: $R^T=R$
+> How to get symmetric matrix?
 > $RR^T\Rightarrow \text{symmetric matrix}$ because $(RR^T)^T=R^{TT}R^T=RR^T$.
 
 ## Transpose

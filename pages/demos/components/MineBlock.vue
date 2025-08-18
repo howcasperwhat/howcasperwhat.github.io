@@ -37,16 +37,16 @@ function getBlockClass(block: BlockState) {
 <template>
   <button
     :class="getBlockClass(block)"
-    w-10 m-.5 h-10 flex-center
+    m-.5 h-10 w-10 flex-center
   >
     <template v-if="block.flagged">
       <div i-mdi-flag />
     </template>
-<template v-else-if="block.revealed || isDev">
+    <template v-else-if="block.revealed || isDev">
       <div v-if="!block.mine" font-bold>
         {{ block.adjacentMines }}
       </div>
       <div v-else i-mdi-mine c-black dark:c-white />
     </template>
-</button>
+  </button>
 </template>

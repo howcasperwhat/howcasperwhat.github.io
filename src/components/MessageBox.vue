@@ -23,12 +23,12 @@ onMounted(() => {
 <template>
   <div
     v-show="!message.isHidden.value" id="messageBox"
-    rounded min-w-36 max-w-2xl float-initial b-0 b-solid
-    z-64 grid="~ flow-col gap-1 items-center" p-y-2 p-x-4
-    :b="colors[message.type.value!]" b-op-80
+
+    grid="~ flow-col gap-1 items-center"
+    :b="colors[message.type.value!]" z-64 float-initial max-w-2xl min-w-36 b-0 b-op-80 rounded b-solid p-x-4 p-y-2
     bg-gray="300 dark:800"
   >
-    <div 
+    <div
       :c="colors[message.type.value!]"
       :class="`i-${icons[message.type.value!]}`"
     />

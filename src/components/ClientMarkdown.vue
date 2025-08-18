@@ -1,15 +1,15 @@
 <script setup lang='ts'>
-import { ref, watch, onMounted } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { useMarkdown } from '../utils/markdown'
 
-const { md } = useMarkdown()
 const props = defineProps<{
   content: string
 }>()
+const { md } = useMarkdown()
 const html = ref<string>('')
 
-let timeout: NodeJS.Timeout | number | undefined = undefined
-const render = () => {
+let timeout: NodeJS.Timeout | number | undefined
+function render() {
   if (timeout)
     clearTimeout(timeout as number)
   timeout = setTimeout(() => {

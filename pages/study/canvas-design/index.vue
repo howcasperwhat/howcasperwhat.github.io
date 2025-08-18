@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
+import Process from '../components/Process.vue'
 import { studyProcesses } from '../stores/data'
-import Process from '../components/Process.vue';
 
 const emit = defineEmits<{
   active: [active: number]
 }>()
 const active = ref(2)
 emit('active', active.value)
-
 </script>
 
 <template>

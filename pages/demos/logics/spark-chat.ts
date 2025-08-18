@@ -1,11 +1,15 @@
-import { assert } from "@vueuse/core"
 import type {
-  ModelDomain, ModelName, ModelVersion,
-  Request, Response, QA
-} from "../types/spark-chat"
-import CryptoJS from "crypto-js"
-import { checkInteger, checkRange } from "./assert"
-import { History } from "./spark-history"
+  ModelDomain,
+  ModelName,
+  ModelVersion,
+  QA,
+  Request,
+  Response,
+} from '../types/spark-chat'
+import { assert } from '@vueuse/core'
+import CryptoJS from 'crypto-js'
+import { checkInteger, checkRange } from './assert'
+import { History } from './spark-history'
 
 const { HmacSHA256, enc } = CryptoJS
 
@@ -18,7 +22,7 @@ export const _spark_map: {
   'Lite': { version: 'v1.1', domain: 'general' },
   'V2.0': { version: 'v2.1', domain: 'generalv2' },
   'Pro': { version: 'v3.1', domain: 'generalv3' },
-  'Max': { version: 'v3.5', domain: 'generalv3.5' }
+  'Max': { version: 'v3.5', domain: 'generalv3.5' },
 }
 
 export class SparkChat {
@@ -34,9 +38,7 @@ export class SparkChat {
   private readonly baseURL: string
   private readonly pathname: string
   public readonly history: History
-  public constructor(modelName: ModelName,
-    appID: string, apiKey: string,
-    apiSecret: string
+  public constructor(modelName: ModelName, appID: string, apiKey: string, apiSecret: string,
   ) {
     this.history = new History()
     // this.name = modelName
@@ -48,12 +50,14 @@ export class SparkChat {
     this.pathname = `/${this.version}/${this.ROUTE}`
     this.baseURL = `${this.PROTOCOL}://${this.HOST}${this.pathname}`
   }
+
   // public get records() {
   //   return this.history.records.value
   // }
   public get qas(): QA[] {
     return this.history.qas.value
   }
+
   private authenticate(): Promise<string> {
     return new Promise<string>((resolve) => {
       const host = 'spark-api.xf-yun.com'
@@ -63,23 +67,24 @@ export class SparkChat {
         HmacSHA256([
           `host: ${host}`,
           `date: ${date}`,
-          `GET ${this.pathname} HTTP/1.1`
-        ].join('\n'), this.apiSecret)
+          `GET ${this.pathname} HTTP/1.1`,
+        ].join('\n'), this.apiSecret),
       )
       const authorization = btoa([
         `api_key="${this.apiKey}"`,
         `algorithm="hmac-sha256"`,
         `headers="host date request-line"`,
-        `signature="${signature}"`
+        `signature="${signature}"`,
       ].join(', '))
       const url = [`${this.baseURL}`, [
         `authorization=${authorization}`,
         `date=${date}`,
-        `host=${host}`
+        `host=${host}`,
       ].join('&')].join('?')
       resolve(url)
     })
   }
+
   private constructRequst(
     history: History,
     temperature: number = 0.5,
@@ -96,10 +101,12 @@ export class SparkChat {
       parameter: {
         chat: {
           domain: this.domain,
-          temperature, max_tokens, top_k
-        }
+          temperature,
+          max_tokens,
+          top_k,
+        },
       },
-      payload: { message: { text: history.clip(8192) } }
+      payload: { message: { text: history.clip(8192) } },
     }
   }
 
@@ -107,7 +114,7 @@ export class SparkChat {
     message: string,
     update: () => void,
     success: () => void,
-    error: (event: Event) => void
+    error: (event: Event) => void,
   ) {
     this.history.push('user', message)
     update()
@@ -119,12 +126,14 @@ export class SparkChat {
       }
       socket.onmessage = (event) => {
         const response: Response = JSON.parse(event.data)
-        if (response.header.code !== 0) error(event)
-        const content = response.payload.choices.text.map((record) => record.content).join('')
+        if (response.header.code !== 0)
+          error(event)
+        const content = response.payload.choices.text.map(record => record.content).join('')
         if (response.header.status === 0) {
           this.history.push('assistant', content)
           update()
-        } else {
+        }
+        else {
           this.history.concat(content)
           update()
         }
@@ -133,6 +142,7 @@ export class SparkChat {
         }
       }
       socket.onerror = (event) => {
+        // eslint-disable-next-line no-console
         console.info(url)
         console.error(event)
       }

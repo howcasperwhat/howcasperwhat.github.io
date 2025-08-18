@@ -17,16 +17,16 @@ const n4 = ref(null)
 
 onMounted(async () => {
   const notate = (await import('animate-notation')).notate
-  n0.value = notate(box.value, 'box', { 
+  n0.value = notate(box.value, 'box', {
     color: '#2f81f7'
   })
-  n1.value = notate(bracket.value, '[]', { 
-    color: '#3fb950', 
+  n1.value = notate(bracket.value, '[]', {
+    color: '#3fb950',
   })
   n2.value = notate(highlight.value, '=', {
     opacity: 0.3,
     color: '#a371f7',
-    zIndexOffset: -1, 
+    zIndexOffset: -1,
   })
   n3.value = notate(circle.value, 'o', {
     color: '#db6d28',
@@ -64,7 +64,7 @@ There are 2 challenges to deal with:
 
 ## <span ref="bracket">Handwriting-like</span> style
 
-I found it is easy to paint a rough notation using SVG after looking up [MDN: d](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d). As an example, I wants draw a static wavy line. Just using [Quadratic Bézier curve (`Q/q` command in path data)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#quadratic_b%C3%A9zier_curve), imo, is enough to draw a wavy line. 
+I found it is easy to paint a rough notation using SVG after looking up [MDN: d](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d). As an example, I wants draw a static wavy line. Just using [Quadratic Bézier curve (`Q/q` command in path data)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#quadratic_b%C3%A9zier_curve), imo, is enough to draw a wavy line.
 
 When `q` up and down with same `dx` and `dy`, we got a static wavy line:
 
@@ -86,7 +86,7 @@ Inspired by [Animated line drawing in SVG](https://jakearchibald.com/2013/animat
 1. Init `strokeDashArray` and `strokeOffset` both to `length`.
 2. Transform `strokeOffset` from `length` to `0`.
 
-Note that there are some bug of `strokeDashArray` in browser that it will display a small dot when dashLength is 0. Setting the opacity to 0 whenever dashLength is 0 can work, or just use the `strokeDashOffset` solution which is more elegant. 
+Note that there are some bug of `strokeDashArray` in browser that it will display a small dot when dashLength is 0. Setting the opacity to 0 whenever dashLength is 0 can work, or just use the `strokeDashOffset` solution which is more elegant.
 
 Below are two examples of the animation using [`animate()`](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/animate):
 
@@ -103,7 +103,7 @@ Below are two examples of the animation using [`animate()`](https://developer.mo
 :::
 
 > [!WARNING]
-> Percentage value for `strokeDashArray` and `strokeOffset` is mentioned in [MDN Documents](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray#dasharray), but is unavailable for broswer now, thus [`getTotleLength()`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getTotalLength) should be called to get the dashLength after create the [SVGPathElement](https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement). We can also see from this that a pure Javascript implementation is necessary. 
+> Percentage value for `strokeDashArray` and `strokeOffset` is mentioned in [MDN Documents](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray#dasharray), but is unavailable for broswer now, thus [`getTotleLength()`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getTotalLength) should be called to get the dashLength after create the [SVGPathElement](https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement). We can also see from this that a pure Javascript implementation is necessary.
 >
 > Note that browser will round down `strokeDashArray` and `strokeOffset` to integer, so use `Math.ceil()` to round dashLength to integer is a good idea.
 
@@ -117,13 +117,13 @@ I think it is a good idea to use [`requestAnimationFrame()`](https://developer.m
 
 ``` ts
 declare function requestAnimationFrame(
-  callback: FrameRequestCallback): number;
+  callback: FrameRequestCallback): number
 
 interface FrameRequestCallback {
-    (time: DOMHighResTimeStamp): void;
+  (time: DOMHighResTimeStamp): void
 }
 
-type DOMHighResTimeStamp = number;
+type DOMHighResTimeStamp = number
 ```
 
 ## [Animate Notation](https://www.npmjs.com/package/animate-notation)
@@ -138,6 +138,7 @@ npm install animate-notation
 
 ``` js
 import { notate } from 'animate-notation'
+
 const foo = document.querySelector('.bar')
 ```
 
@@ -152,8 +153,8 @@ foo.addEventListener('mouseleave', () => n.hide(500))
 <span ref="highlight">Show and hide the notation Infinity times:</span>
 
 ``` js
-const n = notate(foo, '=', { 
-  color: '#a371f7'
+const n = notate(foo, '=', {
+  color: '#a371f7',
   opacity: 0.3,
   zIndexOffset: -1,
 })
@@ -184,14 +185,16 @@ export type PathConstructor = OrConstructorOf<OrArrayOf<Path>>
 You can pass a path data with type `string[]` or `Drawable[]`(see [Rough.js](https://roughjs.com/)) to the `paths` parameter of `notate()`. If path datas are depended on the size of the element, you can pass a function with `width` and `height` as parameters to `paths`.
 
 ``` js
-import PathGenerator from 'animate-notation/path-generator'
 import PathAnimator from 'animate-notation/path-animator'
+import PathGenerator from 'animate-notation/path-generator'
 // PathRoughOptions is a subset of RoughOptions
 const pg = new PathGenerator({ maxRandomnessOffset: 0.4 })
-const paths = (w, h) => [
-  pg.line(0, 0, w, h),
-  pg.arc(0, 0, w, h, Math.PI / 2, Math.PI),
-]
+function paths(w, h) {
+  return [
+    pg.line(0, 0, w, h),
+    pg.arc(0, 0, w, h, Math.PI / 2, Math.PI),
+  ]
+}
 const pa = new PathAnimator(foo, paths, { opacity: 0.8 })
 pa.show(2000)
 // onUnmounted(() => pa.remove())

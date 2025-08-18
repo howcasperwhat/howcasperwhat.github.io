@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
-import { useStorage, useWindowSize } from '@vueuse/core'
-import { isDev, toggleDev } from '../stores/minesweeper'
-import { GamePlay } from '../logics/minesweeper'
 import type { BlockState } from '../types/minesweeper'
+import { useStorage, useWindowSize } from '@vueuse/core'
+import { computed, onMounted, ref, watch } from 'vue'
 import { useMessage } from '../../../src/utils/message'
+import { GamePlay } from '../logics/minesweeper'
+import { isDev, toggleDev } from '../stores/minesweeper'
 import MineBlock from './MineBlock.vue'
 
 const message = useMessage()
@@ -53,15 +53,15 @@ onMounted(() => {
       />
     </div>
   </div>
-  <div grid="~ flow-col gap-6" justify-center m-y-2>
+  <div grid="~ flow-col gap-6" m-y-2 justify-center>
     <button
-      btn bg-blue c-black 
+      btn bg-blue c-black
       @click="toggleDev()"
     >
       {{ isDev ? 'DEV' : 'NORMAL' }}
     </button>
     <button
-      btn bg-amber c-black 
+      btn bg-amber c-black
       @click="play.reset()"
     >
       RESET

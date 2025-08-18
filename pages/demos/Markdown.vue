@@ -3,7 +3,7 @@ import Markdown from './components/Markdown.vue'
 </script>
 
 <template>
-  <Markdown max-w-screen-2xl m-x-auto />
+  <Markdown m-x-auto max-w-screen-2xl />
 </template>
 
 <style scoped></style>

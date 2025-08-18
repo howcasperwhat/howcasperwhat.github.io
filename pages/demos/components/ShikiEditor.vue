@@ -1,7 +1,7 @@
 <script setup lang='ts'>
-import { ref, watch, onMounted, nextTick } from 'vue'
-import { useThemeStore } from '../../../src/stores/theme'
 import { createHighlighter } from 'shiki'
+import { nextTick, onMounted, ref, watch } from 'vue'
+import { useThemeStore } from '../../../src/stores/theme'
 
 const content = defineModel<string>()
 const rendered = ref<string>()
@@ -12,14 +12,14 @@ const preview = ref<HTMLDivElement>()
 
 let highlighter: Awaited<ReturnType<typeof createHighlighter>>
 
-const syncScroll = () => {
+function syncScroll() {
   const e = editor.value!
   const p = preview.value!
   p.scrollTop = e.scrollTop
   p.scrollLeft = e.scrollLeft
 }
 
-const render = (code: string = '') => {
+function render(code: string = '') {
   rendered.value = highlighter.codeToHtml(code, {
     lang: 'markdown',
     theme: `vitesse-${theme.value}`,
@@ -31,16 +31,14 @@ const render = (code: string = '') => {
         if (code.endsWith('\n'))
           return `${code}\n`
       },
-    }]
+    }],
   })
 }
-
 
 onMounted(async () => {
   highlighter = await createHighlighter({
     themes: ['vitesse-dark', 'vitesse-light'],
-    langs: ['typescript', 'javascript', 'markdown',
-      'html', 'css', 'json', 'vue', 'jsx', 'tsx'],
+    langs: ['typescript', 'javascript', 'markdown', 'html', 'css', 'json', 'vue', 'jsx', 'tsx'],
   })
 
   watch(content, () => {
@@ -57,18 +55,22 @@ onMounted(async () => {
 
 <template>
   <div relative class="demo-markdown-wrapper">
-    <div overflow-auto w-full h-full z-10 box-border
-      ref="preview" pointer-events-none p-4>
-      <span v-html="rendered" children-m-0 
-        class="demo-markdown-mock" />
+    <div
+      ref="preview" pointer-events-none z-10 box-border h-full w-full overflow-auto p-4
+    >
+      <span
+        children-m-0 class="demo-markdown-mock"
+        v-html="rendered"
+      />
     </div>
-    <textarea v-model="content" ref="editor"
-      @scroll="syncScroll()"
-      b-0 whitespace-pre inset-0 outline-0
-      resize-none bg-transparent caret-hex-10b981
-      tab-4 z-5 p-4 text-transparent
-      autocomplete="off" autocorrect="off" 
-      autocapitalize="off" spellcheck="false" />
+    <textarea
+      ref="editor" v-model="content"
+      inset-0
+
+      z-5 resize-none whitespace-pre b-0 bg-transparent p-4 text-transparent tab-4 caret-hex-10b981 outline-0 autocomplete="off"
+      autocorrect="off" autocapitalize="off"
+      spellcheck="false" @scroll="syncScroll()"
+    />
   </div>
 </template>
 

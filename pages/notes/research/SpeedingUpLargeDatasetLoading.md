@@ -18,9 +18,9 @@ end = perf_counter()
 print(f'Cost {end - start:.4f}s')
 # ===== 16.3087s =====
 begin = perf_counter()
-df = read_csv(path, header=None, names=names, index_col=None, 
-              usecols=usecols, dtype=int, engine='c', 
-              skiprows=1, na_filter=None, skip_blank_lines=True, 
+df = read_csv(path, header=None, names=names, index_col=None,
+              usecols=usecols, dtype=int, engine='c',
+              skiprows=1, na_filter=None, skip_blank_lines=True,
               memory_map=True, low_memory=True, encoding='utf-8')
 end = perf_counter()
 print(f'Cost {end - begin:.4f}s')
@@ -62,12 +62,12 @@ nlines = nrows // (nproc - 1)
 run(['split', '-l', str(nlines), '-a', '2', '-d', path, '_d_'])
 # 4.8770s
 with ProcessPoolExecutor(max_workers=nproc) as executor:
-  futures = [executor.submit(read_csv, 
-                f'_d_{i:02d}', header=None, names=names, 
-                index_col=None, usecols=usecols, dtype=int, 
+  futures = [executor.submit(read_csv,
+                f'_d_{i:02d}', header=None, names=names,
+                index_col=None, usecols=usecols, dtype=int,
                 engine='c', skiprows=int(not i), na_filter=None,
-                skip_blank_lines=True, memory_map=True, 
-                low_memory=True, encoding='utf-8') 
+                skip_blank_lines=True, memory_map=True,
+                low_memory=True, encoding='utf-8')
              for i in range(nproc)]
   datas = [future.result() for future in futures]
 df = concat(datas)
@@ -76,7 +76,7 @@ print(f'Cost {end - begin:.4f}s')
 ```
 
 > [!CAUTION]
-> To clean up the chunk files, simply run `rm _d_*`. Just be cautious not to delete any other files by mistake.  
+> To clean up the chunk files, simply run `rm _d_*`. Just be cautious not to delete any other files by mistake.
 > When deep debugging, it's best to keep the chunk files to avoid re-splitting the dataset.
 
 This way, the load time drops from `24.6121s` to `4.8770s` — about a 5x speed boost!

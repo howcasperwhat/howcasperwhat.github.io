@@ -14,5 +14,5 @@ export const notes: Note[] = [
     date: '2025-01-02',
     link: '/notes/research/SpeedingUpLargeDatasetLoading',
     title: 'Speeding Up Large Dataset Loading',
-  }
+  },
 ]

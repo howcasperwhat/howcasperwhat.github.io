@@ -11,10 +11,11 @@ defineProps<{
   <div flex="~ items-center" text-xl sm:text-2xl>
     <div :process="type.status" />
     <RouterLink
-      :to="type.link" hover:b-b-none
-      font-bold even:m-y-2 m-l-3 truncate
+      :to="type.link"
+      m-l-3 truncate font-bold even:m-y-2 hover:b-b-none
       :hover:op="active ? 100 : 85" :op="active ? 100 : 70"
-      v-text="type.title"
-    />
+    >
+      {{ type.title }}
+    </RouterLink>
   </div>
 </template>

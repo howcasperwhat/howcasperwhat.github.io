@@ -11,8 +11,8 @@ function dateFormatter(date: string, lang: string) {
 <template>
   <div flex="~ items-center wrap" even:children:m-x-2>
     <span
-      text-xs sm:text-sm rounded p-x-2
-      bg-hex-8884 v-text="note.lang"
+
+      rounded bg-hex-8884 p-x-2 text-xs sm:text-sm v-text="note.lang"
     />
     <span text-4 sm:text-lg v-text="note.title" />
     <span v-if="note.dev" flex even:children:m-x-2>
@@ -22,7 +22,7 @@ function dateFormatter(date: string, lang: string) {
       />
     </span>
     <span
-      text-xs sm:text-sm op-50
+      text-xs op-50 sm:text-sm
       v-text="dateFormatter(note.date, note.lang)"
     />
   </div>

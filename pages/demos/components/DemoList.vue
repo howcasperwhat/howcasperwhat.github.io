@@ -25,10 +25,14 @@ const parts = computed(() => {
 </script>
 
 <template>
-  <div grid="~ cols-1 lg:cols-2 xl:cols-3 gap-4" 
-    class="slide-content">
-    <div v-for="(part, idx) in parts" :key="idx"
-      flex="~ col gap-4">
+  <div
+    grid="~ cols-1 lg:cols-2 xl:cols-3 gap-4"
+    class="slide-content"
+  >
+    <div
+      v-for="(part, idx) in parts" :key="idx"
+      flex="~ col gap-4"
+    >
       <RouterLink
         v-for="demo in part" :key="demo.id"
         :to="demo.route" hover:b-none

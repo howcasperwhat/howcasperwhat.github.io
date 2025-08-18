@@ -1,12 +1,13 @@
 <script setup lang='ts'>
-import MessageBox from './components/MessageBox.vue'
-import NavBar from './components/NavBar.vue'
-import CopyRight from './components/CopyRight.vue'
-import Plum from './components/Plum.vue'
-import Walk from './components/Walk.vue'
-import { onMounted } from 'vue'
 import { useCopyCode } from 'markdown-it-copy-code'
 import { useTabbar } from 'markdown-it-tabbar'
+import { onMounted } from 'vue'
+import CopyRight from './components/CopyRight.vue'
+import MessageBox from './components/MessageBox.vue'
+import NavBar from './components/NavBar.vue'
+import Plum from './components/Plum.vue'
+import Walk from './components/Walk.vue'
+
 onMounted(() => {
   useCopyCode()
   useTabbar()
@@ -16,7 +17,7 @@ onMounted(() => {
 <template>
   <MessageBox />
   <NavBar />
-  <main p-x-8 m-b-24>
+  <main m-b-24 p-x-8>
     <div class="slide">
       <RouterView />
     </div>

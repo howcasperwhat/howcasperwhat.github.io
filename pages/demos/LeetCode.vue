@@ -3,5 +3,5 @@ import LeetCode from './components/LeetCode.vue'
 </script>
 
 <template>
-  <LeetCode max-w-screen-lg m-x-auto />
+  <LeetCode m-x-auto max-w-screen-lg />
 </template>

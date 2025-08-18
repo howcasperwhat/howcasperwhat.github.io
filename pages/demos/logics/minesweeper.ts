@@ -1,11 +1,16 @@
 import type { Ref } from 'vue'
-import { ref } from 'vue'
 import type { BlockState } from '../types/minesweeper'
+import { ref } from 'vue'
 
 const directions = [
-  [-1, -1], [0, -1], [1, -1],
-  [-1, 0], [1, 0],
-  [-1, 1], [0, 1], [1, 1],
+  [-1, -1],
+  [0, -1],
+  [1, -1],
+  [-1, 0],
+  [1, 0],
+  [-1, 1],
+  [0, 1],
+  [1, 1],
 ]
 
 interface GameState {
@@ -31,12 +36,14 @@ export class GamePlay {
       gameState: 'playing',
       mineGenerated: false,
       board: Array.from({ length: this.height }, (_, y) =>
-        Array.from({ length: this.width },
-          (_, x): BlockState => ({
-            x, y, revealed: false, flagged: false, mine: false, adjacentMines: 0,
-          }),
-        ),
-      ),
+        Array.from({ length: this.width }, (_, x): BlockState => ({
+          x,
+          y,
+          revealed: false,
+          flagged: false,
+          mine: false,
+          adjacentMines: 0,
+        }))),
     }
   }
 

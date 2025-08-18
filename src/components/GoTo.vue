@@ -3,20 +3,20 @@ defineProps<{ prev: string, next: string }>()
 </script>
 
 <template>
-  <div 
-    flex="~ justify-between" hover:children:b-b-none
+  <div
+    flex="~ justify-between"
     children:grid="~ flow-col gap-2 items-center"
-    children:text="gray hover:unset" children:w-full
-    font-mono bg-gray:10 p-2 rounded m-t-8
+    children:text="gray hover:unset"
+    m-t-8 rounded bg-gray:10 p-2 font-mono children:w-full hover:children:b-b-none
   >
-    <a 
-      :href="prev" v-if="prev"
+    <a
+      v-if="prev" :href="prev"
       justify-start b-r="2 solid gray/40"
     >
       <div i-mdi:arrow-left-thin text-xl />
       <span v-text="prev" />
     </a>
-    <a :href="next" justify-end v-if="next">
+    <a v-if="next" :href="next" justify-end>
       <span v-text="next" />
       <div i-mdi:arrow-right-thin text-xl />
     </a>

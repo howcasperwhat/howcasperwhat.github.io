@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { useWindowScroll } from '@vueuse/core'
-import { useRouter, useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const { y } = useWindowScroll()
 const route = useRoute()
@@ -18,9 +18,9 @@ function goBack() {
 
 <template>
   <button
-    v-if="route.path !== '/'" rounded-full text-xl
-    flex-center fixed right-3 bottom-3 w-10 h-10
-    op-50 hover:op-100 hover:bg-hex-8884 
+    v-if="route.path !== '/'"
+
+    fixed bottom-3 right-3 h-10 w-10 flex-center rounded-full text-xl op-50 hover:bg-hex-8884 hover:op-100
     @click="far() ? toTop() : goBack()"
   >
     <div v-if="far()" i-carbon:arrow-up />

@@ -45,14 +45,14 @@ public static int[] rangePrime3(int n) {
   int[] result = new int[n + 1];
   boolean[] notPrime = new boolean[n + 1];
   for (int i = 2; i <= n; ++i) {
-    if (!notPrime[i]) 
+    if (!notPrime[i])
       result[cnt++] = i;
     for (int j = 0; j < cnt && i * result[j] <= n; ++j) {
       notPrime[i * result[j]] = true;
       if (i % result[j] == 0) break;
     }
   }
-  return Arrays.copyOf(result, cnt); 
+  return Arrays.copyOf(result, cnt);
 }
 ```
 :::
@@ -215,7 +215,7 @@ int $01Package(int[] m, int[] c, int N, int V) {
   // init dp array
   int[][] dp = new int[N][V+1];
   // default value in dp is 0
-  // so we don't need to init dp[?][0] 
+  // so we don't need to init dp[?][0]
   for (int i = 0; i < N; i++) {
     dp[i][0] = 0;
   }
@@ -283,22 +283,22 @@ int multiplePackage(int[] m, int[] c, int[] n, int N, int V) {
 @ Class Frame
 ``` java
 public class SegmentTree {
-	private int MAXN;
-	private int[] array;
-	private int[] sum;
-	private int[] lazy;
-	private int[] change;
-	private boolean[] update;
-	public SegmentTree(int[] origin) {...}
-	public void build(int l, int r, int rt) {...}
-	private void pushUp(int rt) {...}
-	private void pushDown(int rt, int ln, int rn) {...}
-	public void add(int L, int R, int C,
+  private int MAXN;
+  private int[] array;
+  private int[] sum;
+  private int[] lazy;
+  private int[] change;
+  private boolean[] update;
+  public SegmentTree(int[] origin) {...}
+  public void build(int l, int r, int rt) {...}
+  private void pushUp(int rt) {...}
+  private void pushDown(int rt, int ln, int rn) {...}
+  public void add(int L, int R, int C,
                     int l, int r, int rt) {...}
-	public void update(int L, int R, int C,
-					   int l, int r, int rt) {...}
-	public long query(int L, int R,
-					  int l, int r, int rt) {...}
+  public void update(int L, int R, int C,
+             int l, int r, int rt) {...}
+  public long query(int L, int R,
+            int l, int r, int rt) {...}
 }
 ```
 
@@ -371,7 +371,7 @@ public void add(int L, int R, int C,
       add(L, R, C, l, mid, rt << 1);
     if (mid + 1 <= R)
       add(L, R, C, mid + 1, r, rt << 1 | 1);
-    pushUp(rt);			
+    pushUp(rt);
   }
 }
 ```
@@ -417,7 +417,6 @@ public long query(int L, int R,
 ```
 :::
 
-
 ## Linked List Algorithm
 
 ::: tabbar
@@ -429,7 +428,8 @@ function hasCycle(head: ListNode | null): boolean {
   while (fast && fast.next) {
     slow = slow.next
     fast = fast.next.next
-    if (slow === fast) return true
+    if (slow === fast)
+      return true
   }
   return false
 }
@@ -442,10 +442,10 @@ function detectCycle(head: ListNode | null): ListNode | null {
   while (fast && fast.next) {
     slow = slow.next
     fast = fast.next.next
-    if (slow === fast) 
+    if (slow === fast)
       break
   }
-  if (!fast || !fast.next) 
+  if (!fast || !fast.next)
     return null
   fast = head
   while (slow !== fast) {

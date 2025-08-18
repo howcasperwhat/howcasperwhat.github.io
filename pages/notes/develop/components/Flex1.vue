@@ -1,14 +1,14 @@
 <template>
   <div
-    h-64 rounded font-bold font-mono c-black
+    h-64 rounded c-black font-bold font-mono
     flex="~ col" bg="blue/20 dark:blue/80"
   >
     <div h-8 flex-center v-text="'Container'" />
-    <div h-56 flex m-b-2 children:w-full>
+    <div m-b-2 h-56 flex children:w-full>
       <div
         v-for="i in 3" :key="i"
         bg="yellow/20 dark:yellow/80"
-        flex-center rounded m-x-2 v-text="'Item'"
+        m-x-2 flex-center rounded v-text="'Item'"
       />
     </div>
   </div>

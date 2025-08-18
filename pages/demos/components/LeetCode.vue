@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
-import IDSearcher from './IDSearcher.vue'
+import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import ClientMarkdown from '../../../src/components/ClientMarkdown.vue'
 import V404 from '../../404.vue'
+import ClientMarkdown from '../../../src/components/ClientMarkdown.vue'
+import IDSearcher from './IDSearcher.vue'
+
 const route = useRoute()
-const id = ref(parseInt(route.params.id as string ?? '1'))
+const id = ref(Number.parseInt(route.params.id as string ?? '1'))
 const codeMD = ref('')
 const exit = ref(true)
-const load = async (v: number) => {
+async function load(v: number) {
   import(`../stores/leetcode/${v}.ts?raw`).then(
     (code) => {
       exit.value = true
-      codeMD.value = '```ts\n' + code.default + '\n```'
-    }
+      codeMD.value = `\`\`\`ts\n${code.default}\n\`\`\``
+    },
   ).catch(() => exit.value = false)
 }
 onMounted(async () => {
@@ -24,7 +25,7 @@ onMounted(async () => {
 <template>
   <div>
     <IDSearcher :active="id" @active="load" />
-    <ClientMarkdown :content="codeMD" v-if="exit" />
+    <ClientMarkdown v-if="exit" :content="codeMD" />
     <V404 v-else />
   </div>
 </template>

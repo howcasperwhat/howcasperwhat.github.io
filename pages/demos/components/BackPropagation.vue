@@ -1,9 +1,9 @@
 <script setup lang='ts'>
 import { useWebWorkerFn } from '@vueuse/core'
 import { ref } from 'vue'
-import { modelLearn } from '../logics/bp'
-import { useMessage } from '../../../src/utils/message'
 import { useMarkdown } from '../../../src/utils/markdown'
+import { useMessage } from '../../../src/utils/message'
+import { modelLearn } from '../logics/bp'
 import LineChart from './LineChart.vue'
 
 const { workerFn, workerTerminate } = useWebWorkerFn(modelLearn)
@@ -35,7 +35,7 @@ function terminate() {
       </div>
       <div flex="~ items-center justify-between col">
         <button
-          btn bg-green h-8 c-black
+          h-8 btn bg-green c-black
           :disabled="working" :op="working ? 60 : 100"
           :cursor="working ? 'wait' : 'pointer'"
           @click="learn"
@@ -44,7 +44,7 @@ function terminate() {
           <div v-else i-svg-spinners:tadpole text-4 />
         </button>
         <button
-          btn bg-red h-8 c-black
+          h-8 btn bg-red c-black
           :disabled="!working" :op="working ? 100 : 60"
           :cursor="working ? 'pointer' : 'not-allowed'"
           @click="terminate"
@@ -62,15 +62,15 @@ function terminate() {
         v-html="markdown.renderFormula(`
         ${markdown.matrixToLatex(
           [['w1', 'w2', 'b1'], ['w3', 'w4', 'b1']])
-          } = ${markdown.matrixToLatex(
-            result.layer1Parameter)}`)"
+        } = ${markdown.matrixToLatex(
+          result.layer1Parameter)}`)"
       />
       <span
         v-html="markdown.renderFormula(`
         ${markdown.matrixToLatex(
           [['w4', 'w5', 'b2'], ['w6', 'w7', 'b2']])
-          } = ${markdown.matrixToLatex(
-            result.layer2Parameter)}`)"
+        } = ${markdown.matrixToLatex(
+          result.layer2Parameter)}`)"
       />
       <LineChart
         :key="result" :data="result.error"

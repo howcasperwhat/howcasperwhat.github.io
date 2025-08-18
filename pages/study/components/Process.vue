@@ -22,19 +22,19 @@ function getColor(index: number) {
     <div v-for="process, _ in processes" :key="process.id">
       <a flex="~ items-center" :href="process.name" hover:b-b-none>
         <div
-          w-1.5rem h-1.5rem rounded-full flex-center
+          h-1.5rem w-1.5rem flex-center rounded-full
           b=".1rem solid" hover:b=".1rem solid"
           :c="colors[process.status]"
         >
           <div :class="`i-${icons[process.status]}`" />
         </div>
-        <span m-l-2 text-sm truncate v-text="process.title" />
+        <span m-l-2 truncate text-sm v-text="process.title" />
       </a>
       <div
-        text-sm text-gray p-l-5 b-l=".1rem solid"
-        h-3rem relative m-l-.8rem b="!r-0 !y-0"
+        b-l=".1rem solid"
+        b="!r-0 !y-0"
         :from="getColor(_)" :to="getColor(_ + 1)"
-        b-gradient-to-bottom v-text="process.date"
+        relative m-l-.8rem h-3rem p-l-5 text-sm text-gray b-gradient-to-bottom v-text="process.date"
       />
     </div>
   </div>

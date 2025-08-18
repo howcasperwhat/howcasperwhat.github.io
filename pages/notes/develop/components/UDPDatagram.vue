@@ -9,14 +9,14 @@
     </div>
   </div>
   <div
-    grid="~ flow-row" rounded b="~ solid 1"
-    children:flex children:b-t="~ solid 1"
+    grid="~ flow-row" b="~ solid 1"
+    children:b-t="~ solid 1"
     first:children:b-t="~ solid 0"
-    children:children:flex-center
-    children:children:p-2 op="!80"
+
+    op="!80"
     children:children:b-l="~ solid 1"
     first:children:children:b-l="~ solid 0"
-    children:children:bg-blue:10
+    rounded children:flex children:children:flex-center children:children:bg-blue:10 children:children:p-2
   >
     <div>
       <div basis="16/32" v-text="'源端口号'" />

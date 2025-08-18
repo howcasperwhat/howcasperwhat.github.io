@@ -1,5 +1,5 @@
-function validIPAddress(queryIP: string): string {
-  if (/[^\da-zA-Z:\.]/.test(queryIP))
+export function validIPAddress(queryIP: string): string {
+  if (/[^\da-z:.]/i.test(queryIP))
     return 'Neither'
   const maybeIPv4 = queryIP.includes('.')
   const maybeIPv6 = queryIP.includes(':')
@@ -10,36 +10,42 @@ function validIPAddress(queryIP: string): string {
     if (parts.length !== 4)
       return 'Neither'
     for (const part of parts) {
-      if (part == '0')
+      if (part === '0')
         continue
-      const num = parseInt(part)
+      const num = Number.parseInt(part)
       // .. || .256. || .012.
-      if (!num || num > 255 || `${num}` != part)
+      if (!num || num > 255 || `${num}` !== part)
         return 'Neither'
     }
     return 'IPv4'
-  } else {
+  }
+  else {
     if (queryIP.includes(':::'))
       return 'Neither'
     if (queryIP.includes('::')) {
       const [leftParts, rightParts] = queryIP.split('::').map(parts => parts.split(':'))
-      if ((leftParts.length && Number(leftParts[leftParts.length - 1]) === 0) ||
-        (rightParts.length && Number(rightParts[0]) === 0))
+      if ((leftParts.length && Number(leftParts[leftParts.length - 1]) === 0)
+        || (rightParts.length && Number(rightParts[0]) === 0)) {
         return 'Neither'
-      for (const parts of [leftParts, rightParts])
-        for (const part of parts)
-          if (!/^[0-9a-fA-F]{1,4}$/.test(part))
+      }
+      for (const parts of [leftParts, rightParts]) {
+        for (const part of parts) {
+          if (!/^[0-9a-f]{1,4}$/i.test(part))
             return 'Neither'
+        }
+      }
       return 'IPv6'
-    } else {
+    }
+    else {
       if (queryIP.startsWith(':') || queryIP.endsWith(':'))
         return 'Neither'
       const parts = queryIP.split(':')
       if (parts.length !== 8)
         return 'Neither'
-      for (const part of parts)
-        if (!/^[0-9a-fA-F]{1,4}$/.test(part))
+      for (const part of parts) {
+        if (!/^[0-9a-f]{1,4}$/i.test(part))
           return 'Neither'
+      }
       return 'IPv6'
     }
   }

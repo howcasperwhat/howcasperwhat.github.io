@@ -1,5 +1,6 @@
-import { Ref, ref } from "vue";
-import type { Content, Role, Record, QA } from "../types/spark-chat";
+import type { Ref } from 'vue'
+import type { Content, QA, Record, Role } from '../types/spark-chat'
+import { ref } from 'vue'
 
 export class History {
   public readonly qas: Ref<QA[]> = ref([])
@@ -10,22 +11,27 @@ export class History {
         question: { role, content },
         answer: { role: 'assistant', content: 'thinking...' },
       })
-    } else if (role === 'assistant') {
+    }
+    else if (role === 'assistant') {
       this.qas.value[this.qas.value.length - 1].answer.content = content
     }
   }
+
   public concat(content: Content): void {
     this.qas.value[this.qas.value.length - 1].answer.content += content
   }
+
   public clip(thread: number): Record[] {
     const result: Record[] = []
     let tokens = 0
     for (let i = this.qas.value.length - 1; i >= 0; i--) {
       tokens += this.qas.value[i].answer.content.length
-      if (tokens >= thread) break
+      if (tokens >= thread)
+        break
       result.push(this.qas.value[i].answer)
       tokens += this.qas.value[i].question.content.length
-      if (tokens >= thread) break
+      if (tokens >= thread)
+        break
       result.push(this.qas.value[i].question)
     }
     // erase the last empty answer

@@ -1,13 +1,13 @@
 # 85. Maximal Rectangle
 
 ## Problem
-Given a `rows x cols` binary `matrix` filled with `0`'s and `1`'s, find the largest rectangle containing only `1`'s and return its area.  
+Given a `rows x cols` binary `matrix` filled with `0`'s and `1`'s, find the largest rectangle containing only `1`'s and return its area.
 
 ## Solutions
 
 ### Prefix-Sum + Sliding-Window
 
-``` java 
+``` java
 class Solution {
     public int maximalRectangle(char[][] matrix) {
         if (matrix.length == 0)
@@ -17,14 +17,14 @@ class Solution {
         int[][] sums = new int[row + 1][col + 1];
         for (int i = 1; i < row + 1; ++i)
             for (int j = 1; j < col + 1; ++j)
-                sums[i][j] = sums[i][j - 1] + sums[i - 1][j] 
+                sums[i][j] = sums[i][j - 1] + sums[i - 1][j]
                     - sums[i - 1][j - 1] + (matrix[i - 1][j - 1] - '0');
         int max = 0;
         for (int iBegin = 1; iBegin < row + 1; ++iBegin) {
             for (int iEnd = iBegin; iEnd < row + 1; ++iEnd) {
                 int jBegin = 1, jEnd = 1;
                 while (jEnd < col + 1) {
-                    int sum = sums[iEnd][jEnd] - sums[iEnd][jBegin - 1] 
+                    int sum = sums[iEnd][jEnd] - sums[iEnd][jBegin - 1]
                         - sums[iBegin - 1][jEnd] + sums[iBegin - 1][jBegin - 1];
                     if (sum == (iEnd - iBegin + 1) * (jEnd - jBegin + 1)) {
                         max = Math.max(max, sum);
@@ -42,7 +42,7 @@ class Solution {
 
 > [!NOTE] Complexity Analysis
 > matrix: $m \times n$
-> - Time complexity: $O(m^2n)$  
+> - Time complexity: $O(m^2n)$
 > - Space complexity: $O(mn)$
 
 > [!TIP] Accepted

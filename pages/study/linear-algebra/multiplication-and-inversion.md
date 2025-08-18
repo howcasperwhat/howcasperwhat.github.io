@@ -7,7 +7,7 @@ next: A=LU
 $$\begin{bmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{bmatrix}\begin{bmatrix}b_{11} & b_{12} & b_{13} \\ b_{21} & b_{22} & b_{23} \\ b_{31} & b_{32} & b_{33}\end{bmatrix}=\begin{bmatrix}c_{11} & c_{12} & c_{13} \\ c_{21} & c_{22} & c_{23} \\ c_{31} & c_{32} & c_{33}\end{bmatrix}$$
 
 ### Regular Way
-Assume $r_i = [a_{i1}, a_{i2}, a_{i3}]$ and $c_i = [b_{1i}, b_{2i}, b_{3i}]$ 
+Assume $r_i = [a_{i1}, a_{i2}, a_{i3}]$ and $c_i = [b_{1i}, b_{2i}, b_{3i}]$
 $$c_{ij} = r_i \cdot c_j$$
 
 ### Block Matrix

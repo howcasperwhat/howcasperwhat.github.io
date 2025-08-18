@@ -6,19 +6,22 @@ const { author, license, setupYear } = useConfigStore()
 
 <template>
   <footer text-4 c-gray-500 class="slide-content">
-    <div class="copyright-button"
+    <div
+      class="copyright-button"
       flex="~ items-center justify-center"
-      fixed absolute left-3 bottom-3
-      w-10 h-10 rounded-full z-10
-      hover:bg-hex-8884 hover:cursor-help>
+
+      absolute fixed bottom-3 left-3 z-10 h-10 w-10 rounded-full hover:cursor-help hover:bg-hex-8884
+    >
       <div i-hugeicons:license-pin text-lg />
     </div>
-    <div class="copyright-content" 
-      fixed absolute w-0 whitespace-nowrap
-      left-16 bottom-6 overflow-hidden>
+    <div
+      class="copyright-content"
+
+      absolute fixed bottom-6 left-16 w-0 overflow-hidden whitespace-nowrap
+    >
       {{ `
-          ${license} License 
-          ${setupYear}-present 
+          ${license} License
+          ${setupYear}-present
           ©${author}
       ` }}
     </div>

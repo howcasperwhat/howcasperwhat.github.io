@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { studyProcesses, studyTypes } from '../stores/data'
-import Routes from './Routes.vue'
 import Process from './Process.vue'
+import Routes from './Routes.vue'
 
 defineProps<{ active: number }>()
 </script>

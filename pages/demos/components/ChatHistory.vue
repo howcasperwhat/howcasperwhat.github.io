@@ -1,17 +1,18 @@
 <script setup lang='ts'>
-import { nextTick, onMounted, ref } from 'vue';
 import type { QA } from '../types/spark-chat'
+import { computed, nextTick, onMounted, ref } from 'vue'
 import ChatQA from './ChatQA.vue'
 
 const props = defineProps<{
   history: QA[]
 }>()
+const history = computed(() => props.history)
 const el = ref<HTMLElement>()
-const erase = (index: number) => {
-  props.history.splice(index, 1)
+function erase(index: number) {
+  history.value.splice(index, 1)
 }
 
-const toTop = () => {
+function toTop() {
   el.value!.scrollTop = el.value!.scrollHeight - el.value!.clientHeight
 }
 defineExpose({ toTop })
@@ -24,13 +25,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div grid="~ flow-row" rounded ref="el"
-    b="solid gray 1px" overflow-y-scroll
-    overflow-x-auto
-    v-if="props.history.length !== 0">
-    <div v-for="qa, i in props.history" 
+  <div
+    v-if="props.history.length !== 0" ref="el"
+    grid="~ flow-row"
+    b="solid gray 1px" overflow-x-auto overflow-y-scroll
+    rounded
+  >
+    <div
+      v-for="qa, i in props.history"
       :key="i" b-b="solid #8884 1px"
-      last:b-b-0>
+      last:b-b-0
+    >
       <ChatQA :qa="qa" @erase="erase(i)" />
     </div>
   </div>

@@ -23,8 +23,7 @@ export function bpLearn() {
         errors[i] = layer2Output.sub(output).square().sum().dataSync()[0] / 2
         const deltaLayer2 = layer2Output.sub(output).mul(layer2Output).mul(layer2Output.sub(1).neg())
         let devLayer2 = deltaLayer2.matMul(layer1Output.concat(one).transpose())
-        const deltaLayer1 = layer2Parameter.slice([0, 0], [2, 2]).transpose().matMul(deltaLayer2)
-          .mul(layer1Output).mul(layer1Output.sub(1).neg())
+        const deltaLayer1 = layer2Parameter.slice([0, 0], [2, 2]).transpose().matMul(deltaLayer2).mul(layer1Output).mul(layer1Output.sub(1).neg())
         let devLayer1 = deltaLayer1.matMul(input.concat(one).transpose())
         Bias1Value = devLayer1.slice([0, 2], [2, 1]).sum().dataSync()[0]
         Bias2Value = devLayer2.slice([0, 2], [2, 1]).sum().dataSync()[0]

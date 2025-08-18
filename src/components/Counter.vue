@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-import { computed, ref } from 'vue'
 import { useFetch, useIntervalFn } from '@vueuse/core'
+import { computed, ref } from 'vue'
 import { useConfigStore } from '../stores/config'
 
 const { counterAPI } = useConfigStore()
