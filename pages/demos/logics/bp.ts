@@ -50,15 +50,15 @@ export function modelLearn() {
     model.compile({ loss: 'meanSquaredError', optimizer: tf.train.sgd(_lr) })
     const input = tf.tensor(_input, [1, 2])
     const output = tf.tensor(_output, [1, 2])
-    const onEpochEnd = (epoch, logs) => {
+    const onEpochEnd = (epoch: number, logs: any) => {
       errors[epoch] = logs.loss
     }
     await model.fit(input, output, {
       epochs,
       callbacks: { onEpochEnd },
     })
-    const getParam = (layer, id: number): Float32Array => layer.getWeights()[id].dataSync()
-    const getParams = (layer): [Float32Array, Float32Array] => [getParam(layer, 0), getParam(layer, 1)]
+    const getParam = (layer: any, id: number): Float32Array => layer.getWeights()[id].dataSync()
+    const getParams = (layer: any): [Float32Array, Float32Array] => [getParam(layer, 0), getParam(layer, 1)]
     const concatResult = (w: Float32Array, b: Float32Array) => [[w[0], w[1], b[0]], [w[2], w[3], b[1]]]
     const [l1Params, l2Params] = [0, 1].map(i => concatResult(...getParams(model.layers[i])))
     return { error: errors, layer1Parameter: l1Params, layer2Parameter: l2Params }
