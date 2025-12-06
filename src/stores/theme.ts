@@ -24,7 +24,6 @@ function toggleTheme(event?: MouseEvent) {
     switchTheme()
     return
   }
-  // @ts-expect-error: Transition API
   const transition = document.startViewTransition(async () => {
     await nextTick()
     switchTheme()
