@@ -1,8 +1,8 @@
 import Shiki from '@shikijs/markdown-it'
-import KaTeX from '@vscode/markdown-it-katex'
 import MarkdownIt from 'markdown-it'
 import CopyCode from 'markdown-it-copy-code'
 import Alert from 'markdown-it-github-alerts'
+import MathJax from 'markdown-it-mathjax3'
 import Tabbar from 'markdown-it-tabbar'
 
 const md = MarkdownIt({
@@ -11,7 +11,7 @@ const md = MarkdownIt({
   linkify: true,
   typographer: true,
   // eslint-disable-next-line antfu/no-top-level-await
-}).use(KaTeX).use(await Shiki({
+}).use(await Shiki({
   defaultColor: false,
   defaultLanguage: 'ts',
   fallbackLanguage: 'ts',
@@ -19,7 +19,7 @@ const md = MarkdownIt({
     light: 'vitesse-light',
     dark: 'vitesse-dark',
   },
-})).use(CopyCode).use(Tabbar).use(Alert)
+})).use(CopyCode).use(Tabbar).use(Alert).use(MathJax)
 
 function renderMarkdown(content: string): string {
   return md.render(content)

@@ -1,11 +1,11 @@
 import Shiki from '@shikijs/markdown-it'
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 import Vue from '@vitejs/plugin-vue'
-import KaTeX from '@vscode/markdown-it-katex'
 import Anchor from 'markdown-it-anchor'
 import CopyCode from 'markdown-it-copy-code'
 import Alerts from 'markdown-it-github-alerts'
 import LinkAttributes from 'markdown-it-link-attributes'
+import MathJax from 'markdown-it-mathjax3'
 import Tabbar from 'markdown-it-tabbar'
 import UnoCSS from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -40,7 +40,7 @@ export default defineConfig({
         typographer: true,
       },
       markdownItUses: [
-        KaTeX,
+        MathJax,
         Alerts,
         CopyCode,
         Tabbar,
