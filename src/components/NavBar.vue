@@ -1,10 +1,6 @@
 <script setup lang='ts'>
-import { useThemeStore } from '../stores/theme'
-// import { useConfigStore } from '../stores/config'
+import { toggleTheme } from '../stores/theme'
 import Logo from './Logo.vue'
-
-const { toggleTheme } = useThemeStore()
-// const { githubURL } = useConfigStore()
 </script>
 
 <template>

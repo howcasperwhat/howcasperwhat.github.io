@@ -1,11 +1,10 @@
 <script setup lang='ts'>
 import { createHighlighter } from 'shiki'
 import { nextTick, onMounted, ref, watch } from 'vue'
-import { useThemeStore } from '../../../src/stores/theme'
+import { isDark } from '../../../src/stores/theme'
 
 const content = defineModel<string>()
 const rendered = ref<string>()
-const { theme } = useThemeStore()
 
 const editor = ref<HTMLTextAreaElement>()
 const preview = ref<HTMLDivElement>()
@@ -22,7 +21,7 @@ function syncScroll() {
 function render(code: string = '') {
   rendered.value = highlighter.codeToHtml(code, {
     lang: 'markdown',
-    theme: `vitesse-${theme.value}`,
+    theme: `vitesse-${isDark.value ? 'dark' : 'light'}`,
     transformers: [{
       preprocess(code) {
         // Workaround for https://github.com/shikijs/shiki/issues/608
@@ -46,7 +45,7 @@ onMounted(async () => {
     nextTick(syncScroll)
   }, { immediate: true })
 
-  watch(theme, () => {
+  watch(isDark, () => {
     render(content.value)
     nextTick(syncScroll)
   })

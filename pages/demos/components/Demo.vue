@@ -1,11 +1,10 @@
 <script setup lang='ts'>
 import type { DemoProps } from '../types/demo'
-import { useThemeStore } from '../../../src/stores/theme'
+import { isDark } from '../../../src/stores/theme'
 
 defineProps<{ demo: DemoProps }>()
-const { theme } = useThemeStore()
 function imageSrcOf(name: string) {
-  const value = theme.value || 'dark'
+  const value = isDark.value ? 'dark' : 'light'
   return `/images/demo/${name}.${value}.png`
 }
 </script>
@@ -25,7 +24,7 @@ function imageSrcOf(name: string) {
       <div v-html="demo.description" />
     </div>
     <img
-      :key="theme" w-full
+      :key="+isDark" w-full
       :src="imageSrcOf(demo.name)"
     >
   </div>
